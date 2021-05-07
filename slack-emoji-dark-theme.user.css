@@ -1,0 +1,23 @@
+/* ==UserStyle==
+@name           Slack emoji in Dark theme
+@namespace      mkobayashime
+@version        1.0.0
+@homepageURL    https://github.com/mkobayashime/userscripts
+@updateURL      https://github.com/mkobayashime/userscripts/raw/main/slack-emoji-dark-theme.user.css
+@description    Display Slack emoji with white background and in a slightly larger size
+@author         mkobayashime
+@license        Apache-2.0
+==/UserStyle== */
+
+@-moz-document domain("app.slack.com") {
+  img[data-qa="emoji"],
+  img[data-stringify-type="emoji"] {
+    padding: 1px;
+    background-color: white;
+  }
+
+  .c-emoji__small {
+    width: 20px;
+    height: 20px;
+  }
+}
