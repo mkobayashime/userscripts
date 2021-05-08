@@ -1,0 +1,8 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "repository": "git@github.com:mkobayashime/userscripts.git",
+  "author": "Masaki Kobayashi <contact@mkobayashi.me>",
+  "license": "Apache License 2.0",
+  "private": true
+}
