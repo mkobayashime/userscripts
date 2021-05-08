@@ -1,0 +1,28 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "repository": "git@github.com:mkobayashime/userscripts.git",
+  "author": "Masaki Kobayashi <contact@mkobayashi.me>",
+  "license": "Apache License 2.0",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --check"
+    ],
+    "*.js": [
+      "eslint"
+    ]
+  }
+}

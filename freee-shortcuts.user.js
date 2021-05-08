@@ -11,21 +11,21 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
-  "use strict";
+;(function () {
+  "use strict"
 
   window.onkeyup = (e) => {
     if (e.key === "Escape") {
-      const xpath = "//button[contains(text(),'閉じる')]";
+      const xpath = "//button[contains(text(),'閉じる')]"
       const matchingElement = document.evaluate(
         xpath,
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
-      ).singleNodeValue;
+      ).singleNodeValue
 
-      if (matchingElement) matchingElement.click();
+      if (matchingElement) matchingElement.click()
     }
-  };
-})();
+  }
+})()
