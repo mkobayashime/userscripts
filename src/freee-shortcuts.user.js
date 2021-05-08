@@ -5,7 +5,7 @@
 // @description  freee にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/freee-shortcuts.user.js
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js
 // @include      https://secure.freee.co.jp/*
 // @run-at       document-end
 // @grant        none

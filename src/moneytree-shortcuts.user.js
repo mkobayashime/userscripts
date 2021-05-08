@@ -5,7 +5,7 @@
 // @description  Moneytree にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/moneytree-shortcuts.user.js
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js
 // @include      https://app.getmoneytree.com/*
 // @run-at       document-end
 // @grant        none

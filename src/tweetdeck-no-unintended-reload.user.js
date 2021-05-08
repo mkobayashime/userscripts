@@ -6,7 +6,7 @@
 // @description:jp  書きかけのツイートがある状態で TweetDeck をリロードしたり閉じてしまうのを防ぎます
 // @author          mkobayashime
 // @homepage        https://github.com/mkobayashime/userscripts
-// @updateURL       https://github.com/mkobayashime/userscripts/raw/main/tweetdeck-no-unintended-reload.user.js
+// @updateURL       https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-unintended-reload.user.js
 // @include         https://tweetdeck.twitter.com/
 // @run-at          document-end
 // @grant           none
