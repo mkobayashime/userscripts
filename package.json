@@ -4,5 +4,10 @@
   "repository": "git@github.com:mkobayashime/userscripts.git",
   "author": "Masaki Kobayashi <contact@mkobayashi.me>",
   "license": "Apache License 2.0",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.2.1"
+  }
 }
