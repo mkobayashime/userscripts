@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No project styles in Scrapbox
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.1.0
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -47,13 +47,16 @@
           `link[href='/api/code/${projectId}/settings/style.css']`
         )
         if (projectStyle) {
-          // 少し待たないとなぜかページ全体が表示されなくなってしまう
-          window.setTimeout(() => {
+          // 読み込み前に projectStyle 消すとなぜか何も表示されなくなる
+          const pageListItems = document.querySelectorAll(
+            ".page-list .page-list-item"
+          )
+          if (pageListItems.length) {
             projectStyle.remove()
-          }, 300)
-          window.clearInterval(interval)
+            window.clearInterval(interval)
+          }
         }
-      }, 100)
+      }, 200)
 
       window.setTimeout(() => {
         window.clearInterval(interval)
