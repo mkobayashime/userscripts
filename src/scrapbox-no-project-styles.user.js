@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         No project styles in Scrapbox
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -30,37 +30,42 @@
     })
   }
 
-  const settingPagesPattern = new RegExp(
-    "https://scrapbox.io/(projects/[^/]+/)?settings/"
-  )
+  const pageObserver = new MutationObserver(() => {
+    const settingPagesPattern = new RegExp(
+      "https://scrapbox.io/(projects/[^/]+/)?settings/"
+    )
 
-  const url = window.location.href
+    const url = window.location.href
 
-  if (!settingPagesPattern.test(url)) {
-    const projectId = window.location.href.match(
-      RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
-    ).groups.projectId
+    if (!settingPagesPattern.test(url)) {
+      const projectId = window.location.href.match(
+        RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
+      ).groups.projectId
 
-    if (isProjectEnabled(projectId)) {
-      const interval = window.setInterval(() => {
+      if (isProjectEnabled(projectId)) {
         const projectStyle = document.querySelector(
           `link[href='/api/code/${projectId}/settings/style.css']`
         )
         if (projectStyle) {
-          // 読み込み前に projectStyle 消すとなぜか何も表示されなくなる
-          const pageListItems = document.querySelectorAll(
-            ".page-list .page-list-item"
-          )
-          if (pageListItems.length) {
-            projectStyle.remove()
-            window.clearInterval(interval)
-          }
+          // 空文字列だとそのままスタイルが当たってしまうことがあるので仕方なく
+          projectStyle.href = "dummy"
         }
-      }, 200)
-
-      window.setTimeout(() => {
-        window.clearInterval(interval)
-      }, 3000)
+      }
     }
-  }
+  })
+
+  const documentObserver = new MutationObserver(() => {
+    const app = document.querySelector(".app")
+    if (app) {
+      documentObserver.disconnect()
+      pageObserver.observe(app, {
+        childList: true,
+      })
+    }
+  })
+
+  documentObserver.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  })
 })()
