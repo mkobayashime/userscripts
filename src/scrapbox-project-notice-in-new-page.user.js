@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Project name notice in new page
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.0.1
 // @author       mkobayashime
 // @match        https://scrapbox.io/*
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
@@ -14,10 +14,7 @@
   "use strict"
 
   new MutationObserver(() => {
-    if (
-      window.scrapbox.Page.lines?.length === 1 &&
-      window.scrapbox.Page.lines[0]?.text === ""
-    ) {
+    if (window.scrapbox.Page.lines?.length === 1) {
       window.alert(
         `You are about to create a new page in "${
           window.scrapbox.Project?.name ?? "unknown project"
