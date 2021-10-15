@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Calendar - Unintended User Alert
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      2.0.0
 // @description  Alert when you open Google Calendar in unintended accounts
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -19,16 +19,16 @@
  * Updating this script to next versions may reset this to an empty string.
  * Please re-fill it to make this script works again.
  *
- * @example foo@gmail.com
- * @type string
+ * @example ["foo@gmail.com", "bar@gmail.com"]
+ * @type string[]
  */
-const GOOGLE_ACCOUNT_ADDRESS = ""
+const GOOGLE_ACCOUNT_ADDRESSES = []
 
 ;(function () {
   "use strict"
 
   const xUserEmailElement = document.getElementById("xUserEmail")
-  if (xUserEmailElement?.innerText !== GOOGLE_ACCOUNT_ADDRESS) {
+  if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement?.innerText)) {
     window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`)
   }
 })()
