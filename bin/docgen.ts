@@ -116,6 +116,5 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
   const scriptsMarkdown = filesProperties
     .map((fileProperties) => generateMdFileEntry(fileProperties))
     .join("\n\n")
-  // console.log(scriptsMarkdown)
   updateReadme(scriptsMarkdown)
 })()
