@@ -12,3 +12,7 @@ format: install
 
 format.check: install
 	yarn prettier --check .
+
+docgen: install
+	node --loader ts-node/esm bin/docgen.ts
+	@make format
