@@ -6,6 +6,8 @@ All of them are written just for myself, so I bear no responsibility.
 
 Inspired by [hideo54/userscripts](https://github.com/hideo54/userscripts).
 
+Take a look at [bookmarklets](https://github.com/mkobayashime/bookmarklets/) for more utils.
+
 ## Recommended operation environment
 
 - Google Chrome
