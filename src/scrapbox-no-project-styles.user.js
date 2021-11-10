@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         No project styles in Scrapbox
+// @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.2.1
+// @version      1.2.2
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

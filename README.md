@@ -34,37 +34,39 @@ Alert when you open Google Calendar in unintended accounts
 
 Moneytree にショートカットキーを追加します
 
-### [No project styles in Scrapbox](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-no-project-styles.user.js)
-
-Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
-
-### [No unintended reloads in TweetDeck](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-unintended-reload.user.js)
-
-Display confirmation dialogue when you reload/close TweetDeck with a new draft tweet
-
 ### [Remove signup dialogue in Qiita](https://github.com/mkobayashime/userscripts/raw/main/src/qiita-no-dialogue.user.css)
 
-### [Scrapbox - Project name notice in new page](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-project-notice-in-new-page.user.js)
-
-### [Scrapbox Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-clear-watch-list.user.js)
+### [Scrapbox - Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-clear-watch-list.user.js)
 
 Scrapbox の Watch List を自動的に全削除します
 
-### [Scrapbox Force Theme](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-force-theme.user.js)
+### [Scrapbox - Force Theme](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-force-theme.user.js)
 
 Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 
-### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js)
+### [Scrapbox - No project styles](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-no-project-styles.user.js)
 
-Display confirmation dialogue when you reload/close Slack with a new draft
+Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 
-### [Slack emoji in Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
+### [Scrapbox - Project name notice in new page](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-project-notice-in-new-page.user.js)
+
+Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
+
+### [Slack - Emoji for Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
 
 Display Slack emoji with white background and in a slightly larger size
+
+### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js)
+
+Alert when you reload/close Slack with a new draft
 
 ### [TweetDeck - Auto save draft](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-auto-save-draft.user.js)
 
 Auto save composing tweet and restore it with Alt+P shortcut
+
+### [TweetDeck - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-unintended-reload.user.js)
+
+Alert when you reload/close TweetDeck with a composing tweet
 
 ### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js)
 
