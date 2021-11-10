@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         Scrapbox - Project name notice in new page
 // @namespace    mkobayashime
-// @version      1.0.1
+// @version      1.0.2
+// @description  Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
 // @author       mkobayashime
 // @match        https://scrapbox.io/*
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name            Slack - No unintended reloads
 // @namespace       mkobayashime
-// @version         1.0.0
-// @description     Display confirmation dialogue when you reload/close Slack with a new draft
+// @version         1.0.1
+// @description     Alert when you reload/close Slack with a new draft
 // @author          mkobayashime
 // @homepage        https://github.com/mkobayashime/userscripts
 // @updateURL       https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js

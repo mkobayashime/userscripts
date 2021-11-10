@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Scrapbox Force Theme
+// @name         Scrapbox - Force Theme
 // @namespace    mkobayashime
-// @version      1.0.1
+// @version      1.0.2
 // @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name            No unintended reloads in TweetDeck
+// @name            TweetDeck - No unintended reloads
 // @namespace       mkobayashime
-// @version         1.0.1
-// @description     Display confirmation dialogue when you reload/close TweetDeck with a new draft tweet
+// @version         1.0.2
+// @description     Alert when you reload/close TweetDeck with a composing tweet
 // @description:jp  書きかけのツイートがある状態で TweetDeck をリロードしたり閉じてしまうのを防ぎます
 // @author          mkobayashime
 // @homepage        https://github.com/mkobayashime/userscripts
