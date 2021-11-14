@@ -1,5 +1,3 @@
-// docgen-ignore
-
 // ==UserScript==
 // @name         Quick Tazugane
 // @namespace    mkobayashime
@@ -9,6 +7,8 @@
 // @match        *://*/*
 // @run-at       document-start
 // ==/UserScript==
+
+// docgen-ignore
 
 ;(function () {
   "use strict"
