@@ -47,7 +47,11 @@ const parseFileComment = async ({
     const file = await readFile(filepath)
     const lines = file.toString().split("\n")
 
-    if (lines.length === 0 || lines[0].includes("docgen-ignore")) return O.none
+    if (
+      lines.length === 0 ||
+      lines.some((line) => line.includes("docgen-ignore"))
+    )
+      return O.none
 
     const commentPrefix = {
       title: kind === "script" ? "// @name" : "@name",
