@@ -60,10 +60,6 @@ Display Slack emoji with white background and in a slightly larger size
 
 Alert when you reload/close Slack with a new draft
 
-### [Slack - Quick home channel](https://github.com/mkobayashime/userscripts/raw/main/src/slack-home-channel.user.js)
-
-Go back to your home channel with Ctrl+B shortcut. Ctrl+Shift+B to set current channel as home channel.
-
 ### [TweetDeck - Auto save draft](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-auto-save-draft.user.js)
 
 Auto save composing tweet and restore it with Alt+P shortcut
