@@ -30,6 +30,10 @@ Large display friendly fixed width layout for Wikipedia.
 
 Alert when you open Google Calendar in unintended accounts
 
+### [Instagram - Like with Space](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-like-space.user.js)
+
+Like photo in the center of the screen with Space key
+
 ### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js)
 
 Moneytree にショートカットキーを追加します
