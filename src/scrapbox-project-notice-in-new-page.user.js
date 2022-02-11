@@ -7,7 +7,9 @@
 // @match        https://scrapbox.io/*
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @homepage     https://github.com/mkobayashime/userscripts
+// @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-project-notice-in-new-page.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-project-notice-in-new-page.user.js
 // @grant        none
 // ==/UserScript==
 

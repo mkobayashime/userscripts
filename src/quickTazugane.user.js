@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Quick Tazugane
+// @description  .
 // @namespace    mkobayashime
 // @author       mkobayashime
 // @version      0.2.0
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/quickTazugane.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/quickTazugane.user.js
 // @match        *://*/*
 // @run-at       document-start
 // ==/UserScript==

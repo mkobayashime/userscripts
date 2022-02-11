@@ -5,7 +5,9 @@
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
+// @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-no-project-styles.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-no-project-styles.user.js
 // @include      https://scrapbox.io/*
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @run-at       document-end
