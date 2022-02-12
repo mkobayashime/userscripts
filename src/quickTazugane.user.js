@@ -31,5 +31,10 @@
     }
   }
 
-  if (getStorageValue()) document.body.classList.add(className)
+  const apply = () => {
+    if (getStorageValue()) document.body.classList.add(className)
+  }
+
+  apply()
+  window.addEventListener("DOMContentLoaded", () => apply())
 })()
