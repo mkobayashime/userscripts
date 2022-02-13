@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Arrow keys
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.0.1
 // @description  Next/Prev photo with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -28,7 +28,7 @@
     })
   }
 
-  window.onkeydown = (e) => {
+  window.addEventListener("keydown", (e) => {
     if (e.key === "l" || e.key === "ArrowRight") {
       e.preventDefault()
 
@@ -48,5 +48,5 @@
       const prevButton = post.querySelector("[aria-label='Go Back']")
       if (prevButton) prevButton.click()
     }
-  }
+  })
 })()
