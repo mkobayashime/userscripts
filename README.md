@@ -76,6 +76,10 @@ Auto save composing tweet and restore it with Alt+P shortcut
 
 Alert when you reload/close TweetDeck with a composing tweet
 
+### [ZOZOTOWN - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/zozotown-shortcuts.user.js)
+
+Next/Prev image with arrow/h/l keys
+
 ### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js)
 
 freee にショートカットキーを追加します
