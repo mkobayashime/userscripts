@@ -1,1 +1,1 @@
-- [ ] Bumped up the version if there is changes in the scripts/styles
+- [ ] Bumped up the version if there are changes in the scripts/styles
