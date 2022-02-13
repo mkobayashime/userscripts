@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Like with Space
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.0.1
 // @description  Like photo in the center of the screen with Space key
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -17,7 +17,7 @@
 ;(function () {
   "use strict"
 
-  window.onkeydown = (e) => {
+  window.addEventListener("keydown", (e) => {
     if (e.code === "Space") {
       e.preventDefault()
 
@@ -39,5 +39,5 @@
       const likeButtonInner = likeButtonSvg.parentElement
       if (likeButtonInner) likeButtonInner.click()
     }
-  }
+  })
 })()
