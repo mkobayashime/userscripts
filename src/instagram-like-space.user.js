@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Instagram - Like with Space
 // @namespace    mkobayashime
-// @version      1.0.1
-// @description  Like photo in the center of the screen with Space key
+// @version      1.0.2
+// @description  Like post in the center of the screen with Space key
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
@@ -21,17 +21,17 @@
     if (e.code === "Space") {
       e.preventDefault()
 
-      const photoWrappers = Array.from(document.getElementsByTagName("article"))
+      const postWrappers = Array.from(document.getElementsByTagName("article"))
 
-      const photoWrapperInCenter = photoWrappers.find((element) => {
+      const postWrapperInCenter = postWrappers.find((element) => {
         const windowHalfHeight = window.innerHeight / 2
         const { top, height } = element.getBoundingClientRect()
 
         return top <= windowHalfHeight && top + height >= windowHalfHeight
       })
-      if (!photoWrapperInCenter) return
+      if (!postWrapperInCenter) return
 
-      const likeButtonSvg = photoWrapperInCenter.querySelector(
+      const likeButtonSvg = postWrapperInCenter.querySelector(
         "[aria-label='Like'], [aria-label='Unlike']"
       )
       if (!likeButtonSvg) return
