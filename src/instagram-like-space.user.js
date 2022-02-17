@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Like with Space
 // @namespace    mkobayashime
-// @version      1.0.2
+// @version      1.1.0
 // @description  Like post in the center of the screen with Space key
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -13,6 +13,13 @@
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
+
+/**
+ * Whether pressing Space on already liked post unlikes it or not.
+ * Defaults to `false` to keep it consistent with the double tapping in mobile app.
+ * @default false
+ */
+const UNLIKE = false
 
 ;(function () {
   "use strict"
@@ -32,12 +39,23 @@
       if (!postWrapperInCenter) return
 
       const likeButtonSvg = postWrapperInCenter.querySelector(
-        "[aria-label='Like'], [aria-label='Unlike']"
+        "[aria-label='Like']"
       )
-      if (!likeButtonSvg) return
+      const unlikeButtonSvg = postWrapperInCenter.querySelector(
+        "[aria-label='Unlike']"
+      )
 
-      const likeButtonInner = likeButtonSvg.parentElement
-      if (likeButtonInner) likeButtonInner.click()
+      if (!UNLIKE && unlikeButtonSvg) return
+
+      /**
+       * Prioritize `unlikeButtonSvg` over `likeButtonSvg` in order not to
+       * click like button of comments
+       */
+      const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg
+      if (!buttonSvgToClick) return
+
+      const buttonInner = buttonSvgToClick.parentElement
+      if (buttonInner) buttonInner.click()
     }
   })
 })()
