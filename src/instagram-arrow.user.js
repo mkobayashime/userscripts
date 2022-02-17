@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Arrow keys
 // @namespace    mkobayashime
-// @version      1.0.2
+// @version      1.1.0
 // @description  Next/Prev post with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -17,6 +17,11 @@
 ;(function () {
   "use strict"
 
+  const isTyping = () => {
+    const inputTags = ["INPUT", "TEXTAREA", "SELECT"]
+    return inputTags.includes(document.activeElement.tagName.toUpperCase())
+  }
+
   const getPostInTheCenter = () => {
     const postWrappers = Array.from(document.getElementsByTagName("article"))
 
@@ -29,9 +34,9 @@
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "l" || e.key === "ArrowRight") {
-      e.preventDefault()
+    if (isTyping()) return
 
+    if (e.key === "l" || e.key === "ArrowRight") {
       const post = getPostInTheCenter()
       if (!post) return
 
@@ -40,8 +45,6 @@
     }
 
     if (e.key === "h" || e.key === "ArrowLeft") {
-      e.preventDefault()
-
       const post = getPostInTheCenter()
       if (!post) return
 
