@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Like with Space
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Like post in the center of the screen with Space key
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -24,7 +24,14 @@ const UNLIKE = false
 ;(function () {
   "use strict"
 
+  const isTyping = () => {
+    const inputTags = ["INPUT", "TEXTAREA", "SELECT"]
+    return inputTags.includes(document.activeElement.tagName.toUpperCase())
+  }
+
   window.addEventListener("keydown", (e) => {
+    if (isTyping()) return
+
     if (e.code === "Space") {
       e.preventDefault()
 
