@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Instagram - Arrow keys
 // @namespace    mkobayashime
-// @version      1.0.1
-// @description  Next/Prev photo with arrow/h/l keys
+// @version      1.0.2
+// @description  Next/Prev post with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
@@ -18,9 +18,9 @@
   "use strict"
 
   const getPostInTheCenter = () => {
-    const photoWrappers = Array.from(document.getElementsByTagName("article"))
+    const postWrappers = Array.from(document.getElementsByTagName("article"))
 
-    return photoWrappers.find((element) => {
+    return postWrappers.find((element) => {
       const windowHalfHeight = window.innerHeight / 2
       const { top, height } = element.getBoundingClientRect()
 

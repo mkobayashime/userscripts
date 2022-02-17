@@ -32,11 +32,11 @@ Alert when you open Google Calendar in unintended accounts
 
 ### [Instagram - Arrow keys](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-arrow.user.js)
 
-Next/Prev photo with arrow/h/l keys
+Next/Prev post with arrow/h/l keys
 
 ### [Instagram - Like with Space](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-like-space.user.js)
 
-Like photo in the center of the screen with Space key
+Like post in the center of the screen with Space key
 
 ### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js)
 
