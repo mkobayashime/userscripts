@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.1.0
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -30,7 +30,11 @@ const UNLIKE = false
   }
 
   const getTargetPost = () => {
-    const postWrappers = Array.from(document.getElementsByTagName("article"))
+    const postWrappers = Array.from(
+      document.querySelectorAll('article[role="presentation"]')
+    )
+
+    if (postWrappers.length === 1) return postWrappers[0]
 
     return postWrappers.find((element) => {
       const windowHalfHeight = window.innerHeight / 2
