@@ -1,18 +1,20 @@
 // ==UserScript==
 // @name         Instagram - Arrow keys
 // @namespace    mkobayashime
-// @version      1.1.0
-// @description  Next/Prev post with arrow/h/l keys
+// @version      1.2.0
+// @description  Deprecated. Use `instagram-shortcuts.user.js` instead.
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/instagram-arrow.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/instagram-arrow.user.js
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js
 // @include      https://www.instagram.com/*
 // @icon         https://www.google.com/s2/favicons?domain=instagram.com
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
+
+// docgen-ignore
 
 ;(function () {
   "use strict"
