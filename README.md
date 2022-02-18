@@ -30,13 +30,9 @@ Large display friendly fixed width layout for Wikipedia.
 
 Alert when you open Google Calendar in unintended accounts
 
-### [Instagram - Arrow keys](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-arrow.user.js)
+### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js)
 
-Next/Prev post with arrow/h/l keys
-
-### [Instagram - Like with Space](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-like-space.user.js)
-
-Like post in the center of the screen with Space key
+Space key to like, arrow/h/l keys to next/previous photo in the post
 
 ### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js)
 

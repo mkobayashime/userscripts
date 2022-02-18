@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Instagram - Like with Space
+// @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.0
-// @description  Deprecated. Use `instagram-shortcuts.user.js` instead.
+// @version      1.0.0
+// @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
@@ -13,8 +13,6 @@
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
-
-// docgen-ignore
 
 /**
  * Whether pressing Space on already liked post unlikes it or not.
@@ -31,28 +29,28 @@ const UNLIKE = false
     return inputTags.includes(document.activeElement.tagName.toUpperCase())
   }
 
+  const getTargetPost = () => {
+    const postWrappers = Array.from(document.getElementsByTagName("article"))
+
+    return postWrappers.find((element) => {
+      const windowHalfHeight = window.innerHeight / 2
+      const { top, height } = element.getBoundingClientRect()
+
+      return top <= windowHalfHeight && top + height >= windowHalfHeight
+    })
+  }
+
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return
 
     if (e.code === "Space") {
       e.preventDefault()
 
-      const postWrappers = Array.from(document.getElementsByTagName("article"))
+      const targetPost = getTargetPost()
+      if (!targetPost) return
 
-      const postWrapperInCenter = postWrappers.find((element) => {
-        const windowHalfHeight = window.innerHeight / 2
-        const { top, height } = element.getBoundingClientRect()
-
-        return top <= windowHalfHeight && top + height >= windowHalfHeight
-      })
-      if (!postWrapperInCenter) return
-
-      const likeButtonSvg = postWrapperInCenter.querySelector(
-        "[aria-label='Like']"
-      )
-      const unlikeButtonSvg = postWrapperInCenter.querySelector(
-        "[aria-label='Unlike']"
-      )
+      const likeButtonSvg = targetPost.querySelector("[aria-label='Like']")
+      const unlikeButtonSvg = targetPost.querySelector("[aria-label='Unlike']")
 
       if (!UNLIKE && unlikeButtonSvg) return
 
@@ -65,6 +63,22 @@ const UNLIKE = false
 
       const buttonInner = buttonSvgToClick.parentElement
       if (buttonInner) buttonInner.click()
+    }
+
+    if (e.key === "l" || e.key === "ArrowRight") {
+      const post = getTargetPost()
+      if (!post) return
+
+      const nextButton = post.querySelector("[aria-label='Next']")
+      if (nextButton) nextButton.click()
+    }
+
+    if (e.key === "h" || e.key === "ArrowLeft") {
+      const post = getTargetPost()
+      if (!post) return
+
+      const prevButton = post.querySelector("[aria-label='Go Back']")
+      if (prevButton) prevButton.click()
     }
   })
 })()
