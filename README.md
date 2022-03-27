@@ -30,6 +30,10 @@ Large display friendly fixed width layout for Wikipedia.
 
 Alert when you open Google Calendar in unintended accounts
 
+### [HOME'S - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/lifull-homes-shortcuts.user.js)
+
+Next/Prev image with arrow/h/l keys
+
 ### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js)
 
 Space key to like, arrow/h/l keys to next/previous photo in the post
