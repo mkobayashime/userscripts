@@ -14,9 +14,9 @@
 // @grant        none
 // ==/UserScript==
 
-;(function () {
-  "use strict"
+(function () {
+  "use strict";
 
-  localStorage.setItem("projectsLastAccessed", "{}")
-  localStorage.setItem("lastProject", "{}")
-})()
+  localStorage.setItem("projectsLastAccessed", "{}");
+  localStorage.setItem("lastProject", "{}");
+})();

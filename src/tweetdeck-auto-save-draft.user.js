@@ -14,35 +14,35 @@
 // @grant        none
 // ==/UserScript==
 
-;(function () {
-  "use strict"
+(function () {
+  "use strict";
 
-  const storageKey = "___auto-saved-draft"
+  const storageKey = "___auto-saved-draft";
 
   const getTextArea = () =>
     document.querySelector(
       "div[data-drawer='compose'] textarea.js-compose-text"
-    )
+    );
 
   window.setInterval(() => {
-    const textarea = getTextArea()
-    if (!textarea) return
+    const textarea = getTextArea();
+    if (!textarea) return;
 
-    const draft = textarea.value
-    if (!draft) return
+    const draft = textarea.value;
+    if (!draft) return;
 
-    window.localStorage.setItem(storageKey, draft)
-  }, 500)
+    window.localStorage.setItem(storageKey, draft);
+  }, 500);
 
   window.onkeydown = (e) => {
     if (e.altKey && e.code === "KeyP") {
-      const textarea = getTextArea()
-      if (!textarea) return
+      const textarea = getTextArea();
+      if (!textarea) return;
 
-      const draft = window.localStorage.getItem(storageKey)
-      if (!draft) return
+      const draft = window.localStorage.getItem(storageKey);
+      if (!draft) return;
 
-      textarea.value = draft
+      textarea.value = draft;
     }
-  }
-})()
+  };
+})();
