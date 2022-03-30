@@ -64,6 +64,10 @@ Scrapbox ページを新たに作成する際、意図したプロジェクト�
 
 Display Slack emoji with white background and in a slightly larger size
 
+### [Slack - No autofocus in moving channels](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-autofocus.user.js)
+
+Disable autofocus to the message input field after moved to another channel
+
 ### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js)
 
 Alert when you reload/close Slack with a new draft
