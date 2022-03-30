@@ -24,13 +24,13 @@
  * @example ["foo@gmail.com", "bar@gmail.com"]
  * @type string[]
  */
-const GOOGLE_ACCOUNT_ADDRESSES = []
+const GOOGLE_ACCOUNT_ADDRESSES = [];
 
-;(function () {
-  "use strict"
+(function () {
+  "use strict";
 
-  const xUserEmailElement = document.getElementById("xUserEmail")
+  const xUserEmailElement = document.getElementById("xUserEmail");
   if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement?.innerText)) {
-    window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`)
+    window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`);
   }
-})()
+})();

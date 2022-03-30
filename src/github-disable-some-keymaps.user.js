@@ -15,19 +15,19 @@
 
 // docgen-ignore
 
-;(function () {
-  "use strict"
+(function () {
+  "use strict";
 
   const isTyping = () => {
-    const inputTags = ["INPUT", "TEXTAREA", "SELECT"]
-    return inputTags.includes(document.activeElement.tagName.toUpperCase())
-  }
+    const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
+    return inputTags.includes(document.activeElement.tagName.toUpperCase());
+  };
 
   document.addEventListener("keydown", (e) => {
-    if (isTyping()) return
+    if (isTyping()) return;
 
     if (e.code === "Period") {
-      e.preventDefault()
+      e.preventDefault();
     }
-  })
-})()
+  });
+})();
