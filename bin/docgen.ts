@@ -23,7 +23,7 @@ const getFiles = async (): Promise<
 > => {
   try {
     return pipe(
-      await glob.sync(path.resolve("src", "*.user.@(js|css)")),
+      glob.sync(path.resolve("src", "*.user.@(js|css)")),
       A.sort(string.Ord),
       A.map((filepath) => ({
         filepath,
@@ -92,9 +92,7 @@ ${description ?? ""}
 };
 
 const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
-  const readme = await (
-    await readFile(path.resolve(".", "README.md"))
-  ).toString();
+  const readme = (await readFile(path.resolve(".", "README.md"))).toString();
   if (!readme) return;
 
   const readmeKeyword = "<!-- docgen -->";
