@@ -87,3 +87,7 @@ Next/Prev image with arrow/h/l keys
 ### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js)
 
 freee にショートカットキーを追加します
+
+### [note - Auto save drafts](https://github.com/mkobayashime/userscripts/raw/main/src/note-auto-save-drafts.user.js)
+
+Auto save draft articles periodically
