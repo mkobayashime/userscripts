@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js
-// @include      https://www.instagram.com/*
+// @match        https://www.instagram.com/*
 // @icon         https://www.google.com/s2/favicons?domain=instagram.com
 // @run-at       document-end
 // @grant        none
