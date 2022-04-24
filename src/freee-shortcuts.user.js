@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         freee shortcut keys
 // @namespace    mkobayashime
-// @version      1.0.1
+// @version      1.1.0
 // @description  freee にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js
-// @include      https://secure.freee.co.jp/*
+// @match        https://secure.freee.co.jp/*
 // @icon         https://www.google.com/s2/favicons?domain=freee.co.jp
 // @run-at       document-end
 // @grant        none
