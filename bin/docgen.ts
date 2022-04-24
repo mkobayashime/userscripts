@@ -15,24 +15,24 @@ type FileProperties = {
 
 type FileKind = "script" | "style";
 
-const getFiles = async (): Promise<
-  Array<{
-    filepath: string;
-    kind: FileKind;
-  }>
-> => {
+const getFiles = async (): Promise<{
+  scripts: string[];
+  styles: string[];
+}> => {
   try {
-    return pipe(
-      glob.sync(path.resolve("src", "*.user.@(js|css)")),
-      A.sort(string.Ord),
-      A.map((filepath) => ({
-        filepath,
-        kind: filepath.endsWith(".user.js") ? "script" : "style",
-      }))
-    );
+    return {
+      scripts: pipe(
+        glob.sync(path.resolve("src", "*.user.js")),
+        A.sort(string.Ord)
+      ),
+      styles: pipe(
+        glob.sync(path.resolve("src", "*.user.css")),
+        A.sort(string.Ord)
+      ),
+    };
   } catch (err) {
     console.error(err);
-    return [];
+    return { scripts: [], styles: [] };
   }
 };
 
@@ -79,6 +79,25 @@ const parseFileComment = async ({
   }
 };
 
+const getFilesProperties = async ({
+  files,
+  kind,
+}: {
+  files: string[];
+  kind: FileKind;
+}) =>
+  pipe(
+    await Promise.all(
+      files.map(async (file) => {
+        return await parseFileComment({ filepath: file, kind });
+      })
+    ),
+    A.compact,
+    A.sort<FileProperties>(
+      Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title))
+    )
+  );
+
 const generateMdFileEntry = ({
   filename,
   title,
@@ -107,20 +126,30 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
 
 //
 (async () => {
-  const files = await getFiles();
-  const filesProperties = pipe(
-    await Promise.all(
-      files.map(async (file) => {
-        return await parseFileComment(file);
-      })
-    ),
-    A.compact,
-    A.sort<FileProperties>(
-      Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title))
-    )
-  );
-  const scriptsMarkdown = filesProperties
+  const { scripts, styles } = await getFiles();
+
+  const scriptFileProperties = await getFilesProperties({
+    files: scripts,
+    kind: "script",
+  });
+  const styleFileProperties = await getFilesProperties({
+    files: styles,
+    kind: "style",
+  });
+
+  const scriptsMarkdown = scriptFileProperties
     .map((fileProperties) => generateMdFileEntry(fileProperties))
     .join("\n\n");
-  updateReadme(scriptsMarkdown);
+  const stylesMarkdown = styleFileProperties
+    .map((fileProperties) => generateMdFileEntry(fileProperties))
+    .join("\n\n");
+
+  const joinedMarkdown = [
+    "## Scripts (`*.user.js`)",
+    scriptsMarkdown,
+    "## Styles (`*.user.css`)",
+    stylesMarkdown,
+  ].join("\n\n");
+
+  updateReadme(joinedMarkdown);
 })();
