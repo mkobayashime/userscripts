@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         note - Auto save drafts
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.1.0
 // @description  Auto save draft articles periodically
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -16,9 +16,9 @@
 
 /**
  * Interval of auto saving in milliseconds
- * @default 10000: 10 seconds
+ * @default 30000: 30 seconds
  */
-const INTERVAL = 10 * 1000;
+const INTERVAL = 30 * 1000;
 
 (function () {
   "use strict";
