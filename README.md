@@ -58,6 +58,10 @@ Scrapbox ページを新たに作成する際、意図したプロジェクト�
 
 Disable autofocus to the message input field after moved to another channel
 
+### [Slack - No desktop app](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-desktop-app.user.js)
+
+Open workspace in the browser after signing in, not in desktop app
+
 ### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js)
 
 Alert when you reload/close Slack with a new draft
