@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.2.1
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -44,6 +44,19 @@ const UNLIKE = false;
     });
   };
 
+  const findParentButtonRecursively = (
+    { origin, limit } = { origin: null, limit: 5 }
+  ) => {
+    if (!origin || limit < 0) return null;
+
+    if (origin instanceof HTMLButtonElement) return origin;
+
+    return findParentButtonRecursively({
+      origin: origin.parentElement,
+      limit: limit - 1,
+    });
+  };
+
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
 
@@ -53,20 +66,24 @@ const UNLIKE = false;
       const targetPost = getTargetPost();
       if (!targetPost) return;
 
-      const likeButtonSvg = targetPost.querySelector("[aria-label='Like']");
-      const unlikeButtonSvg = targetPost.querySelector("[aria-label='Unlike']");
+      const buttonsArea = targetPost.querySelector("section");
+      if (!buttonsArea) return;
+
+      const likeButtonSvg = buttonsArea.querySelector("[aria-label='Like']");
+      const unlikeButtonSvg = buttonsArea.querySelector(
+        "[aria-label='Unlike']"
+      );
 
       if (!UNLIKE && unlikeButtonSvg) return;
 
-      /**
-       * Prioritize `unlikeButtonSvg` over `likeButtonSvg` in order not to
-       * click like button of comments
-       */
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
 
-      const buttonInner = buttonSvgToClick.parentElement;
-      if (buttonInner) buttonInner.click();
+      const buttonToClick = findParentButtonRecursively({
+        origin: buttonSvgToClick,
+        limit: 5,
+      });
+      if (buttonToClick) buttonToClick.click();
     }
 
     if (e.key === "l" || e.key === "ArrowRight") {
