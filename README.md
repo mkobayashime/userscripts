@@ -38,6 +38,10 @@ Space key to like, arrow/h/l keys to next/previous photo in the post
 
 Moneytree にショートカットキーを追加します
 
+### [Pinterest - Shortcuts in "Save from site"](https://github.com/mkobayashime/userscripts/raw/main/src/pinterest-save-from-site-shortcuts.user.js)
+
+Ctrl+Enter in "Save from site"
+
 ### [Scrapbox - Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-clear-watch-list.user.js)
 
 Scrapbox の Watch List を自動的に全削除します
