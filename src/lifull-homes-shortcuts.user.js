@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         HOME'S - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Next/Prev image with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/lifull-homes-shortcuts.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/lifull-homes-shortcuts.user.js
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/lifull-homes-shortcuts.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/lifull-homes-shortcuts.user.js
 // @match        https://www.homes.co.jp/*
 // @icon         https://www.google.com/s2/favicons?domain=homes.co.jp
 // @run-at       document-end

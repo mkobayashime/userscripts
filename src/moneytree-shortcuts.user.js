@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Moneytree shortcut keys
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Moneytree にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/moneytree-shortcuts.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/moneytree-shortcuts.user.js
 // @match        https://app.getmoneytree.com/*
 // @icon         https://www.google.com/s2/favicons?domain=getmoneytree.com
 // @run-at       document-end
