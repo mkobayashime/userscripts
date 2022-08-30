@@ -22,75 +22,75 @@ Click _Raw_ button in the desired script/style. Tampermonkey/Stylus will open th
 
 ## Scripts (`*.user.js`)
 
-### [ETC 利用照会サービス - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/etc-meisai-shortcuts.user.js)
+### [ETC 利用照会サービス - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js)
 
 ETC 利用照会サービスに h/l などのショートカットキーを追加します
 
-### [Google Calendar - Unintended User Alert](https://github.com/mkobayashime/userscripts/raw/main/src/google-calendar-unintended-user-alert.user.js)
+### [Google Calendar - Unintended User Alert](https://github.com/mkobayashime/userscripts/raw/main/dist/google-calendar-unintended-user-alert.user.js)
 
 Alert when you open Google Calendar in unintended accounts
 
-### [HOME'S - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/lifull-homes-shortcuts.user.js)
+### [HOME'S - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/lifull-homes-shortcuts.user.js)
 
 Next/Prev image with arrow/h/l keys
 
-### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/instagram-shortcuts.user.js)
+### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js)
 
 Space key to like, arrow/h/l keys to next/previous photo in the post
 
-### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/moneytree-shortcuts.user.js)
+### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/moneytree-shortcuts.user.js)
 
 Moneytree にショートカットキーを追加します
 
-### [Pinterest - Shortcuts in "Save from site"](https://github.com/mkobayashime/userscripts/raw/main/src/pinterest-save-from-site-shortcuts.user.js)
+### [Pinterest - Shortcuts in "Save from site"](https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js)
 
 Ctrl+Enter in "Save from site"
 
-### [Scrapbox - Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-clear-watch-list.user.js)
+### [Scrapbox - Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-clear-watch-list.user.js)
 
 Scrapbox の Watch List を自動的に全削除します
 
-### [Scrapbox - Force Theme](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-force-theme.user.js)
+### [Scrapbox - Force Theme](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js)
 
 Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 
-### [Scrapbox - No project styles](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-no-project-styles.user.js)
+### [Scrapbox - No project styles](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-no-project-styles.user.js)
 
 Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 
-### [Scrapbox - Project name notice in new page](https://github.com/mkobayashime/userscripts/raw/main/src/scrapbox-project-notice-in-new-page.user.js)
+### [Scrapbox - Project name notice in new page](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-project-notice-in-new-page.user.js)
 
 Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
 
-### [Slack - No autofocus in moving channels](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-autofocus.user.js)
+### [Slack - No autofocus in moving channels](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-autofocus.user.js)
 
 Disable autofocus to the message input field after moved to another channel
 
-### [Slack - No desktop app](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-desktop-app.user.js)
+### [Slack - No desktop app](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-desktop-app.user.js)
 
 Open workspace in the browser after signing in, not in desktop app
 
-### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/slack-no-unintended-reload.user.js)
+### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-unintended-reload.user.js)
 
 Alert when you reload/close Slack with a new draft
 
-### [TweetDeck - Auto save draft](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-auto-save-draft.user.js)
+### [TweetDeck - Auto save draft](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-auto-save-draft.user.js)
 
 Auto save composing tweet and restore it with Alt+P shortcut
 
-### [TweetDeck - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-unintended-reload.user.js)
+### [TweetDeck - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-no-unintended-reload.user.js)
 
 Alert when you reload/close TweetDeck with a composing tweet
 
-### [ZOZOTOWN - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/zozotown-shortcuts.user.js)
+### [ZOZOTOWN - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/zozotown-shortcuts.user.js)
 
 Next/Prev image with arrow/h/l keys
 
-### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/freee-shortcuts.user.js)
+### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/freee-shortcuts.user.js)
 
 freee にショートカットキーを追加します
 
-### [note - Auto save drafts](https://github.com/mkobayashime/userscripts/raw/main/src/note-auto-save-drafts.user.js)
+### [note - Auto save drafts](https://github.com/mkobayashime/userscripts/raw/main/dist/note-auto-save-drafts.user.js)
 
 Auto save draft articles periodically
 

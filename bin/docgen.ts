@@ -102,9 +102,12 @@ const generateMdFileEntry = ({
   filename,
   title,
   description,
-}: FileProperties): string => {
+  fileKind,
+}: FileProperties & { fileKind: FileKind }): string => {
   return `
-### [${title}](https://github.com/mkobayashime/userscripts/raw/main/src/${filename})
+### [${title}](https://github.com/mkobayashime/userscripts/raw/main/${
+    fileKind === "script" ? "dist" : "src"
+  }/${filename})
 
 ${description ?? ""}
   `.trim();
@@ -138,10 +141,14 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
   });
 
   const scriptsMarkdown = scriptFileProperties
-    .map((fileProperties) => generateMdFileEntry(fileProperties))
+    .map((fileProperties) =>
+      generateMdFileEntry({ ...fileProperties, fileKind: "script" })
+    )
     .join("\n\n");
   const stylesMarkdown = styleFileProperties
-    .map((fileProperties) => generateMdFileEntry(fileProperties))
+    .map((fileProperties) =>
+      generateMdFileEntry({ ...fileProperties, fileKind: "style" })
+    )
     .join("\n\n");
 
   const joinedMarkdown = [
