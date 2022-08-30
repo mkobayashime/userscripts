@@ -22,6 +22,10 @@ Click _Raw_ button in the desired script/style. Tampermonkey/Stylus will open th
 
 ## Scripts (`*.user.js`)
 
+### [ETC 利用照会サービス - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/src/etc-meisai-shortcuts.user.js)
+
+ETC 利用照会サービスに h/l などのショートカットキーを追加します
+
 ### [Google Calendar - Unintended User Alert](https://github.com/mkobayashime/userscripts/raw/main/src/google-calendar-unintended-user-alert.user.js)
 
 Alert when you open Google Calendar in unintended accounts
