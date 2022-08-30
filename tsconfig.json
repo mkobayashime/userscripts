@@ -1,5 +1,5 @@
 {
-  "include": ["bin/*.ts"],
+  "include": ["bin/*.ts", "src/*.user.ts"],
   "compilerOptions": {
     "target": "es2020",
     "module": "es2020",
