@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.4.0
+// @version      1.5.0
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,14 +15,11 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-
   /**
    * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
   const enabledProjectIds = [];
-
   const isProjectEnabled = (projectId) => {
     if (enabledProjectIds.length === 0) return true;
     return enabledProjectIds.some((pattern) => {
@@ -32,19 +29,15 @@
       return pattern.test(projectId);
     });
   };
-
   const pageObserver = new MutationObserver(() => {
     const settingPagesPattern = new RegExp(
       "https://scrapbox.io/(projects/[^/]+/)?settings/"
     );
-
     const url = window.location.href;
-
     if (!settingPagesPattern.test(url)) {
       const projectId = window.location.href.match(
         RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
       ).groups.projectId;
-
       if (isProjectEnabled(projectId)) {
         const projectStyle = document.querySelector(
           `link[href='/api/code/${projectId}/settings/style.css']`
@@ -56,7 +49,6 @@
       }
     }
   });
-
   const documentObserver = new MutationObserver(() => {
     const app = document.querySelector(".app");
     if (app) {
@@ -66,7 +58,6 @@
       });
     }
   });
-
   documentObserver.observe(document.documentElement, {
     childList: true,
     subtree: true,

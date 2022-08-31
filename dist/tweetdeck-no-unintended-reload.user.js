@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            TweetDeck - No unintended reloads
 // @namespace       mkobayashime
-// @version         1.2.0
+// @version         1.3.0
 // @description     Alert when you reload/close TweetDeck with a composing tweet
 // @description:jp  書きかけのツイートがある状態で TweetDeck をリロードしたり閉じてしまうのを防ぎます
 // @author          mkobayashime
@@ -16,8 +16,6 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-
   window.addEventListener("beforeunload", (event) => {
     const textarea = document.getElementsByTagName("textarea")[0];
     if (textarea) {

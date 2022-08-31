@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Moneytree shortcut keys
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.3.0
 // @description  Moneytree にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,8 +15,6 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-
   document.onkeypress = (e) => {
     if (e.ctrlKey && e.code === "Enter") {
       const saveBtnInner = document.getElementsByClassName(
@@ -27,7 +25,6 @@
       }
     }
   };
-
   document.onkeyup = (e) => {
     if (e.key === "Escape") {
       const cancelBtnInner = document.getElementsByClassName(
