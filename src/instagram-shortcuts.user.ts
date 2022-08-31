@@ -14,16 +14,16 @@
 // @grant        none
 // ==/UserScript==
 
-/**
- * Whether pressing Space on already liked post unlikes it or not.
- * Defaults to `false` to keep it consistent with the double tapping in mobile app.
- * @default false
- */
-const UNLIKE = false;
+const config = {
+  /**
+   * Whether pressing Space on already liked post unlikes it or not.
+   * Defaults to `false` to keep it consistent with the double tapping in mobile app.
+   * @default false
+   */
+  UNLIKE: false,
+};
 
-(function () {
-  "use strict";
-
+(({ UNLIKE }: typeof config) => {
   const isTyping = () => {
     const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
     return inputTags.includes(document.activeElement.tagName.toUpperCase());
@@ -102,4 +102,6 @@ const UNLIKE = false;
       if (prevButton) prevButton.click();
     }
   });
-})();
+})(config);
+
+export {};
