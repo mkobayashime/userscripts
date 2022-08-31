@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Calendar - Unintended User Alert
 // @namespace    mkobayashime
-// @version      2.1.0
+// @version      3.0.0
 // @description  Alert when you open Google Calendar in unintended accounts
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

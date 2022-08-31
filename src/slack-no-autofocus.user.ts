@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No autofocus in moving channels
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Disable autofocus to the message input field after moved to another channel
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

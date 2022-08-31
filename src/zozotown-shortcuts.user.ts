@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZOZOTOWN - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.0
+// @version      1.4.0
 // @description  Next/Prev image with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

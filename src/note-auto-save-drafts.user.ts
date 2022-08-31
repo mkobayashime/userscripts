@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         note - Auto save drafts
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      2.0.0
 // @description  Auto save draft articles periodically
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

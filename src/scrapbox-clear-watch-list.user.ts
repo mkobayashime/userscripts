@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Clear Watch List
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.3.0
 // @description  Scrapbox の Watch List を自動的に全削除します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
