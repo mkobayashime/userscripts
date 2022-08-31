@@ -22,3 +22,9 @@ build: install
 docgen: install
 	node --loader ts-node/esm bin/docgen.ts
 	@make format
+
+typecheck: install
+	yarn tsc --noEmit
+
+typecheck.watch: install
+	yarn tsc --noEmit --watch
