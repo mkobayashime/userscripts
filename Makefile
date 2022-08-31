@@ -18,6 +18,7 @@ dev: install
 
 build: install
 	yarn run rollup --config
+	@make format
 
 docgen: install
 	node --loader ts-node/esm bin/docgen.ts
