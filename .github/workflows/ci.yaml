@@ -41,3 +41,22 @@ jobs:
         run: make docgen
       - name: Check uncommitted changes
         run: test -z "$(git status --porcelain)"
+  scripts:
+    name: Up-to-date scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Build
+        run: make build
+      - name: Check uncommitted changes
+        run: test -z "$(git status --porcelain)"
