@@ -7,6 +7,9 @@ lint: install
 lint.fix: install
 	yarn eslint --fix .
 
+lint.fix.dist: install
+	yarn eslint --fix dist
+
 format: install
 	yarn prettier --write .
 
@@ -19,6 +22,7 @@ dev: install
 build: install
 	yarn run rollup --config
 	@make format
+	@make lint.fix.dist
 
 docgen: install
 	node --loader ts-node/esm bin/docgen.ts

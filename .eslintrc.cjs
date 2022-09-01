@@ -21,7 +21,7 @@ module.exports = {
       plugins: ["@typescript-eslint"],
     },
     {
-      files: ["src/*.user.ts"],
+      files: ["*.user.ts"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -33,6 +33,14 @@ module.exports = {
       rules: {
         "userscripts/filename-user": "off",
       },
+    },
+    {
+      files: ["*.user.js"],
+      extends: [
+        "eslint:recommended",
+        "plugin:userscripts/recommended",
+        "prettier",
+      ],
     },
   ],
 };
