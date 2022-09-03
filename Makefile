@@ -33,3 +33,6 @@ typecheck: install
 
 typecheck.watch: install
 	yarn tsc --noEmit --watch
+
+scaffold.script:
+	@./bin/scaffold-script.sh
