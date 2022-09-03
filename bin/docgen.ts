@@ -22,7 +22,7 @@ const getFiles = async (): Promise<{
   try {
     return {
       scripts: pipe(
-        glob.sync(path.resolve("src", "*.user.js")),
+        glob.sync(path.resolve("src", "*.user.ts")),
         A.sort(string.Ord)
       ),
       styles: pipe(
@@ -142,7 +142,11 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
 
   const scriptsMarkdown = scriptFileProperties
     .map((fileProperties) =>
-      generateMdFileEntry({ ...fileProperties, fileKind: "script" })
+      generateMdFileEntry({
+        ...fileProperties,
+        filename: fileProperties.filename.replace(/.user.ts$/, ".user.js"),
+        fileKind: "script",
+      })
     )
     .join("\n\n");
   const stylesMarkdown = styleFileProperties

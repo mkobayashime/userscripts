@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.0
+// @version      2.0.0
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,16 +14,16 @@
 // @grant        none
 // ==/UserScript==
 
-/**
- * Whether pressing Space on already liked post unlikes it or not.
- * Defaults to `false` to keep it consistent with the double tapping in mobile app.
- * @default false
- */
-const UNLIKE = false;
+const config = {
+  /**
+   * Whether pressing Space on already liked post unlikes it or not.
+   * Defaults to `false` to keep it consistent with the double tapping in mobile app.
+   * @default false
+   */
+  UNLIKE: false,
+};
 
-(function () {
-  "use strict";
-
+(({ UNLIKE }: typeof config) => {
   const isTyping = () => {
     const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
     return inputTags.includes(document.activeElement.tagName.toUpperCase());
@@ -102,4 +102,6 @@ const UNLIKE = false;
       if (prevButton) prevButton.click();
     }
   });
-})();
+})(config);
+
+export {};

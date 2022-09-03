@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No unintended reloads
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.3.0
 // @description  Alert when you reload/close Slack with a new draft
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,16 +15,12 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-
   window.addEventListener("beforeunload", (event) => {
     const messageInputContainer =
       document.getElementsByClassName("ql-editor")[0];
     if (messageInputContainer) {
       const isEmpty = new RegExp(".");
-
       const messageLines = messageInputContainer.children;
-
       if (
         Array.from(messageLines).some((line) => isEmpty.test(line.innerText))
       ) {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Ctrl+Enter in "Save from site"
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,8 +15,6 @@
 // ==/UserScript==
 
 (function () {
-  "use strict";
-
   window.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "Enter") {
       const saveFromSiteButton = document.querySelector(
@@ -26,7 +24,6 @@
         saveFromSiteButton.click();
         return;
       }
-
       const websiteLinkSubmitButton = document.querySelector(
         '[data-test-id="website-link-submit-button"]'
       );
@@ -34,7 +31,6 @@
         websiteLinkSubmitButton.click();
         return;
       }
-
       e.preventDefault();
       document.activeElement.blur();
       const addNPinButtonCandidates = Array.from(
@@ -47,7 +43,6 @@
         addNPinButton.click();
         return;
       }
-
       const dropdownSaveButton = document.querySelector(
         'button[data-test-id="board-dropdown-save-button"]'
       );

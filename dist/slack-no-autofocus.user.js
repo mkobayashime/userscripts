@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No autofocus in moving channels
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Disable autofocus to the message input field after moved to another channel
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -18,30 +18,21 @@ const waitForChannelNameWrapper = async () =>
     const timeout = window.setTimeout(() => {
       throw new Error("Timeout: Getting channel name wrapper");
     }, 30000);
-
     const interval = window.setInterval(() => {
       const channelNameWrapper = document.querySelector("div[role='main']");
-
       if (channelNameWrapper) {
         resolve(channelNameWrapper);
-
         window.clearInterval(interval);
         window.clearTimeout(timeout);
       }
     }, 200);
   });
-
 (async function () {
-  "use strict";
-
   const channelNameWrapper = await waitForChannelNameWrapper();
-
   new MutationObserver((e) => {
     const oldAriaLabel = e[0].oldValue;
     const currentAriaLabel = e[0].target.ariaLabel;
-
     if (!oldAriaLabel || !currentAriaLabel) return;
-
     if (oldAriaLabel !== currentAriaLabel) {
       document.activeElement.blur();
     }

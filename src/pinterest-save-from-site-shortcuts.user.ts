@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @description  Ctrl+Enter in "Save from site"
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

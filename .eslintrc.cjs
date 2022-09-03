@@ -1,13 +1,46 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:userscripts/recommended", "prettier"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  rules: {},
+  overrides: [
+    {
+      files: ["*.js"],
+      extends: ["eslint:recommended", "prettier"],
+    },
+    {
+      files: ["*.ts"],
+      extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      parser: "@typescript-eslint/parser",
+      plugins: ["@typescript-eslint"],
+    },
+    {
+      files: ["*.user.ts"],
+      extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:userscripts/recommended",
+        "prettier",
+      ],
+      parser: "@typescript-eslint/parser",
+      plugins: ["@typescript-eslint"],
+      rules: {
+        "userscripts/filename-user": "off",
+      },
+    },
+    {
+      files: ["*.user.js"],
+      extends: [
+        "eslint:recommended",
+        "plugin:userscripts/recommended",
+        "prettier",
+      ],
+    },
+  ],
 };

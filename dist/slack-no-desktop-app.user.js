@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No desktop app
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.2.0
 // @author       mkobayashime
 // @description  Open workspace in the browser after signing in, not in desktop app
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,8 +14,6 @@
 // ==/UserScript==
 
 (async function () {
-  "use strict";
-
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.get("entry_point") === "workspace_signin") {
     window.location.href = window.location.origin;
