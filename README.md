@@ -105,3 +105,7 @@ Large display friendly fixed width layout for Wikipedia.
 ### [Slack - Emoji for Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
 
 Display Slack emoji with white background and in a slightly larger size
+
+### [YouTube - Mirrored video](https://github.com/mkobayashime/userscripts/raw/main/src/youtube-mirrored.user.css)
+
+Mirrored video in YouTube
