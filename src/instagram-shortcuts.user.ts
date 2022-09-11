@@ -50,7 +50,7 @@ const config = {
     origin,
     limit = 5,
   }: {
-    origin: HTMLElement | null;
+    origin: Element | null;
     limit: number;
   }): HTMLButtonElement | null => {
     if (!origin || limit < 0) return null;
@@ -83,7 +83,7 @@ const config = {
       if (!UNLIKE && unlikeButtonSvg) return;
 
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
-      if (!(buttonSvgToClick instanceof HTMLElement)) return;
+      if (!buttonSvgToClick) return;
 
       const buttonToClick = findParentButtonRecursively({
         origin: buttonSvgToClick,

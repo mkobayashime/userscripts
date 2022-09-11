@@ -62,7 +62,7 @@ const config = {
       );
       if (!UNLIKE && unlikeButtonSvg) return;
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
-      if (!(buttonSvgToClick instanceof HTMLElement)) return;
+      if (!buttonSvgToClick) return;
       const buttonToClick = findParentButtonRecursively({
         origin: buttonSvgToClick,
         limit: 5,
