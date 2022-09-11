@@ -26,7 +26,9 @@ const config = {
 (({ UNLIKE }: typeof config) => {
   const isTyping = () => {
     const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(document.activeElement.tagName.toUpperCase());
+    return inputTags.includes(
+      document.activeElement?.tagName.toUpperCase() ?? ""
+    );
   };
 
   const getTargetPost = () => {
@@ -44,9 +46,13 @@ const config = {
     });
   };
 
-  const findParentButtonRecursively = (
-    { origin, limit } = { origin: null, limit: 5 }
-  ) => {
+  const findParentButtonRecursively = ({
+    origin,
+    limit = 5,
+  }: {
+    origin: HTMLElement | null;
+    limit: number;
+  }): HTMLButtonElement | null => {
     if (!origin || limit < 0) return null;
 
     if (origin instanceof HTMLButtonElement) return origin;
@@ -77,7 +83,7 @@ const config = {
       if (!UNLIKE && unlikeButtonSvg) return;
 
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
-      if (!buttonSvgToClick) return;
+      if (!(buttonSvgToClick instanceof HTMLElement)) return;
 
       const buttonToClick = findParentButtonRecursively({
         origin: buttonSvgToClick,
@@ -90,7 +96,9 @@ const config = {
       const post = getTargetPost();
       if (!post) return;
 
-      const nextButton = post.querySelector("[aria-label='Next']");
+      const nextButton = post.querySelector<HTMLButtonElement>(
+        "[aria-label='Next']"
+      );
       if (nextButton) nextButton.click();
     }
 
@@ -98,7 +106,9 @@ const config = {
       const post = getTargetPost();
       if (!post) return;
 
-      const prevButton = post.querySelector("[aria-label='Go Back']");
+      const prevButton = post.querySelector<HTMLButtonElement>(
+        "[aria-label='Go Back']"
+      );
       if (prevButton) prevButton.click();
     }
   });

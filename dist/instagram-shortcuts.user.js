@@ -25,7 +25,9 @@ const config = {
 (({ UNLIKE }) => {
   const isTyping = () => {
     const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(document.activeElement.tagName.toUpperCase());
+    return inputTags.includes(
+      document.activeElement?.tagName.toUpperCase() ?? ""
+    );
   };
   const getTargetPost = () => {
     const postWrappers = Array.from(
@@ -38,9 +40,7 @@ const config = {
       return top <= windowHalfHeight && top + height >= windowHalfHeight;
     });
   };
-  const findParentButtonRecursively = (
-    { origin, limit } = { origin: null, limit: 5 }
-  ) => {
+  const findParentButtonRecursively = ({ origin, limit = 5 }) => {
     if (!origin || limit < 0) return null;
     if (origin instanceof HTMLButtonElement) return origin;
     return findParentButtonRecursively({
@@ -62,7 +62,7 @@ const config = {
       );
       if (!UNLIKE && unlikeButtonSvg) return;
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
-      if (!buttonSvgToClick) return;
+      if (!(buttonSvgToClick instanceof HTMLElement)) return;
       const buttonToClick = findParentButtonRecursively({
         origin: buttonSvgToClick,
         limit: 5,
