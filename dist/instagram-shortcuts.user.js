@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.0.0
+// @version      2.1.0
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -56,10 +56,12 @@ const config = {
       if (!targetPost) return;
       const buttonsArea = targetPost.querySelector("section");
       if (!buttonsArea) return;
-      const likeButtonSvg = buttonsArea.querySelector("[aria-label='Like']");
-      const unlikeButtonSvg = buttonsArea.querySelector(
-        "[aria-label='Unlike']"
-      );
+      const likeButtonSvg =
+        buttonsArea.querySelector("[aria-label='Like']") ??
+        buttonsArea.querySelector("[aria-label='いいね！']");
+      const unlikeButtonSvg =
+        buttonsArea.querySelector("[aria-label='Unlike']") ??
+        buttonsArea.querySelector("[aria-label='「いいね！」を取り消す']");
       if (!UNLIKE && unlikeButtonSvg) return;
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
@@ -72,13 +74,17 @@ const config = {
     if (e.key === "l" || e.key === "ArrowRight") {
       const post = getTargetPost();
       if (!post) return;
-      const nextButton = post.querySelector("[aria-label='Next']");
+      const nextButton =
+        post.querySelector("[aria-label='Next']") ??
+        post.querySelector("[aria-label='次へ']");
       if (nextButton) nextButton.click();
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
       const post = getTargetPost();
       if (!post) return;
-      const prevButton = post.querySelector("[aria-label='Go Back']");
+      const prevButton =
+        post.querySelector("[aria-label='Go Back']") ??
+        post.querySelector("[aria-label='戻る']");
       if (prevButton) prevButton.click();
     }
   });
