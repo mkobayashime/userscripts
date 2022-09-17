@@ -1,16 +1,18 @@
-import multiInput from "rollup-plugin-multi-input";
 import typescript from "@rollup/plugin-typescript";
+import glob from "glob";
+
+const tsScripts = glob.sync("./src/*.user.ts");
 
 /**
  * @type {import('rollup').RollupOptions}
  */
-const config = {
-  input: ["src/*.user.ts"],
+const config = tsScripts.map((file) => ({
+  input: file,
   output: {
     dir: "dist",
     entryFileNames: "[name].js",
   },
-  plugins: [multiInput(), typescript()],
-};
+  plugins: [typescript()],
+}));
 
 export default config;
