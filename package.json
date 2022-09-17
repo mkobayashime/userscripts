@@ -16,7 +16,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-userscripts": "0.2.9",
     "fp-ts": "2.12.3",
-    "glob": "^8.0.3",
+    "glob": "8.0.3",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
