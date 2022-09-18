@@ -11,7 +11,7 @@ export const userscriptMetaPlugin: () => {
     name: "userscriptMetaPlugin",
     renderChunk: (code, chunk) => {
       const scriptName = path.basename(chunk.fileName, ".user.js");
-      const scriptMeta: UserScriptMeta = meta[scriptName];
+      const scriptMeta = meta[scriptName];
       if (!scriptMeta) {
         throw new Error(`Meta not found for userscript: ${chunk.fileName}`);
       }
