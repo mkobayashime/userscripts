@@ -7,6 +7,8 @@ import * as Ord from "fp-ts/lib/Ord.js";
 import * as string from "fp-ts/lib/string.js";
 import glob from "glob";
 
+import { meta } from "../src/userscripts/meta/index.js";
+
 type FileProperties = {
   filename: string;
   title: string;
@@ -22,7 +24,7 @@ const getFiles = async (): Promise<{
   try {
     return {
       scripts: pipe(
-        glob.sync(path.resolve("src", "*.user.ts")),
+        glob.sync(path.resolve("src", "userscripts", "*.user.ts")),
         A.sort(string.Ord)
       ),
       styles: pipe(
@@ -85,8 +87,23 @@ const getFilesProperties = async ({
 }: {
   files: string[];
   kind: FileKind;
-}) =>
-  pipe(
+}): Promise<FileProperties[]> => {
+  if (kind === "script") {
+    return files.map((file) => {
+      const scriptMeta = meta[path.basename(file, ".user.ts")];
+      if (!scriptMeta) {
+        throw new Error(`Meta not found for userscript: ${file}`);
+      }
+
+      return {
+        filename: path.basename(file),
+        title: scriptMeta.name,
+        description: scriptMeta.description,
+      };
+    });
+  }
+
+  return pipe(
     await Promise.all(
       files.map(async (file) => {
         return await parseFileComment({ filepath: file, kind });
@@ -97,6 +114,7 @@ const getFilesProperties = async ({
       Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title))
     )
   );
+};
 
 const generateMdFileEntry = ({
   filename,

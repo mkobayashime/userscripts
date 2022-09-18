@@ -6,8 +6,8 @@
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
 // @match        https://www2.etc-meisai.jp/etc/*
 // @run-at       document-end
 // @grant        none

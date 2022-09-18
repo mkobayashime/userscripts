@@ -4,12 +4,12 @@
 // @version      1.2.0
 // @description  Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
 // @author       mkobayashime
-// @match        https://scrapbox.io/*
-// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-project-notice-in-new-page.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-project-notice-in-new-page.user.js
+// @match        https://scrapbox.io/*
+// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @grant        none
 // ==/UserScript==
 

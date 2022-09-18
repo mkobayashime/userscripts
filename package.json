@@ -14,6 +14,7 @@
     "@typescript-eslint/parser": "5.37.0",
     "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-userscripts": "0.2.9",
     "fp-ts": "2.12.3",
     "glob": "8.0.3",

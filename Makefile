@@ -17,10 +17,10 @@ format.check: install
 	yarn prettier --check .
 
 dev: install
-	yarn run rollup --config --watch
+	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --watch
 
 build: install
-	yarn run rollup --config
+	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
 	@make format
 	@make lint.fix.dist
 

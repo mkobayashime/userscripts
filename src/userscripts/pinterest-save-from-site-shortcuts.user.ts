@@ -1,19 +1,3 @@
-// ==UserScript==
-// @name         Pinterest - Shortcuts in "Save from site"
-// @namespace    mkobayashime
-// @version      1.2.0
-// @description  Ctrl+Enter in "Save from site"
-// @author       mkobayashime
-// @homepage     https://github.com/mkobayashime/userscripts
-// @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js
-// @match        https://www.pinterest.jp/pin-builder/
-// @icon         https://www.google.com/s2/favicons?domain=pinterest.jp
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
-
 (function () {
   "use strict";
 

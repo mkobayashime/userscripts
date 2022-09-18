@@ -1,19 +1,3 @@
-// ==UserScript==
-// @name         Instagram - Shortcut keys
-// @namespace    mkobayashime
-// @version      2.1.0
-// @description  Space key to like, arrow/h/l keys to next/previous photo in the post
-// @author       mkobayashime
-// @homepage     https://github.com/mkobayashime/userscripts
-// @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js
-// @match        https://www.instagram.com/*
-// @icon         https://www.google.com/s2/favicons?domain=instagram.com
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
-
 const config = {
   /**
    * Whether pressing Space on already liked post unlikes it or not.

@@ -2,8 +2,8 @@
 // @name         Slack - No desktop app
 // @namespace    mkobayashime
 // @version      1.2.0
-// @author       mkobayashime
 // @description  Open workspace in the browser after signing in, not in desktop app
+// @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-desktop-app.user.js
