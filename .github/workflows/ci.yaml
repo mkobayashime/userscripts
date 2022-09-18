@@ -22,6 +22,8 @@ jobs:
         run: make lint
       - name: Prettier
         run: make format.check
+      - name: Typecheck
+        run: make typecheck
   docs:
     name: Up-to-date docs
     runs-on: ubuntu-latest
