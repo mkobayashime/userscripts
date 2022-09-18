@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Moneytree shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.0
+// @version      1.3.1
 // @description  Moneytree にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -21,7 +21,7 @@
         "modal-header-done-text"
       )[0];
       if (saveBtnInner) {
-        saveBtnInner.parentElement.click();
+        saveBtnInner.parentElement?.click();
       }
     }
   };
@@ -31,7 +31,7 @@
         "modal-header-back-text"
       )[0];
       if (cancelBtnInner) {
-        cancelBtnInner.parentElement.click();
+        cancelBtnInner.parentElement?.click();
       }
     }
   };

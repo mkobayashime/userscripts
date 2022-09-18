@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.2.1
 // @description  Ctrl+Enter in "Save from site"
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -32,6 +32,7 @@
         return;
       }
       e.preventDefault();
+      if (!(document.activeElement instanceof HTMLElement)) return;
       document.activeElement.blur();
       const addNPinButtonCandidates = Array.from(
         document.querySelectorAll('[data-test-id="pin-builder-draft"] button')

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Calendar - Unintended User Alert
 // @namespace    mkobayashime
-// @version      3.0.0
+// @version      3.0.1
 // @description  Alert when you open Google Calendar in unintended accounts
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -28,6 +28,7 @@ const config = {
 };
 (({ GOOGLE_ACCOUNT_ADDRESSES }) => {
   const xUserEmailElement = document.getElementById("xUserEmail");
+  if (!xUserEmailElement) return;
   if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement?.innerText)) {
     window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`);
   }

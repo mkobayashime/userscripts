@@ -8,7 +8,9 @@
       const messageLines = messageInputContainer.children;
 
       if (
-        Array.from(messageLines).some((line) => isEmpty.test(line.innerText))
+        (Array.from(messageLines) as HTMLElement[]).some((line) =>
+          isEmpty.test(line.innerText)
+        )
       ) {
         event.preventDefault();
         event.returnValue = "";

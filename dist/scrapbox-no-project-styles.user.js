@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.5.0
+// @version      1.5.1
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -37,7 +37,8 @@
     if (!settingPagesPattern.test(url)) {
       const projectId = window.location.href.match(
         RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
-      ).groups.projectId;
+      )?.groups?.projectId;
+      if (!projectId) return;
       if (isProjectEnabled(projectId)) {
         const projectStyle = document.querySelector(
           `link[href='/api/code/${projectId}/settings/style.css']`

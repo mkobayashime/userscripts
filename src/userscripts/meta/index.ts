@@ -24,7 +24,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www2.etc-meisai.jp/etc/*",
     name: "ETC利用照会サービス - Shortcut keys",
     runAt: "document-end",
-    version: "1.2.0",
+    version: "1.2.1",
   },
   "freee-shortcuts": {
     description: "freee にショートカットキーを追加します",
@@ -32,7 +32,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://secure.freee.co.jp/*",
     name: "freee shortcut keys",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "google-calendar-unintended-user-alert": {
     description: "Alert when you open Google Calendar in unintended accounts",
@@ -40,7 +40,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://calendar.google.com/calendar/*",
     name: "Google Calendar - Unintended User Alert",
     runAt: "document-end",
-    version: "3.0.0",
+    version: "3.0.1",
   },
   "instagram-shortcuts": {
     description:
@@ -65,7 +65,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://app.getmoneytree.com/*",
     name: "Moneytree shortcut keys",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "note-auto-save-drafts": {
     description: "Auto save draft articles periodically",
@@ -81,7 +81,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www.pinterest.jp/pin-builder/",
     name: 'Pinterest - Shortcuts in "Save from site"',
     runAt: "document-end",
-    version: "1.2.0",
+    version: "1.2.1",
   },
   "scrapbox-clear-watch-list": {
     description: "Scrapbox の Watch List を自動的に全削除します",
@@ -97,7 +97,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Force Theme",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "scrapbox-no-project-styles": {
     description:
@@ -106,7 +106,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - No project styles",
     runAt: "document-end",
-    version: "1.5.0",
+    version: "1.5.1",
   },
   "scrapbox-project-notice-in-new-page": {
     description:
@@ -114,7 +114,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Project name notice in new page",
-    version: "1.2.0",
+    version: "1.2.1",
   },
   "slack-no-autofocus": {
     description:
@@ -122,7 +122,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?sz=64&domain=slack.com",
     match: "https://app.slack.com/client/*",
     name: "Slack - No autofocus in moving channels",
-    version: "1.2.0",
+    version: "1.2.1",
   },
   "slack-no-desktop-app": {
     description:

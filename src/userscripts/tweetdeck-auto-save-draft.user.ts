@@ -2,7 +2,7 @@
   const storageKey = "___auto-saved-draft";
 
   const getTextArea = () =>
-    document.querySelector(
+    document.querySelector<HTMLTextAreaElement>(
       "div[data-drawer='compose'] textarea.js-compose-text"
     );
 

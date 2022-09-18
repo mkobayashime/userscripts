@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         freee shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.0
+// @version      1.3.1
 // @description  freee にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -25,7 +25,8 @@
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
       ).singleNodeValue;
-      if (matchingElement) matchingElement.click();
+      if (matchingElement && matchingElement instanceof HTMLElement)
+        matchingElement.click();
     }
   };
 })();

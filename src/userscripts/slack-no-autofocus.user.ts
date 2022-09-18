@@ -1,4 +1,4 @@
-const waitForChannelNameWrapper = async () =>
+const waitForChannelNameWrapper = async (): Promise<Element> =>
   new Promise((resolve) => {
     const timeout = window.setTimeout(() => {
       throw new Error("Timeout: Getting channel name wrapper");
@@ -21,11 +21,14 @@ const waitForChannelNameWrapper = async () =>
 
   new MutationObserver((e) => {
     const oldAriaLabel = e[0].oldValue;
+
+    if (!(e[0].target instanceof HTMLElement)) return;
     const currentAriaLabel = e[0].target.ariaLabel;
 
     if (!oldAriaLabel || !currentAriaLabel) return;
 
     if (oldAriaLabel !== currentAriaLabel) {
+      if (!(document.activeElement instanceof HTMLElement)) return;
       document.activeElement.blur();
     }
   }).observe(channelNameWrapper, { attributeOldValue: true });

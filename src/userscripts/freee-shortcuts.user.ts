@@ -10,7 +10,8 @@
         null
       ).singleNodeValue;
 
-      if (matchingElement) matchingElement.click();
+      if (matchingElement && matchingElement instanceof HTMLElement)
+        matchingElement.click();
     }
   };
 })();
