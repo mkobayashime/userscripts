@@ -1,3 +1,5 @@
+import { isTyping } from "./utils/isTyping";
+
 const config = {
   /**
    * Whether pressing Space on already liked post unlikes it or not.
@@ -8,13 +10,6 @@ const config = {
 };
 
 (({ UNLIKE }: typeof config) => {
-  const isTyping = () => {
-    const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(
-      document.activeElement?.tagName.toUpperCase() ?? ""
-    );
-  };
-
   const getTargetPost = () => {
     const postWrappers = Array.from(
       document.querySelectorAll('article[role="presentation"]')

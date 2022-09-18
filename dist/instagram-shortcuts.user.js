@@ -14,6 +14,13 @@
 // @grant        none
 // ==/UserScript==
 
+const isTyping = () => {
+  const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
+  return inputTags.includes(
+    document.activeElement?.tagName.toUpperCase() ?? ""
+  );
+};
+
 const config = {
   /**
    * Whether pressing Space on already liked post unlikes it or not.
@@ -23,12 +30,6 @@ const config = {
   UNLIKE: false,
 };
 (({ UNLIKE }) => {
-  const isTyping = () => {
-    const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(
-      document.activeElement?.tagName.toUpperCase() ?? ""
-    );
-  };
   const getTargetPost = () => {
     const postWrappers = Array.from(
       document.querySelectorAll('article[role="presentation"]')

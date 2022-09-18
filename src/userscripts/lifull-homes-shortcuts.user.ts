@@ -1,10 +1,7 @@
+import { isTyping } from "./utils/isTyping";
+
 (function () {
   "use strict";
-
-  const isTyping = () => {
-    const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(document.activeElement.tagName.toUpperCase());
-  };
 
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
