@@ -18,7 +18,7 @@ module.exports = {
       files: ["*.ts"],
       extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
       parser: "@typescript-eslint/parser",
-      plugins: ["@typescript-eslint"],
+      plugins: ["@typescript-eslint", "sort-keys-fix"],
     },
     {
       files: ["*.user.ts"],
@@ -31,6 +31,7 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       plugins: ["@typescript-eslint"],
       rules: {
+        "userscripts/no-invalid-metadata": "off",
         "userscripts/filename-user": "off",
       },
     },

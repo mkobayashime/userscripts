@@ -1,19 +1,3 @@
-// ==UserScript==
-// @name         Scrapbox - Force Theme
-// @namespace    mkobayashime
-// @version      1.3.0
-// @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
-// @author       mkobayashime
-// @homepage     https://github.com/mkobayashime/userscripts
-// @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js
-// @match        https://scrapbox.io/*
-// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
-
 (function () {
   "use strict";
 
