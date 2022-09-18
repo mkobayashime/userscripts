@@ -1,6 +1,4 @@
 (function () {
-  "use strict";
-
   /**
    * 適用するテーマ. html の data-project-theme に設定されるもの.
    * @type string

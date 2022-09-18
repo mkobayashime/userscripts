@@ -1,6 +1,4 @@
 (function () {
-  "use strict";
-
   window.onkeyup = (e) => {
     if (e.key === "Escape") {
       const xpath = "//button[contains(text(),'閉じる')]";

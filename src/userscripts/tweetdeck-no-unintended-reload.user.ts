@@ -1,6 +1,4 @@
 (function () {
-  "use strict";
-
   window.addEventListener("beforeunload", (event) => {
     const textarea = document.getElementsByTagName("textarea")[0];
     if (textarea) {
