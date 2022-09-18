@@ -1,12 +1,10 @@
 import typescript from "@rollup/plugin-typescript";
 import glob from "glob";
+import { RollupOptions } from "rollup";
 
 const tsScripts = glob.sync("./src/*.user.ts");
 
-/**
- * @type {import('rollup').RollupOptions}
- */
-const config = tsScripts.map((file) => ({
+const config: RollupOptions[] = tsScripts.map((file) => ({
   input: file,
   output: {
     dir: "dist",
