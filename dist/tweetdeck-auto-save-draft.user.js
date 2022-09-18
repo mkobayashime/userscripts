@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         TweetDeck - Auto save draft
-// @description  Auto save composing tweet and restore it with Alt+P shortcut
 // @namespace    mkobayashime
 // @version      1.4.0
+// @description  Auto save composing tweet and restore it with Alt+P shortcut
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
