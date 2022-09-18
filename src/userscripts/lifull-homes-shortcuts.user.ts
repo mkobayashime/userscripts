@@ -6,13 +6,15 @@ import { isTyping } from "./utils/isTyping";
 
     if (e.key === "l" || e.key === "ArrowRight") {
       e.preventDefault();
-      const nextButton = document.querySelector("#controls a.next");
+      const nextButton =
+        document.querySelector<HTMLElement>("#controls a.next");
       if (nextButton) nextButton.click();
     }
 
     if (e.key === "h" || e.key === "ArrowLeft") {
       e.preventDefault();
-      const prevButton = document.querySelector("#controls a.prev");
+      const prevButton =
+        document.querySelector<HTMLElement>("#controls a.prev");
       if (prevButton) prevButton.click();
     }
   });

@@ -5,7 +5,7 @@
         "modal-header-done-text"
       )[0];
       if (saveBtnInner) {
-        saveBtnInner.parentElement.click();
+        saveBtnInner.parentElement?.click();
       }
     }
   };
@@ -16,7 +16,7 @@
         "modal-header-back-text"
       )[0];
       if (cancelBtnInner) {
-        cancelBtnInner.parentElement.click();
+        cancelBtnInner.parentElement?.click();
       }
     }
   };

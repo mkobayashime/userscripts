@@ -13,7 +13,8 @@ import { isTyping } from "./utils/isTyping";
         null
       ).singleNodeValue;
 
-      if (prevPageButton) prevPageButton.click();
+      if (prevPageButton && prevPageButton instanceof HTMLElement)
+        prevPageButton.click();
     }
 
     if (e.key === "l" || e.key === "ArrowRight") {
@@ -25,7 +26,8 @@ import { isTyping } from "./utils/isTyping";
         null
       ).singleNodeValue;
 
-      if (nextPageButton) nextPageButton.click();
+      if (nextPageButton && nextPageButton instanceof HTMLElement)
+        nextPageButton.click();
     }
   });
 })();

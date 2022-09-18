@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ETC利用照会サービス - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.2.1
 // @description  ETC利用照会サービスに h/l などのショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -31,7 +31,8 @@ const isTyping = () => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
       ).singleNodeValue;
-      if (prevPageButton) prevPageButton.click();
+      if (prevPageButton && prevPageButton instanceof HTMLElement)
+        prevPageButton.click();
     }
     if (e.key === "l" || e.key === "ArrowRight") {
       const nextPageButton = document.evaluate(
@@ -41,7 +42,8 @@ const isTyping = () => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null
       ).singleNodeValue;
-      if (nextPageButton) nextPageButton.click();
+      if (nextPageButton && nextPageButton instanceof HTMLElement)
+        nextPageButton.click();
     }
   });
 })();
