@@ -14,11 +14,14 @@
 // @grant        none
 // ==/UserScript==
 
+const isTyping = () => {
+  const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
+  return inputTags.includes(
+    document.activeElement?.tagName.toUpperCase() ?? ""
+  );
+};
+
 (function () {
-  const isTyping = () => {
-    const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-    return inputTags.includes(document.activeElement.tagName.toUpperCase());
-  };
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.key === "l" || e.key === "ArrowRight") {
