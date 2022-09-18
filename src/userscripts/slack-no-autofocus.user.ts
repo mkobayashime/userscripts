@@ -17,8 +17,6 @@ const waitForChannelNameWrapper = async () =>
   });
 
 (async function () {
-  "use strict";
-
   const channelNameWrapper = await waitForChannelNameWrapper();
 
   new MutationObserver((e) => {

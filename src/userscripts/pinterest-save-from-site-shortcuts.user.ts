@@ -1,6 +1,4 @@
 (function () {
-  "use strict";
-
   window.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "Enter") {
       const saveFromSiteButton = document.querySelector(

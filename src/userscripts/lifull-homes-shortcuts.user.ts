@@ -1,8 +1,6 @@
 import { isTyping } from "./utils/isTyping";
 
 (function () {
-  "use strict";
-
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
 

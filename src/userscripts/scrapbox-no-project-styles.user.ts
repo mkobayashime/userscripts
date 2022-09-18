@@ -1,6 +1,4 @@
 (function () {
-  "use strict";
-
   /**
    * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
