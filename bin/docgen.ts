@@ -24,7 +24,7 @@ const getFiles = async (): Promise<{
   try {
     return {
       scripts: pipe(
-        glob.sync(path.resolve("src", "*.user.ts")),
+        glob.sync(path.resolve("src", "userscripts", "*.user.ts")),
         A.sort(string.Ord)
       ),
       styles: pipe(

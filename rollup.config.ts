@@ -3,7 +3,7 @@ import glob from "glob";
 import { RollupOptions } from "rollup";
 import { userscriptMetaPlugin } from "./src/userscripts/meta/rollupPlugin";
 
-const tsScripts = glob.sync("./src/*.user.ts");
+const tsScripts = glob.sync("./src/userscripts/*.user.ts");
 
 const config: RollupOptions[] = tsScripts.map((file) => ({
   input: file,
