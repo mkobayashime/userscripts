@@ -1,25 +1,20 @@
 import path from "path";
-import { RenderChunkHook } from "rollup";
+import { Plugin } from "rollup";
 
 import { meta, UserScriptMeta } from ".";
 
-export const userscriptMetaPlugin: () => {
-  name: string;
-  renderChunk: RenderChunkHook;
-} = () => {
-  return {
-    name: "userscriptMetaPlugin",
-    renderChunk: (code, chunk) => {
-      const scriptName = path.basename(chunk.fileName, ".user.js");
-      const scriptMeta = meta[scriptName];
-      if (!scriptMeta) {
-        throw new Error(`Meta not found for userscript: ${chunk.fileName}`);
-      }
+export const userscriptMetaPlugin = (): Plugin => ({
+  name: "userscriptMetaPlugin",
+  renderChunk: (code, chunk) => {
+    const scriptName = path.basename(chunk.fileName, ".user.js");
+    const scriptMeta = meta[scriptName];
+    if (!scriptMeta) {
+      throw new Error(`Meta not found for userscript: ${chunk.fileName}`);
+    }
 
-      return generateHeader(scriptMeta, chunk.fileName) + "\n\n" + code;
-    },
-  };
-};
+    return generateHeader(scriptMeta, chunk.fileName) + "\n\n" + code;
+  },
+});
 
 const generateHeader = (meta: UserScriptMeta, fileName: string): string =>
   [
