@@ -34,5 +34,11 @@ typecheck: install
 typecheck.watch: install
 	yarn tsc --noEmit --watch
 
+test: install
+	yarn run ava
+
+test.watch: install
+	yarn run ava --watch
+
 scaffold.script:
 	@./bin/scaffold-script.sh
