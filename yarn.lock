@@ -792,10 +792,10 @@ eslint-plugin-sort-keys-fix@1.1.2:
     natural-compare "^1.4.0"
     requireindex "~1.2.0"
 
-eslint-plugin-userscripts@0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-userscripts/-/eslint-plugin-userscripts-0.2.9.tgz#be48e05e633a497ec241a0662d50e481db12d88e"
-  integrity sha512-bu6TlrkurNZ3QuxyIS3TRygZdJxRTxRYbFPpiaarCss6LFq20fOixHEfqaT2T/4kfoi/0EOWVx1x3mAu0EMRvg==
+eslint-plugin-userscripts@0.2.10:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-userscripts/-/eslint-plugin-userscripts-0.2.10.tgz#f5d683157e49a5d4fb9813093b3a5b16f326c06a"
+  integrity sha512-wBincpFWAvJG7xBgN79wm6oBRwZFee6eF2PtP9Nu81AZkEfspQw2ulMQK2bi7vlssD0Cbx1ERCb7yay8b/CHAA==
   dependencies:
     requireindex "~1.2.0"
     semver "^7.3.5"
