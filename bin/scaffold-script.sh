@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-echo 'Name of the userscript (in kebab-case):'
+echo -n 'Name of the userscript (in kebab-case): '
 read -r script_name
 
-echo 'Description of the userscript:'
+echo -n 'Description of the userscript: '
 read -r description
 
 cat << TEMPLATE > "src/$script_name.user.ts"
