@@ -1,3 +1,5 @@
+ts-node = node --loader ts-node/esm --experimental-specifier-resolution=node
+
 install:
 	yarn install
 
@@ -17,7 +19,7 @@ format.check: install
 	yarn prettier --check .
 
 dev: install
-	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --watch
+	$(ts-node) bin/dev.ts
 
 build: install
 	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
@@ -25,7 +27,7 @@ build: install
 	@make lint.fix.dist
 
 docgen: install
-	node --loader ts-node/esm bin/docgen.ts
+	$(ts-node) bin/docgen.ts
 	@make format
 
 typecheck: install
