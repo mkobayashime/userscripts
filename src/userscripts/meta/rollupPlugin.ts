@@ -1,7 +1,7 @@
 import path from "path";
 import { Plugin } from "rollup";
 
-import { meta, UserScriptMeta } from ".";
+import { meta, UserScriptMeta } from "./index.js";
 
 export const userscriptMetaPlugin = (): Plugin => ({
   name: "userscriptMetaPlugin",
