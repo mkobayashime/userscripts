@@ -1,0 +1,15 @@
+/* ==UserStyle==
+@name           TweetDeck - No beta button
+@namespace      mkobayashime
+@version        1.0.0
+@homepageURL    https://github.com/mkobayashime/userscripts
+@updateURL      https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-beta-button.user.css
+@description    Hide the link button appealing to try the beta UI
+@author         mkobayashime
+==/UserStyle== */
+
+@-moz-document domain("tweetdeck.twitter.com") {
+  .js-gryphon-beta-btn {
+    display: none;
+  }
+}

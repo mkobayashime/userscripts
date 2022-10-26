@@ -106,6 +106,10 @@ Large display friendly fixed width layout for Wikipedia.
 
 Display Slack emoji with white background and in a slightly larger size
 
+### [TweetDeck - No beta button](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-beta-button.user.css)
+
+Hide the link button appealing to try the beta UI
+
 ### [YouTube - Mirrored video](https://github.com/mkobayashime/userscripts/raw/main/src/youtube-mirrored.user.css)
 
 Mirrored video in YouTube
