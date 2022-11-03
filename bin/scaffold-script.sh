@@ -6,7 +6,7 @@ read -r script_name
 echo -n 'Description of the userscript: '
 read -r description
 
-cat << TEMPLATE > "src/$script_name.user.ts"
+cat << TEMPLATE > "src/userscripts/$script_name.user.ts"
 const config = {
 };
 
