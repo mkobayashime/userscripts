@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Github - PR submission shortcuts
+// @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.0.1
 // @description  Ctrl+Enter to merge/automerge PR
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
