@@ -1,6 +1,8 @@
+import { isTyping } from "./utils/isTyping";
+
 (() => {
   window.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.key === "Enter") {
+    if (e.ctrlKey && e.key === "Enter" && !isTyping()) {
       const confirmButton = document.querySelector<HTMLElement>(
         "button.js-merge-commit-button[type='submit']"
       );
