@@ -39,7 +39,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?domain=github.com",
     match: "https://github.com/*/*/pull/*",
     name: "GitHub - PR submission shortcuts",
-    version: "1.0.1",
+    version: "1.1.0",
   },
   "google-calendar-unintended-user-alert": {
     description: "Alert when you open Google Calendar in unintended accounts",
