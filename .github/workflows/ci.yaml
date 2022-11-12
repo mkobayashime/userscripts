@@ -76,6 +76,6 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Build
-        run: make build
+        run: NODE_OPTIONS='--max_old_space_size=4096' make build
       - name: Check uncommitted changes
         run: test -z "$(git status --porcelain)"
