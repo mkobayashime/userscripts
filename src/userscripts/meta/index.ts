@@ -66,6 +66,14 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
+  "mdn-force-english": {
+    description:
+      "Redirect Japanese pages in MDN to corresponding English pages",
+    icon: "https://www.google.com/s2/favicons?domain=developer.mozilla.org",
+    match: "https://developer.mozilla.org/ja/docs/*",
+    name: "MDN - Force English",
+    version: "1.0.0",
+  },
   "moneytree-shortcuts": {
     description: "Moneytree にショートカットキーを追加します",
     icon: "https://www.google.com/s2/favicons?domain=getmoneytree.com",
