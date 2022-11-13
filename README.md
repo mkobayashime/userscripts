@@ -46,6 +46,10 @@ Space key to like, arrow/h/l keys to next/previous photo in the post
 
 Next/Prev image with arrow/h/l keys
 
+### [MDN - Force English](https://github.com/mkobayashime/userscripts/raw/main/dist/mdn-force-english.user.js)
+
+Redirect Japanese pages in MDN to corresponding English pages
+
 ### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/moneytree-shortcuts.user.js)
 
 Moneytree にショートカットキーを追加します
