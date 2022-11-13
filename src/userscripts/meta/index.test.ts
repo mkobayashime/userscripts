@@ -1,8 +1,8 @@
-import path from "path";
 import test from "ava";
 import glob from "glob";
+import path from "path";
 
-import { meta } from "./index.js";
+import { meta } from ".";
 
 const tsScripts = glob.sync("./src/userscripts/*.user.ts");
 const scriptNames = tsScripts.map((file) => path.basename(file, ".user.ts"));

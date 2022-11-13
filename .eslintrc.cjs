@@ -5,35 +5,25 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  parser: "@typescript-eslint/parser",
   parserOptions: {
+    project: "./tsconfig.json",
     ecmaVersion: 12,
     sourceType: "module",
   },
+  plugins: ["@typescript-eslint", "import", "sort-keys-fix"],
   overrides: [
+    // {
+    //   files: ["*.js"],
+    //   extends: ["@mkobayashime"],
+    // },
     {
-      files: ["*.js"],
-      extends: ["eslint:recommended", "prettier"],
-    },
-    {
-      files: ["*.ts"],
-      extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-      ],
-      parser: "@typescript-eslint/parser",
-      plugins: ["@typescript-eslint", "sort-keys-fix"],
+      files: ["*.ts", "*.js"],
+      extends: ["@mkobayashime"],
     },
     {
       files: ["*.user.ts"],
-      extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:userscripts/recommended",
-        "prettier",
-      ],
-      parser: "@typescript-eslint/parser",
-      plugins: ["@typescript-eslint"],
+      extends: ["plugin:userscripts/recommended", "@mkobayashime"],
       rules: {
         "userscripts/no-invalid-metadata": "off",
         "userscripts/filename-user": "off",
@@ -41,11 +31,7 @@ module.exports = {
     },
     {
       files: ["*.user.js"],
-      extends: [
-        "eslint:recommended",
-        "plugin:userscripts/recommended",
-        "prettier",
-      ],
+      extends: ["plugin:userscripts/recommended", "@mkobayashime"],
     },
   ],
 };

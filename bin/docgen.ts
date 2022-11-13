@@ -1,13 +1,13 @@
-import path from "path";
-import { readFile, writeFile } from "fs/promises";
+import * as A from "fp-ts/lib/Array.js";
 import { pipe } from "fp-ts/lib/function.js";
 import * as O from "fp-ts/lib/Option.js";
-import * as A from "fp-ts/lib/Array.js";
 import * as Ord from "fp-ts/lib/Ord.js";
 import * as string from "fp-ts/lib/string.js";
+import { readFile, writeFile } from "fs/promises";
 import glob from "glob";
+import path from "path";
 
-import { meta } from "../src/userscripts/meta/index.js";
+import { meta } from "../src/userscripts/meta";
 
 type FileProperties = {
   filename: string;

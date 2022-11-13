@@ -1,8 +1,9 @@
+import typescript from "@rollup/plugin-typescript";
+import chalk from "chalk";
+import chokidar from "chokidar";
 import path from "node:path";
 import * as rollup from "rollup";
-import typescript from "@rollup/plugin-typescript";
-import chokidar from "chokidar";
-import chalk from "chalk";
+
 import { copyToClipboardPlugin } from "../copyToClipboardRollupPlugin.js";
 import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
 
