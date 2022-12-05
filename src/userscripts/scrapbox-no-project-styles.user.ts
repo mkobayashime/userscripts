@@ -1,11 +1,28 @@
 (function () {
   /**
-   * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
+   * このスクリプトを有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
   const enabledProjectIds: Array<string | RegExp> = [];
 
+  /**
+   * このスクリプトを無効化するプロジェクトの id またはマッチする RegExp. `enabledProjectIds` を上書きします.
+   * @type Array<string | RegExp>
+   */
+  const disabledProjectIds: Array<string | RegExp> = [];
+
   const isProjectEnabled = (projectId: string) => {
+    if (
+      disabledProjectIds.some((pattern) => {
+        if (typeof pattern === "string") {
+          return pattern === projectId;
+        }
+        return pattern.test(projectId);
+      })
+    ) {
+      return false;
+    }
+
     if (enabledProjectIds.length === 0) return true;
     return enabledProjectIds.some((pattern) => {
       if (typeof pattern === "string") {

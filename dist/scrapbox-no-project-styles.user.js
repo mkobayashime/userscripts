@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.5.1
+// @version      1.6.0
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -16,11 +16,26 @@
 
 (function () {
   /**
-   * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
+   * このスクリプトを有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
   const enabledProjectIds = [];
+  /**
+   * このスクリプトを無効化するプロジェクトの id またはマッチする RegExp. `enabledProjectIds` を上書きします.
+   * @type Array<string | RegExp>
+   */
+  const disabledProjectIds = [];
   const isProjectEnabled = (projectId) => {
+    if (
+      disabledProjectIds.some((pattern) => {
+        if (typeof pattern === "string") {
+          return pattern === projectId;
+        }
+        return pattern.test(projectId);
+      })
+    ) {
+      return false;
+    }
     if (enabledProjectIds.length === 0) return true;
     return enabledProjectIds.some((pattern) => {
       if (typeof pattern === "string") {

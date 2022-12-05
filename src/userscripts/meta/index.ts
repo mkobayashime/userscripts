@@ -121,7 +121,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - No project styles",
     runAt: "document-end",
-    version: "1.5.1",
+    version: "1.6.0",
   },
   "scrapbox-project-notice-in-new-page": {
     description:
