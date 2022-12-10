@@ -66,6 +66,10 @@ Ctrl+Enter in "Save from site"
 
 Scrapbox の Watch List を自動的に全削除します
 
+### [Scrapbox - Leave insert with Esc key](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-escape-inert.user.js)
+
+Leave 'insert' mode with Esc key in Scrapbox
+
 ### [Scrapbox - Force Theme](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js)
 
 Scrapbox でプロジェクトに関わらず特定のテーマを使用します

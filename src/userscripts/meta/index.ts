@@ -106,6 +106,13 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
+  "scrapbox-escape-inert": {
+    description: "Leave 'insert' mode with Esc key in Scrapbox",
+    icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
+    match: "https://scrapbox.io/*",
+    name: "Scrapbox - Leave insert with Esc key",
+    version: "1.0.0",
+  },
   "scrapbox-force-theme": {
     description: "Scrapbox でプロジェクトに関わらず特定のテーマを使用します",
     icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
