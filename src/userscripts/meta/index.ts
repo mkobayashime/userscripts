@@ -144,7 +144,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?sz=64&domain=slack.com",
     match: "https://app.slack.com/client/*",
     name: "Slack - No autofocus in moving channels",
-    version: "1.2.1",
+    version: "1.2.2",
   },
   "slack-no-desktop-app": {
     description:
