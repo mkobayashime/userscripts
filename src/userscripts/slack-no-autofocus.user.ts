@@ -5,7 +5,9 @@ const waitForChannelNameWrapper = async (): Promise<Element> =>
     }, 30000);
 
     const interval = window.setInterval(() => {
-      const channelNameWrapper = document.querySelector("div[role='main']");
+      const channelNameWrapper = document.querySelector(
+        ".p-workspace__primary_view"
+      );
 
       if (channelNameWrapper) {
         resolve(channelNameWrapper);
