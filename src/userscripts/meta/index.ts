@@ -34,6 +34,13 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.1",
   },
+  "github-disable-some-keymaps": {
+    description: "Disable some keyboard shortcuts on GitHub",
+    icon: "https://www.google.com/s2/favicons?domain=github.com",
+    match: "https://github.com/*",
+    name: "GitHub - Disable some keymaps",
+    version: "0.2.0",
+  },
   "github-pr-submission-shortcuts": {
     description: "Ctrl+Enter to merge/automerge PR",
     icon: "https://www.google.com/s2/favicons?domain=github.com",
