@@ -30,6 +30,10 @@ ETC 利用照会サービスに h/l などのショートカットキーを追�
 
 freee にショートカットキーを追加します
 
+### [GitHub - Disable some keymaps](https://github.com/mkobayashime/userscripts/raw/main/dist/github-disable-some-keymaps.user.js)
+
+Disable some keyboard shortcuts on GitHub
+
 ### [GitHub - PR submission shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/github-pr-submission-shortcuts.user.js)
 
 Ctrl+Enter to merge/automerge PR
