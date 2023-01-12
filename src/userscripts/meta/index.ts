@@ -27,7 +27,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
       "https://www.musixmatch.com/*",
     ],
     name: "Copy lyrics",
-    version: "1.1.0",
+    version: "1.2.0",
   },
   "etc-meisai-shortcuts": {
     description:
