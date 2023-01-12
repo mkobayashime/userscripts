@@ -6,7 +6,7 @@ export type UserScriptMeta = {
   version: string;
   description: string;
   descriptionJp?: string;
-  match: string;
+  match: string | string[];
   icon?: string;
   runAt?:
     | "document-end"

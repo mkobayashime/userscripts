@@ -29,7 +29,9 @@ const generateHeader = (meta: UserScriptMeta, fileName: string): string =>
     `// @homepageURL  https://github.com/mkobayashime/userscripts`,
     `// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/${fileName}`,
     `// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/${fileName}`,
-    `// @match        ${meta.match}`,
+    (Array.isArray(meta.match) ? meta.match : [meta.match])
+      .map((matchString) => `// @match        ${matchString}`)
+      .join("\n"),
     meta.icon ? `// @icon         ${meta.icon}` : null,
     meta.runAt ? `// @run-at       ${meta.runAt}` : null,
     `// @grant        ${meta.grant ?? "none"}`,
