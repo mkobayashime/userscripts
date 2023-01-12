@@ -24,9 +24,10 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
       "https://www.google.com/search*",
       "https://www.uta-net.com/song/*",
       "https://j-lyric.net/*",
+      "https://www.musixmatch.com/*",
     ],
     name: "Copy lyrics",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   "etc-meisai-shortcuts": {
     description:

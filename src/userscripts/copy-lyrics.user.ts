@@ -33,6 +33,14 @@ const jLyric = () => {
   return wrapper.innerText;
 };
 
+const musixmatch = () =>
+  Array.from(document.getElementsByClassName("mxm-lyrics__content "))
+    .map((element) =>
+      element instanceof HTMLElement ? element.innerText : null
+    )
+    .filter((str) => str)
+    .join("\n");
+
 //
 (async () => {
   const url = window.location.href;
@@ -61,6 +69,12 @@ const jLyric = () => {
         if (lyrics) {
           await copyToClipboard(lyrics, false);
         }
+        return;
+      }
+
+      if (url.startsWith("https://www.musixmatch.com/")) {
+        const lyrics = musixmatch();
+        if (lyrics) await copyToClipboard(lyrics, false);
         return;
       }
     }
