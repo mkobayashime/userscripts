@@ -18,6 +18,16 @@ export type UserScriptMeta = {
 };
 
 export const meta: { [name: string]: UserScriptMeta | undefined } = {
+  "copy-lyrics": {
+    description: "Copy lyrics automatically in supported sites",
+    match: [
+      "https://www.google.com/search*",
+      "https://www.uta-net.com/song/*",
+      "https://j-lyric.net/*",
+    ],
+    name: "Copy lyrics",
+    version: "1.0.0",
+  },
   "etc-meisai-shortcuts": {
     description:
       "ETC利用照会サービスに h/l などのショートカットキーを追加します",
