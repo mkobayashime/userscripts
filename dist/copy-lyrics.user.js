@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.1.0
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -11,6 +11,7 @@
 // @match        https://www.google.com/search*
 // @match        https://www.uta-net.com/song/*
 // @match        https://j-lyric.net/*
+// @match        https://www.musixmatch.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -64,6 +65,13 @@ const jLyric = () => {
   if (!wrapper) return;
   return wrapper.innerText;
 };
+const musixmatch = () =>
+  Array.from(document.getElementsByClassName("mxm-lyrics__content "))
+    .map((element) =>
+      element instanceof HTMLElement ? element.innerText : null
+    )
+    .filter((str) => str)
+    .join("\n");
 //
 (async () => {
   const url = window.location.href;
@@ -89,6 +97,11 @@ const jLyric = () => {
         if (lyrics) {
           await copyToClipboard(lyrics, false);
         }
+        return;
+      }
+      if (url.startsWith("https://www.musixmatch.com/")) {
+        const lyrics = musixmatch();
+        if (lyrics) await copyToClipboard(lyrics, false);
         return;
       }
     }
