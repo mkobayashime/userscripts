@@ -2,22 +2,14 @@ import { copyToClipboard } from "./utils/copyToClipboard";
 import { enableSelection } from "./utils/enableSelection";
 
 const googleSearch = () => {
-  const wrapper = document.querySelector("div[data-lyricid]");
-  if (!wrapper) return;
-
-  const paragraphsWrapper = wrapper.children[1];
-  if (!paragraphsWrapper) return;
-
-  const paragraphs = Array.from(paragraphsWrapper.children);
-  if (!paragraphs || paragraphs.length === 0) return;
-
-  return paragraphs
-    .map((element) => {
-      if (!(element instanceof HTMLElement)) return null;
-      return element.innerText;
-    })
-    .filter((str) => str)
-    .join("\n\n");
+  return Array.from(
+    document.querySelectorAll("div[data-lyricid] > div > div > div > span")
+  )
+    .map((element) =>
+      element instanceof HTMLSpanElement ? element.innerText : null
+    )
+    .filter((str) => str !== null)
+    .join("\n");
 };
 
 const utaNet = () => {
