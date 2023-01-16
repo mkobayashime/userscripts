@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.3.0
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -12,6 +12,7 @@
 // @match        https://www.uta-net.com/song/*
 // @match        https://j-lyric.net/*
 // @match        https://www.musixmatch.com/*
+// @match        https://linkco.re/*/songs/*/lyrics*
 // @grant        none
 // ==/UserScript==
 
@@ -67,6 +68,16 @@ const musixmatch = () =>
     )
     .filter((str) => str)
     .join("\n");
+const linkcore = () => {
+  const wrapper = document.querySelector(".lyric_text");
+  if (!wrapper) return;
+  return Array.from(wrapper.children)
+    .map((element) =>
+      element instanceof HTMLElement ? element.innerText : null
+    )
+    .filter((str) => str !== null)
+    .join("\n");
+};
 //
 (async () => {
   const url = window.location.href;
@@ -97,6 +108,11 @@ const musixmatch = () =>
       if (url.startsWith("https://www.musixmatch.com/")) {
         const lyrics = musixmatch();
         if (lyrics) await copyToClipboard(lyrics, false);
+        return;
+      }
+      if (url.startsWith("https://linkco.re/")) {
+        const lyrics = linkcore();
+        if (lyrics) await copyToClipboard(lyrics);
         return;
       }
     }
