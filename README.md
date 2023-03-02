@@ -110,6 +110,10 @@ Auto save composing tweet and restore it with Alt+P shortcut
 
 Alert when you reload/close TweetDeck with a composing tweet
 
+### [Zoom - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/zoom-web-shortcuts.user.js)
+
+Google Meet-like Ctrl-d/e shortcuts in Zoom
+
 ### [ZOZOTOWN - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/zozotown-shortcuts.user.js)
 
 Next/Prev image with arrow/h/l keys

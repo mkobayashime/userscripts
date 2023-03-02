@@ -199,6 +199,13 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
+  "zoom-web-shortcuts": {
+    description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
+    icon: "https://www.google.com/s2/favicons?domain=zoom.us",
+    match: "https://*.zoom.us/*",
+    name: "Zoom - Shortcuts",
+    version: "1.0.0",
+  },
   "zozotown-shortcuts": {
     description: "Next/Prev image with arrow/h/l keys",
     icon: "https://www.google.com/s2/favicons?domain=zozo.jp",
