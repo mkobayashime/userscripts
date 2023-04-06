@@ -28,7 +28,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
       "https://linkco.re/*/songs/*/lyrics*",
     ],
     name: "Copy lyrics",
-    version: "1.3.0",
+    version: "1.4.0",
   },
   "etc-meisai-shortcuts": {
     description:
