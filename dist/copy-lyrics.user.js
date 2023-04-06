@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.3.0
+// @version      1.4.0
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -78,6 +78,15 @@ const linkcore = () => {
     .filter((str) => str !== null)
     .join("\n");
 };
+const lineMusic = () => {
+  const wrapper = document.querySelector(".ly_text");
+  if (!wrapper || !(wrapper instanceof HTMLElement)) {
+    window.alert("Lyrics not found. Please open the lyrics modal.");
+    return;
+  }
+  const text = wrapper.innerText;
+  return text.replace(/歌詞\s*/, "");
+};
 //
 (async () => {
   const url = window.location.href;
@@ -114,6 +123,12 @@ const linkcore = () => {
         const lyrics = linkcore();
         if (lyrics) await copyToClipboard(lyrics);
         return;
+      }
+      if (url.startsWith("https://music.line.me/webapp/")) {
+        const lyrics = lineMusic();
+        if (lyrics) {
+          await copyToClipboard(lyrics, false);
+        }
       }
     }
   });
