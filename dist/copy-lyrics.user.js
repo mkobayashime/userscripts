@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.4.0
+// @version      1.4.1
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -13,6 +13,7 @@
 // @match        https://j-lyric.net/*
 // @match        https://www.musixmatch.com/*
 // @match        https://linkco.re/*/songs/*/lyrics*
+// @match        https://music.line.me/webapp/*
 // @grant        none
 // ==/UserScript==
 
