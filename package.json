@@ -22,7 +22,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-userscripts": "0.2.12",
     "fp-ts": "2.13.1",
-    "glob": "8.0.3",
+    "glob": "9.3.5",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "prettier": "2.8.7",
