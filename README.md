@@ -120,10 +120,6 @@ Next/Prev image with arrow/h/l keys
 
 ## Styles (`*.user.css`)
 
-### [Fixed width Wikipedia](https://github.com/mkobayashime/userscripts/raw/main/src/wikipedia-fixed-width.user.css)
-
-Large display friendly fixed width layout for Wikipedia.
-
 ### [Remove signup dialogue in Qiita](https://github.com/mkobayashime/userscripts/raw/main/src/qiita-no-dialogue.user.css)
 
 ### [Slack - Emoji for Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
