@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.1.0
+// @version      2.2.0
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -41,18 +41,11 @@ const config = {
       return top <= windowHalfHeight && top + height >= windowHalfHeight;
     });
   };
-  const findParentButtonRecursively = ({ origin, limit = 5 }) => {
-    if (!origin || limit < 0) return null;
-    if (origin instanceof HTMLButtonElement) return origin;
-    return findParentButtonRecursively({
-      origin: origin.parentElement,
-      limit: limit - 1,
-    });
-  };
-  window.addEventListener("keydown", (e) => {
+  window.document.documentElement.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.code === "Space") {
       e.preventDefault();
+      e.stopImmediatePropagation();
       const targetPost = getTargetPost();
       if (!targetPost) return;
       const buttonsArea = targetPost.querySelector("section");
@@ -66,13 +59,10 @@ const config = {
       if (!UNLIKE && unlikeButtonSvg) return;
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
-      const buttonToClick = findParentButtonRecursively({
-        origin: buttonSvgToClick,
-        limit: 5,
-      });
-      if (buttonToClick) buttonToClick.click();
+      buttonSvgToClick.parentElement?.click();
     }
     if (e.key === "l" || e.key === "ArrowRight") {
+      e.stopImmediatePropagation();
       const post = getTargetPost();
       if (!post) return;
       const nextButton =

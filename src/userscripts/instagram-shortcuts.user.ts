@@ -25,28 +25,12 @@ const config = {
     });
   };
 
-  const findParentButtonRecursively = ({
-    origin,
-    limit = 5,
-  }: {
-    origin: Element | null;
-    limit: number;
-  }): HTMLButtonElement | null => {
-    if (!origin || limit < 0) return null;
-
-    if (origin instanceof HTMLButtonElement) return origin;
-
-    return findParentButtonRecursively({
-      origin: origin.parentElement,
-      limit: limit - 1,
-    });
-  };
-
-  window.addEventListener("keydown", (e) => {
+  window.document.documentElement.addEventListener("keydown", (e) => {
     if (isTyping()) return;
 
     if (e.code === "Space") {
       e.preventDefault();
+      e.stopImmediatePropagation();
 
       const targetPost = getTargetPost();
       if (!targetPost) return;
@@ -55,25 +39,24 @@ const config = {
       if (!buttonsArea) return;
 
       const likeButtonSvg =
-        buttonsArea.querySelector("[aria-label='Like']") ??
-        buttonsArea.querySelector("[aria-label='いいね！']");
+        buttonsArea.querySelector<HTMLElement>("[aria-label='Like']") ??
+        buttonsArea.querySelector<HTMLElement>("[aria-label='いいね！']");
       const unlikeButtonSvg =
-        buttonsArea.querySelector("[aria-label='Unlike']") ??
-        buttonsArea.querySelector("[aria-label='「いいね！」を取り消す']");
+        buttonsArea.querySelector<HTMLElement>("[aria-label='Unlike']") ??
+        buttonsArea.querySelector<HTMLElement>(
+          "[aria-label='「いいね！」を取り消す']"
+        );
 
       if (!UNLIKE && unlikeButtonSvg) return;
 
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
-
-      const buttonToClick = findParentButtonRecursively({
-        origin: buttonSvgToClick,
-        limit: 5,
-      });
-      if (buttonToClick) buttonToClick.click();
+      buttonSvgToClick.parentElement?.click();
     }
 
     if (e.key === "l" || e.key === "ArrowRight") {
+      e.stopImmediatePropagation();
+
       const post = getTargetPost();
       if (!post) return;
 
