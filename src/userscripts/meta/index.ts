@@ -76,7 +76,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www.instagram.com/*",
     name: "Instagram - Shortcut keys",
     runAt: "document-end",
-    version: "2.1.0",
+    version: "2.2.0",
   },
   "lifull-homes-shortcuts": {
     description: "Next/Prev image with arrow/h/l keys",
