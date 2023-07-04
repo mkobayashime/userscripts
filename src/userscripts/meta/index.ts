@@ -200,6 +200,13 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
+  "tweetdeck-shortcuts": {
+    description: "Refined shortcuts in the new (preview) version of TweetDeck",
+    icon: "https://www.google.com/s2/favicons?domain=twitter.com",
+    match: "https://tweetdeck.twitter.com/*",
+    name: "TweetDeck Preview - Shortcuts",
+    version: "0.1.0",
+  },
   "zoom-web-shortcuts": {
     description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
     icon: "https://www.google.com/s2/favicons?domain=zoom.us",
