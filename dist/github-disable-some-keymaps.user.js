@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - Disable some keymaps
 // @namespace    mkobayashime
-// @version      0.2.0
+// @version      0.2.1
 // @description  Disable some keyboard shortcuts on GitHub
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,8 +15,9 @@
 
 const isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-  return inputTags.includes(
-    document.activeElement?.tagName.toUpperCase() ?? ""
+  return (
+    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
+    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
   );
 };
 

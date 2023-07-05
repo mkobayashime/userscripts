@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ETC利用照会サービス - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.2.1
+// @version      1.2.2
 // @description  ETC利用照会サービスに h/l などのショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,8 +15,9 @@
 
 const isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-  return inputTags.includes(
-    document.activeElement?.tagName.toUpperCase() ?? ""
+  return (
+    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
+    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
   );
 };
 
