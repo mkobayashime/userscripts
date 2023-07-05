@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TweetDeck Preview - Shortcuts
 // @namespace    mkobayashime
-// @version      0.1.0
+// @version      0.2.0
 // @description  Refined shortcuts in the new (preview) version of TweetDeck
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -54,6 +54,21 @@ const config = {};
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
           keyCode: 76, // `l`
+        })
+      );
+    }
+    /**
+     * 0–9 keys to focus columns
+     */
+    if (e.keyCode >= 48 && e.keyCode < 58) {
+      document.dispatchEvent(
+        new KeyboardEvent("keypress", {
+          keyCode: 67,
+        })
+      );
+      document.dispatchEvent(
+        new KeyboardEvent("keypress", {
+          keyCode: e.keyCode,
         })
       );
     }
