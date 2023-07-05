@@ -37,7 +37,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www2.etc-meisai.jp/etc/*",
     name: "ETC利用照会サービス - Shortcut keys",
     runAt: "document-end",
-    version: "1.2.1",
+    version: "1.2.2",
   },
   "freee-shortcuts": {
     description: "freee にショートカットキーを追加します",
@@ -52,14 +52,14 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?domain=github.com",
     match: "https://github.com/*",
     name: "GitHub - Disable some keymaps",
-    version: "0.2.0",
+    version: "0.2.1",
   },
   "github-pr-submission-shortcuts": {
     description: "Ctrl+Enter to merge/automerge PR",
     icon: "https://www.google.com/s2/favicons?domain=github.com",
     match: "https://github.com/*/*/pull/*",
     name: "GitHub - PR submission shortcuts",
-    version: "1.1.0",
+    version: "1.1.1",
   },
   "google-calendar-unintended-user-alert": {
     description: "Alert when you open Google Calendar in unintended accounts",
@@ -76,7 +76,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www.instagram.com/*",
     name: "Instagram - Shortcut keys",
     runAt: "document-end",
-    version: "2.2.0",
+    version: "2.2.1",
   },
   "lifull-homes-shortcuts": {
     description: "Next/Prev image with arrow/h/l keys",
@@ -84,7 +84,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www.homes.co.jp/*",
     name: "HOME'S - Shortcut keys",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "mdn-force-english": {
     description:
@@ -205,7 +205,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://tweetdeck.twitter.com/*",
     name: "TweetDeck Preview - Shortcuts",
-    version: "0.2.0",
+    version: "0.2.1",
   },
   "zoom-web-shortcuts": {
     description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
@@ -220,6 +220,6 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://zozo.jp/*",
     name: "ZOZOTOWN - Shortcut keys",
     runAt: "document-end",
-    version: "1.4.0",
+    version: "1.4.1",
   },
 };

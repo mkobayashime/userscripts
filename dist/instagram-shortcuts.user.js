@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.2.0
+// @version      2.2.1
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -16,8 +16,9 @@
 
 const isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-  return inputTags.includes(
-    document.activeElement?.tagName.toUpperCase() ?? ""
+  return (
+    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
+    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
   );
 };
 

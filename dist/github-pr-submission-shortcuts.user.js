@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.1.1
 // @description  Ctrl+Enter to merge/automerge PR
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -15,8 +15,9 @@
 
 const isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-  return inputTags.includes(
-    document.activeElement?.tagName.toUpperCase() ?? ""
+  return (
+    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
+    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
   );
 };
 
