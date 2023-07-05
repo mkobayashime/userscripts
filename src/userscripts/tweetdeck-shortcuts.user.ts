@@ -46,6 +46,22 @@ const config = {};
         })
       );
     }
+
+    /**
+     * 0–9 keys to focus columns
+     */
+    if (e.keyCode >= 48 && e.keyCode < 58) {
+      document.dispatchEvent(
+        new KeyboardEvent("keypress", {
+          keyCode: 67,
+        })
+      );
+      document.dispatchEvent(
+        new KeyboardEvent("keypress", {
+          keyCode: e.keyCode,
+        })
+      );
+    }
   });
 })(config);
 
