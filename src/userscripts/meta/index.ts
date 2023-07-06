@@ -15,6 +15,7 @@ export type UserScriptMeta = {
     | "document-idle"
     | "context-menu";
   grant?: string;
+  docgenIgnore?: boolean;
 };
 
 export const meta: { [name: string]: UserScriptMeta | undefined } = {
@@ -184,6 +185,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
   },
   "tweetdeck-auto-save-draft": {
     description: "Auto save composing tweet and restore it with Alt+P shortcut",
+    docgenIgnore: true,
     icon: "https://www.google.com/s2/favicons?domain=tweetdeck.twitter.com",
     match: "https://tweetdeck.twitter.com/",
     name: "TweetDeck - Auto save draft",
@@ -194,6 +196,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     description: "Alert when you reload/close TweetDeck with a composing tweet",
     descriptionJp:
       "書きかけのツイートがある状態で TweetDeck をリロードしたり閉じてしまうのを防ぎます",
+    docgenIgnore: true,
     icon: "https://www.google.com/s2/favicons?domain=tweetdeck.twitter.com",
     match: "https://tweetdeck.twitter.com/",
     name: "TweetDeck - No unintended reloads",

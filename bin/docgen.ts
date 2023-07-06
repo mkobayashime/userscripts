@@ -89,17 +89,21 @@ const getFilesProperties = async ({
   kind: FileKind;
 }): Promise<FileProperties[]> => {
   if (kind === "script") {
-    return files.map((file) => {
+    return files.flatMap((file) => {
       const scriptMeta = meta[path.basename(file, ".user.ts")];
       if (!scriptMeta) {
         throw new Error(`Meta not found for userscript: ${file}`);
       }
 
-      return {
-        filename: path.basename(file),
-        title: scriptMeta.name,
-        description: scriptMeta.description,
-      };
+      if (scriptMeta.docgenIgnore) return [];
+
+      return [
+        {
+          filename: path.basename(file),
+          title: scriptMeta.name,
+          description: scriptMeta.description,
+        },
+      ];
     });
   }
 

@@ -102,14 +102,6 @@ Open workspace in the browser after signing in, not in desktop app
 
 Alert when you reload/close Slack with a new draft
 
-### [TweetDeck - Auto save draft](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-auto-save-draft.user.js)
-
-Auto save composing tweet and restore it with Alt+P shortcut
-
-### [TweetDeck - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-no-unintended-reload.user.js)
-
-Alert when you reload/close TweetDeck with a composing tweet
-
 ### [TweetDeck Preview - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-shortcuts.user.js)
 
 Refined shortcuts in the new (preview) version of TweetDeck
