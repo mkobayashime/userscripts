@@ -7,9 +7,9 @@ echo -n 'Description of the userscript: '
 read -r description
 
 cat << TEMPLATE > "src/userscripts/$script_name.user.ts"
-const config = {
-};
+const config = {};
 
+// eslint-disable-next-line no-empty-pattern
 (({}: typeof config) => {
   //
 })(config);
