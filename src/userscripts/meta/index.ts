@@ -127,13 +127,6 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
-  "scrapbox-escape-inert": {
-    description: "Leave 'insert' mode with Esc key in Scrapbox",
-    icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
-    match: "https://scrapbox.io/*",
-    name: "Scrapbox - Leave insert with Esc key",
-    version: "1.0.0",
-  },
   "scrapbox-force-theme": {
     description: "Scrapbox でプロジェクトに関わらず特定のテーマを使用します",
     icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
@@ -166,14 +159,6 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://app.slack.com/client/*",
     name: "Slack - No autofocus in moving channels",
     version: "1.2.2",
-  },
-  "slack-no-desktop-app": {
-    description:
-      "Open workspace in the browser after signing in, not in desktop app",
-    icon: "https://www.google.com/s2/favicons?sz=64&domain=slack.com",
-    match: "https://*.slack.com/ssb/*",
-    name: "Slack - No desktop app",
-    version: "1.2.0",
   },
   "slack-no-unintended-reload": {
     description: "Alert when you reload/close Slack with a new draft",
