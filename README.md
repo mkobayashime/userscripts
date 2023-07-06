@@ -98,6 +98,10 @@ Alert when you reload/close Slack with a new draft
 
 Refined shortcuts in the new (preview) version of TweetDeck
 
+### [Twitter - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/twitter-shortcuts.user.js)
+
+Refined shortcuts in Twitter for web
+
 ### [Zoom - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/zoom-web-shortcuts.user.js)
 
 Google Meet-like Ctrl-d/e shortcuts in Zoom
