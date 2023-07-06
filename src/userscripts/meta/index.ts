@@ -15,6 +15,7 @@ export type UserScriptMeta = {
     | "document-idle"
     | "context-menu";
   grant?: string;
+  docgenIgnore?: boolean;
 };
 
 export const meta: { [name: string]: UserScriptMeta | undefined } = {
