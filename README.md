@@ -74,10 +74,6 @@ Ctrl+Enter in "Save from site"
 
 Scrapbox の Watch List を自動的に全削除します
 
-### [Scrapbox - Leave insert with Esc key](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-escape-inert.user.js)
-
-Leave 'insert' mode with Esc key in Scrapbox
-
 ### [Scrapbox - Force Theme](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js)
 
 Scrapbox でプロジェクトに関わらず特定のテーマを使用します
@@ -93,10 +89,6 @@ Scrapbox ページを新たに作成する際、意図したプロジェクト�
 ### [Slack - No autofocus in moving channels](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-autofocus.user.js)
 
 Disable autofocus to the message input field after moved to another channel
-
-### [Slack - No desktop app](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-desktop-app.user.js)
-
-Open workspace in the browser after signing in, not in desktop app
 
 ### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-unintended-reload.user.js)
 
@@ -121,10 +113,6 @@ Next/Prev image with arrow/h/l keys
 ### [Slack - Emoji for Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
 
 Display Slack emoji with white background and in a slightly larger size
-
-### [TweetDeck - No beta button](https://github.com/mkobayashime/userscripts/raw/main/src/tweetdeck-no-beta-button.user.css)
-
-Hide the link button appealing to try the beta UI
 
 ### [YouTube - Mirrored video](https://github.com/mkobayashime/userscripts/raw/main/src/youtube-mirrored.user.css)
 
