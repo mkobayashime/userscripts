@@ -5,7 +5,7 @@ import * as O from "fp-ts/lib/Option.js";
 import * as A from "fp-ts/lib/Array.js";
 import * as Ord from "fp-ts/lib/Ord.js";
 import * as string from "fp-ts/lib/string.js";
-import glob from "glob";
+import { globSync } from "glob";
 
 import { meta } from "../src/userscripts/meta/index.js";
 
@@ -24,11 +24,11 @@ const getFiles = async (): Promise<{
   try {
     return {
       scripts: pipe(
-        glob.sync(path.resolve("src", "userscripts", "*.user.ts")),
+        globSync(path.resolve("src", "userscripts", "*.user.ts")),
         A.sort(string.Ord)
       ),
       styles: pipe(
-        glob.sync(path.resolve("src", "*.user.css")),
+        globSync(path.resolve("src", "*.user.css")),
         A.sort(string.Ord)
       ),
     };
