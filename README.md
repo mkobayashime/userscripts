@@ -26,9 +26,9 @@ Click _Raw_ button in the desired script/style. Tampermonkey/Stylus will open th
 
 Copy lyrics automatically in supported sites
 
-### [ETC 利用照会サービス - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js)
+### [ETC利用照会サービス - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js)
 
-ETC 利用照会サービスに h/l などのショートカットキーを追加します
+ETC利用照会サービスに h/l などのショートカットキーを追加します
 
 ### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/freee-shortcuts.user.js)
 
