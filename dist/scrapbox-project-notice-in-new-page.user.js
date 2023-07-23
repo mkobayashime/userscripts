@@ -13,6 +13,7 @@
 // @grant        none
 // ==/UserScript==
 
+/* eslint-enable no-var */
 (function () {
   const titleElement = document.querySelector("title");
   if (!titleElement) return;
