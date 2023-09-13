@@ -53,6 +53,14 @@ const config = {};
         tabs[indexOfTabToClick].click();
       }
     }
+
+    if (e.ctrlKey && e.key === "e") {
+      const normalizedURL = `${window.location.origin}${window.location.pathname}`;
+      if (/^https:\/\/twitter\.com\/\S+\/status\/\d+$/.test(normalizedURL)) {
+        e.preventDefault();
+        window.location.href = `${normalizedURL}/likes`;
+      }
+    }
   });
 })(config);
 
