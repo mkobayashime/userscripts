@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter - Shortcuts
 // @namespace    mkobayashime
-// @version      0.3.0
+// @version      0.3.1
 // @description  Refined shortcuts in Twitter for web
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -67,7 +67,7 @@ const config = {};
       const normalizedURL = `${window.location.origin}${window.location.pathname}`;
       if (/^https:\/\/twitter\.com\/\S+\/status\/\d+$/.test(normalizedURL)) {
         e.preventDefault();
-        window.location.href = `${normalizedURL}/likes`;
+        window.open(`${normalizedURL}/likes`);
       }
     }
   });
