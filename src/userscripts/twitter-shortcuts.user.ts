@@ -58,7 +58,7 @@ const config = {};
       const normalizedURL = `${window.location.origin}${window.location.pathname}`;
       if (/^https:\/\/twitter\.com\/\S+\/status\/\d+$/.test(normalizedURL)) {
         e.preventDefault();
-        window.location.href = `${normalizedURL}/likes`;
+        window.open(`${normalizedURL}/likes`);
       }
     }
   });
