@@ -55,11 +55,13 @@ const config = {};
     }
 
     if (e.ctrlKey && e.key === "e") {
-      const normalizedURL = `${window.location.origin}${window.location.pathname}`;
-      if (/^https:\/\/twitter\.com\/\S+\/status\/\d+$/.test(normalizedURL)) {
-        e.preventDefault();
-        window.open(`${normalizedURL}/likes`);
-      }
+      const tweetURLMatch = window.location.href.match(
+        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/
+      );
+      if (!tweetURLMatch) return;
+
+      e.preventDefault();
+      window.open(`${tweetURLMatch[0]}/likes`);
     }
   });
 })(config);
