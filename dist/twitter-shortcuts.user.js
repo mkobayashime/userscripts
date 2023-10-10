@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter - Shortcuts
 // @namespace    mkobayashime
-// @version      0.3.2
+// @version      0.4.0
 // @description  Refined shortcuts in Twitter for web
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -22,6 +22,24 @@ const isTyping = () => {
 };
 
 const config = {};
+const findTweetInCenter = () => {
+  if (window.location.href.match(RegExp("^https://twitter.com/.*/status/"))) {
+    return document.querySelector(
+      "article[data-testid='tweet'][tabindex='-1']"
+    );
+  } else {
+    const tweetWrappers = Array.from(
+      document.querySelectorAll("article[data-testid='tweet']")
+    );
+    if (tweetWrappers.length === 0) return;
+    if (tweetWrappers.length === 1) return tweetWrappers[0];
+    return tweetWrappers.find((element) => {
+      const windowHalfHeight = window.innerHeight / 2;
+      const { top, height } = element.getBoundingClientRect();
+      return top <= windowHalfHeight && top + height >= windowHalfHeight;
+    });
+  }
+};
 // eslint-disable-next-line no-empty-pattern
 (({}) => {
   document.body.addEventListener("keypress", (e) => {
@@ -70,6 +88,15 @@ const config = {};
       if (!tweetURLMatch) return;
       e.preventDefault();
       window.open(`${tweetURLMatch[0]}/likes`);
+    }
+    if (e.ctrlKey && e.key === "l") {
+      e.preventDefault();
+      const targetTweet = findTweetInCenter();
+      if (!targetTweet) return;
+      const likeButton = targetTweet.querySelector(
+        "[data-testid='like'][role='button'], [data-testid='unlike'][role='button']"
+      );
+      if (likeButton instanceof HTMLElement) likeButton.click();
     }
   });
 })(config);

@@ -200,7 +200,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://twitter.com/*",
     name: "Twitter - Shortcuts",
-    version: "0.3.2",
+    version: "0.4.0",
   },
   "zoom-web-shortcuts": {
     description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
