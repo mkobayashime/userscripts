@@ -38,7 +38,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www2.etc-meisai.jp/etc/*",
     name: "ETC利用照会サービス - Shortcut keys",
     runAt: "document-end",
-    version: "1.2.2",
+    version: "2.0.0",
   },
   "freee-shortcuts": {
     description: "freee にショートカットキーを追加します",

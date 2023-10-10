@@ -6,7 +6,7 @@ import { isTyping } from "./utils/isTyping";
 
     if (e.key === "h" || e.key === "ArrowLeft") {
       const prevPageButton = document.evaluate(
-        "//button[contains(text(), '前頁')]",
+        "//button[contains(text(), '前月')]",
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -19,7 +19,7 @@ import { isTyping } from "./utils/isTyping";
 
     if (e.key === "l" || e.key === "ArrowRight") {
       const nextPageButton = document.evaluate(
-        "//button[contains(text(), '次頁')]",
+        "//button[contains(text(), '翌月')]",
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
