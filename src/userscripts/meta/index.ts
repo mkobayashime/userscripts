@@ -158,7 +158,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     icon: "https://www.google.com/s2/favicons?sz=64&domain=slack.com",
     match: "https://app.slack.com/client/*",
     name: "Slack - No autofocus in moving channels",
-    version: "1.2.2",
+    version: "2.0.0",
   },
   "slack-no-unintended-reload": {
     description: "Alert when you reload/close Slack with a new draft",
