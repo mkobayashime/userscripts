@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No autofocus in moving channels
 // @namespace    mkobayashime
-// @version      1.2.2
+// @version      2.0.0
 // @description  Disable autofocus to the message input field after moved to another channel
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -13,32 +13,15 @@
 // @grant        none
 // ==/UserScript==
 
-const waitForChannelNameWrapper = async () =>
-  new Promise((resolve) => {
-    const timeout = window.setTimeout(() => {
-      throw new Error("Timeout: Getting channel name wrapper");
-    }, 30000);
-    const interval = window.setInterval(() => {
-      const channelNameWrapper = document.querySelector(
-        ".p-workspace__primary_view"
-      );
-      if (channelNameWrapper) {
-        resolve(channelNameWrapper);
-        window.clearInterval(interval);
-        window.clearTimeout(timeout);
-      }
-    }, 200);
+void (async () => {
+  let curTitle = "";
+  new MutationObserver(() => {
+    if (document.title === curTitle) return;
+    curTitle = document.title;
+    if (!(document.activeElement instanceof HTMLElement)) return;
+    document.activeElement.blur();
+  }).observe(document.head, {
+    subtree: true,
+    childList: true,
   });
-(async function () {
-  const channelNameWrapper = await waitForChannelNameWrapper();
-  new MutationObserver((e) => {
-    const oldAriaLabel = e[0].oldValue;
-    if (!(e[0].target instanceof HTMLElement)) return;
-    const currentAriaLabel = e[0].target.ariaLabel;
-    if (!oldAriaLabel || !currentAriaLabel) return;
-    if (oldAriaLabel !== currentAriaLabel) {
-      if (!(document.activeElement instanceof HTMLElement)) return;
-      document.activeElement.blur();
-    }
-  }).observe(channelNameWrapper, { attributeOldValue: true });
 })();

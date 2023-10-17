@@ -1,37 +1,15 @@
-const waitForChannelNameWrapper = async (): Promise<Element> =>
-  new Promise((resolve) => {
-    const timeout = window.setTimeout(() => {
-      throw new Error("Timeout: Getting channel name wrapper");
-    }, 30000);
+void (async () => {
+  let curTitle = "";
 
-    const interval = window.setInterval(() => {
-      const channelNameWrapper = document.querySelector(
-        ".p-workspace__primary_view"
-      );
+  new MutationObserver(() => {
+    if (document.title === curTitle) return;
 
-      if (channelNameWrapper) {
-        resolve(channelNameWrapper);
+    curTitle = document.title;
 
-        window.clearInterval(interval);
-        window.clearTimeout(timeout);
-      }
-    }, 200);
+    if (!(document.activeElement instanceof HTMLElement)) return;
+    document.activeElement.blur();
+  }).observe(document.head, {
+    subtree: true,
+    childList: true,
   });
-
-(async function () {
-  const channelNameWrapper = await waitForChannelNameWrapper();
-
-  new MutationObserver((e) => {
-    const oldAriaLabel = e[0].oldValue;
-
-    if (!(e[0].target instanceof HTMLElement)) return;
-    const currentAriaLabel = e[0].target.ariaLabel;
-
-    if (!oldAriaLabel || !currentAriaLabel) return;
-
-    if (oldAriaLabel !== currentAriaLabel) {
-      if (!(document.activeElement instanceof HTMLElement)) return;
-      document.activeElement.blur();
-    }
-  }).observe(channelNameWrapper, { attributeOldValue: true });
 })();
