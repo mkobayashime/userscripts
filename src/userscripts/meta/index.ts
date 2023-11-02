@@ -58,9 +58,9 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
   "github-pr-submission-shortcuts": {
     description: "Ctrl+Enter to merge/automerge PR",
     icon: "https://www.google.com/s2/favicons?domain=github.com",
-    match: "https://github.com/*/*/pull/*",
+    match: "https://github.com/*",
     name: "GitHub - PR submission shortcuts",
-    version: "1.1.1",
+    version: "1.2.0",
   },
   "google-calendar-unintended-user-alert": {
     description: "Alert when you open Google Calendar in unintended accounts",

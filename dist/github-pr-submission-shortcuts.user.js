@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.1.1
+// @version      1.2.0
 // @description  Ctrl+Enter to merge/automerge PR
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/github-pr-submission-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/github-pr-submission-shortcuts.user.js
-// @match        https://github.com/*/*/pull/*
+// @match        https://github.com/*
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // @grant        none
 // ==/UserScript==
@@ -21,8 +21,9 @@ const isTyping = () => {
   );
 };
 
-(() => {
+void (() => {
   window.addEventListener("keydown", (e) => {
+    if (!/\/\S+\/\S+\/pull\//.test(window.location.pathname)) return;
     if (e.ctrlKey && e.key === "Enter" && !isTyping()) {
       const confirmButton = document.querySelector(
         "button.js-merge-commit-button[type='submit']"
