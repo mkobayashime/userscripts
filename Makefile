@@ -1,45 +1,50 @@
 ts-node = node --loader ts-node/esm --experimental-specifier-resolution=node
 
-install:
+node_modules: package.json yarn.lock
+ifeq ($(MAKE_YARN_FROZEN_LOCKFILE), 1)
+	yarn install --frozen-lockfile
+else
 	yarn install
+endif
+	@touch node_modules
 
-lint: install
+lint: node_modules
 	yarn eslint .
 
-lint.fix: install
+lint.fix: node_modules
 	yarn eslint --fix .
 
-lint.fix.dist: install
+lint.fix.dist: node_modules
 	yarn eslint --fix dist
 
-format: install
+format: node_modules
 	yarn prettier --write .
 
-format.check: install
+format.check: node_modules
 	yarn prettier --check .
 
-dev: install
+dev: node_modules
 	$(ts-node) bin/dev.ts
 
-build: install
+build: node_modules
 	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
 	@make format
 	@make lint.fix.dist
 
-docgen: install
+docgen: node_modules
 	$(ts-node) bin/docgen.ts
 	@make format
 
-typecheck: install
+typecheck: node_modules
 	yarn tsc --noEmit
 
-typecheck.watch: install
+typecheck.watch: node_modules
 	yarn tsc --noEmit --watch
 
-test: install
+test: node_modules
 	yarn run ava
 
-test.watch: install
+test.watch: node_modules
 	yarn run ava --watch
 
 scaffold.script:

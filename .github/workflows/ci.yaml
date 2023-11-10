@@ -2,6 +2,9 @@ on: push
 
 name: CI
 
+env:
+  MAKE_YARN_FROZEN_LOCKFILE: 1
+
 jobs:
   lint:
     name: Lint
@@ -14,7 +17,7 @@ jobs:
           node-version: "18"
           cache: "yarn"
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: make node_modules
       - name: ESLint
         run: make lint
       - name: Prettier
@@ -32,7 +35,7 @@ jobs:
           node-version: "18"
           cache: "yarn"
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: make node_modules
       - name: Test
         run: make test
   docs:
@@ -46,7 +49,7 @@ jobs:
           node-version: "18"
           cache: "yarn"
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: make node_modules
       - name: Docgen
         run: make docgen
       - name: Check uncommitted changes
@@ -62,7 +65,7 @@ jobs:
           node-version: "18"
           cache: "yarn"
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: make node_modules
       - name: Build
         run: NODE_OPTIONS='--max_old_space_size=4096' make build
       - name: Check uncommitted changes
