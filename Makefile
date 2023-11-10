@@ -44,3 +44,6 @@ test.watch: install
 
 scaffold.script:
 	@./bin/scaffold-script.sh
+
+open.dist.in.remote:
+	@./bin/open-dist-in-remote.sh
