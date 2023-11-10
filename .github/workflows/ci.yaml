@@ -12,10 +12,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - uses: actions/cache@v3
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          cache: "yarn"
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: ESLint
@@ -33,10 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - uses: actions/cache@v3
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          cache: "yarn"
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Test
@@ -50,10 +44,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - uses: actions/cache@v3
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          cache: "yarn"
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Docgen
@@ -69,10 +60,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - uses: actions/cache@v3
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          cache: "yarn"
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Build
