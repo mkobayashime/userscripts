@@ -1,4 +1,4 @@
-import { isTyping } from "./utils/isTyping";
+import { isTyping } from "./utils/isTyping.js";
 
 const config = {
   /**
@@ -11,9 +11,7 @@ const config = {
 
 (({ UNLIKE }: typeof config) => {
   const getTargetPost = () => {
-    const postWrappers = Array.from(
-      document.querySelectorAll('article[role="presentation"]')
-    );
+    const postWrappers = Array.from(document.querySelectorAll("article"));
 
     if (postWrappers.length === 1) return postWrappers[0];
 
@@ -29,41 +27,37 @@ const config = {
     if (isTyping()) return;
 
     if (e.code === "Space") {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-
       const targetPost = getTargetPost();
       if (!targetPost) return;
 
-      const buttonsArea = targetPost.querySelector("section");
-      if (!buttonsArea) return;
-
-      const likeButtonSvg =
-        buttonsArea.querySelector<HTMLElement>("[aria-label='Like']") ??
-        buttonsArea.querySelector<HTMLElement>("[aria-label='いいね！']");
-      const unlikeButtonSvg =
-        buttonsArea.querySelector<HTMLElement>("[aria-label='Unlike']") ??
-        buttonsArea.querySelector<HTMLElement>(
-          "[aria-label='「いいね！」を取り消す']"
-        );
-
-      if (!UNLIKE && unlikeButtonSvg) return;
+      const likeButtonSvg = targetPost.querySelector<HTMLElement>(
+        "[aria-label='Like'], [aria-label='いいね！']"
+      );
+      const unlikeButtonSvg = targetPost.querySelector<HTMLElement>(
+        "[aria-label='Unlike'], [aria-label='「いいね！」を取り消す']"
+      );
 
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      if (!UNLIKE && unlikeButtonSvg) return;
+
       buttonSvgToClick.parentElement?.click();
     }
 
     if (e.key === "l" || e.key === "ArrowRight") {
-      e.stopImmediatePropagation();
-
       const post = getTargetPost();
       if (!post) return;
 
       const nextButton =
         post.querySelector<HTMLButtonElement>("[aria-label='Next']") ??
         post.querySelector<HTMLButtonElement>("[aria-label='次へ']");
-      if (nextButton) nextButton.click();
+      if (!nextButton) return;
+
+      nextButton.click();
     }
 
     if (e.key === "h" || e.key === "ArrowLeft") {
@@ -73,7 +67,9 @@ const config = {
       const prevButton =
         post.querySelector<HTMLButtonElement>("[aria-label='Go Back']") ??
         post.querySelector<HTMLButtonElement>("[aria-label='戻る']");
-      if (prevButton) prevButton.click();
+      if (!prevButton) return;
+
+      prevButton.click();
     }
   });
 })(config);

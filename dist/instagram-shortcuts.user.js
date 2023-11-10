@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.2.1
+// @version      2.2.2
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -32,9 +32,7 @@ const config = {
 };
 (({ UNLIKE }) => {
   const getTargetPost = () => {
-    const postWrappers = Array.from(
-      document.querySelectorAll('article[role="presentation"]')
-    );
+    const postWrappers = Array.from(document.querySelectorAll("article"));
     if (postWrappers.length === 1) return postWrappers[0];
     return postWrappers.find((element) => {
       const windowHalfHeight = window.innerHeight / 2;
@@ -45,31 +43,29 @@ const config = {
   window.document.documentElement.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.code === "Space") {
-      e.preventDefault();
-      e.stopImmediatePropagation();
       const targetPost = getTargetPost();
       if (!targetPost) return;
-      const buttonsArea = targetPost.querySelector("section");
-      if (!buttonsArea) return;
-      const likeButtonSvg =
-        buttonsArea.querySelector("[aria-label='Like']") ??
-        buttonsArea.querySelector("[aria-label='いいね！']");
-      const unlikeButtonSvg =
-        buttonsArea.querySelector("[aria-label='Unlike']") ??
-        buttonsArea.querySelector("[aria-label='「いいね！」を取り消す']");
-      if (!UNLIKE && unlikeButtonSvg) return;
+      const likeButtonSvg = targetPost.querySelector(
+        "[aria-label='Like'], [aria-label='いいね！']"
+      );
+      const unlikeButtonSvg = targetPost.querySelector(
+        "[aria-label='Unlike'], [aria-label='「いいね！」を取り消す']"
+      );
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;
       if (!buttonSvgToClick) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (!UNLIKE && unlikeButtonSvg) return;
       buttonSvgToClick.parentElement?.click();
     }
     if (e.key === "l" || e.key === "ArrowRight") {
-      e.stopImmediatePropagation();
       const post = getTargetPost();
       if (!post) return;
       const nextButton =
         post.querySelector("[aria-label='Next']") ??
         post.querySelector("[aria-label='次へ']");
-      if (nextButton) nextButton.click();
+      if (!nextButton) return;
+      nextButton.click();
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
       const post = getTargetPost();
@@ -77,7 +73,8 @@ const config = {
       const prevButton =
         post.querySelector("[aria-label='Go Back']") ??
         post.querySelector("[aria-label='戻る']");
-      if (prevButton) prevButton.click();
+      if (!prevButton) return;
+      prevButton.click();
     }
   });
 })(config);
