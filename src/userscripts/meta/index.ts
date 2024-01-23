@@ -30,7 +30,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
       "https://music.line.me/webapp/*",
     ],
     name: "Copy lyrics",
-    version: "1.4.1",
+    version: "1.4.2",
   },
   "etc-meisai-shortcuts": {
     description:
