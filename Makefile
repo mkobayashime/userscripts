@@ -1,4 +1,4 @@
-ts-node = node --loader ts-node/esm --experimental-specifier-resolution=node
+ts-node = node --import tsx
 
 node_modules: package.json yarn.lock
 ifeq ($(MAKE_YARN_FROZEN_LOCKFILE), 1)
