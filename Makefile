@@ -1,4 +1,4 @@
-ts-node = node --loader ts-node/esm --experimental-specifier-resolution=node
+ts-node = node --import @swc-node/register/esm-register
 jest = NODE_OPTIONS='--experimental-vm-modules' yarn run jest
 
 node_modules: package.json yarn.lock
