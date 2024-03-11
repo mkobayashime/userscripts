@@ -46,14 +46,13 @@ const linkcore = () => {
 };
 
 const lineMusic = () => {
-  const wrapper = document.querySelector(".ly_text");
+  const wrapper = document.querySelector(".lyrics");
   if (!wrapper || !(wrapper instanceof HTMLElement)) {
-    window.alert("Lyrics not found. Please open the lyrics modal.");
+    window.alert("Lyrics element not found.");
     return;
   }
 
-  const text = wrapper.innerText;
-  return text.replace(/歌詞\s*/, "");
+  return wrapper.innerText;
 };
 
 //

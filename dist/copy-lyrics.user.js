@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.4.1
+// @version      1.4.2
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -80,13 +80,12 @@ const linkcore = () => {
     .join("\n");
 };
 const lineMusic = () => {
-  const wrapper = document.querySelector(".ly_text");
+  const wrapper = document.querySelector(".lyrics");
   if (!wrapper || !(wrapper instanceof HTMLElement)) {
-    window.alert("Lyrics not found. Please open the lyrics modal.");
+    window.alert("Lyrics element not found.");
     return;
   }
-  const text = wrapper.innerText;
-  return text.replace(/歌詞\s*/, "");
+  return wrapper.innerText;
 };
 //
 (async () => {
