@@ -20,7 +20,7 @@
     "chokidar": "3.5.3",
     "clipboardy": "3.0.0",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "9.0.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-userscripts": "0.4.0",
     "fp-ts": "2.16.1",
