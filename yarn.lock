@@ -1563,12 +1563,11 @@ eslint-plugin-sort-keys-fix@1.1.2:
     natural-compare "^1.4.0"
     requireindex "~1.2.0"
 
-eslint-plugin-userscripts@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-userscripts/-/eslint-plugin-userscripts-0.4.0.tgz#b5ef87718b1fc16f7aba74126ec05f8ad53f77a4"
-  integrity sha512-SqYXsAo4Lb4jLYjMYh4ws/SX4kWXO6Iq4l2eQUqqxitmbnkYXr18SPIGY8/MjV2G3X3ckGVLgZAL5ynlsqNo7g==
+eslint-plugin-userscripts@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-userscripts/-/eslint-plugin-userscripts-0.5.2.tgz#e132fd733ce09865aeb384aa00219ee33a544f8a"
+  integrity sha512-wakC0yMSYunlHQ6xZIOvtZ4OsewkQ5fx8JT0swHUCvNH2dua9GMIzjW5HtD/mgxL902pvOn/UOFEWN5MFizJ3g==
   dependencies:
-    requireindex "~1.2.0"
     semver "^7.3.8"
 
 eslint-scope@^7.2.2:
