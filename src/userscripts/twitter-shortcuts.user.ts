@@ -67,8 +67,8 @@ const findTweetInCenter = () => {
             ? -1
             : activeTabIndex - 1
           : activeTabIndex === tabs.length - 1
-          ? -1
-          : activeTabIndex + 1;
+            ? -1
+            : activeTabIndex + 1;
       if (indexOfTabToClick < 0) return;
 
       if (tabs[indexOfTabToClick]) {
