@@ -10,8 +10,5 @@
     "strict": true,
     "skipLibCheck": true,
     "types": ["jest"]
-  },
-  "ts-node": {
-    "swc": true
   }
 }
