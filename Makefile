@@ -1,4 +1,5 @@
 ts-node = node --loader ts-node/esm --experimental-specifier-resolution=node
+jest = NODE_OPTIONS='--experimental-vm-modules' yarn run jest
 
 node_modules: package.json yarn.lock
 ifeq ($(MAKE_YARN_FROZEN_LOCKFILE), 1)
@@ -42,10 +43,10 @@ typecheck.watch: node_modules
 	yarn tsc --noEmit --watch
 
 test: node_modules
-	yarn run ava
+	$(jest)
 
 test.watch: node_modules
-	yarn run ava --watch
+	$(jest) --watch
 
 scaffold.script:
 	@./bin/scaffold-script.sh
