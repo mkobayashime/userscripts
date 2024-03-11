@@ -1822,10 +1822,10 @@ foreground-child@^3.1.0:
     cross-spawn "^7.0.0"
     signal-exit "^4.0.1"
 
-fp-ts@2.16.2:
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.16.2.tgz#7faa90f6fc2e8cf84c711d2c4e606afe2be9e342"
-  integrity sha512-CkqAjnIKFqvo3sCyoBTqgJvF+bHrSik584S9nhTjtBESLx26cbtVMR/T9a6ApChOcSDAaM3JydDmWDUn4EEXng==
+fp-ts@2.16.3:
+  version "2.16.3"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.16.3.tgz#0862d583cd8673717dbad8576c0f58afda27c83a"
+  integrity sha512-REm0sOecd4inACbAiFeOxpyOgB+f0OqhmZBBVOc5Ku1HqdroDU5uxYu9mybKj+be4DQ5L2YI6LuosjAfmuJCBQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
