@@ -112,6 +112,10 @@ Next/Prev image with arrow/h/l keys
 
 ## Styles (`*.user.css`)
 
+### [Google Calendar - Dark](https://github.com/mkobayashime/userscripts/raw/main/src/google-calendar-dark.user.css)
+
+Dark theme for Google Calendar
+
 ### [Remove signup dialogue in Qiita](https://github.com/mkobayashime/userscripts/raw/main/src/qiita-no-dialogue.user.css)
 
 ### [Slack - Emoji for Dark theme](https://github.com/mkobayashime/userscripts/raw/main/src/slack-emoji-dark-theme.user.css)
