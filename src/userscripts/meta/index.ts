@@ -168,26 +168,6 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     runAt: "document-end",
     version: "1.3.0",
   },
-  "tweetdeck-auto-save-draft": {
-    description: "Auto save composing tweet and restore it with Alt+P shortcut",
-    docgenIgnore: true,
-    icon: "https://www.google.com/s2/favicons?domain=tweetdeck.twitter.com",
-    match: "https://tweetdeck.twitter.com/",
-    name: "TweetDeck - Auto save draft",
-    runAt: "document-end",
-    version: "1.4.0",
-  },
-  "tweetdeck-no-unintended-reload": {
-    description: "Alert when you reload/close TweetDeck with a composing tweet",
-    descriptionJp:
-      "書きかけのツイートがある状態で TweetDeck をリロードしたり閉じてしまうのを防ぎます",
-    docgenIgnore: true,
-    icon: "https://www.google.com/s2/favicons?domain=tweetdeck.twitter.com",
-    match: "https://tweetdeck.twitter.com/",
-    name: "TweetDeck - No unintended reloads",
-    runAt: "document-end",
-    version: "1.3.0",
-  },
   "tweetdeck-shortcuts": {
     description: "Refined shortcuts in the new (preview) version of TweetDeck",
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
