@@ -11,6 +11,10 @@ const config = {
 
 (({ UNLIKE }: typeof config) => {
   const getTargetPost = () => {
+    if (window.location.href.startsWith("https://www.instagram.com/p/")) {
+      return document.querySelector("main");
+    }
+
     const postWrappers = Array.from(document.querySelectorAll("article"));
 
     if (postWrappers.length === 1) return postWrappers[0];
