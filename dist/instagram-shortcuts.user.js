@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.2.2
+// @version      2.2.3
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -32,6 +32,9 @@ const config = {
 };
 (({ UNLIKE }) => {
   const getTargetPost = () => {
+    if (window.location.href.startsWith("https://www.instagram.com/p/")) {
+      return document.querySelector("main");
+    }
     const postWrappers = Array.from(document.querySelectorAll("article"));
     if (postWrappers.length === 1) return postWrappers[0];
     return postWrappers.find((element) => {
@@ -65,15 +68,17 @@ const config = {
         post.querySelector("[aria-label='Next']") ??
         post.querySelector("[aria-label='次へ']");
       if (!nextButton) return;
+      e.stopPropagation();
       nextButton.click();
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
       const post = getTargetPost();
       if (!post) return;
       const prevButton =
-        post.querySelector("[aria-label='Go Back']") ??
+        post.querySelector("[aria-label='Go back']") ??
         post.querySelector("[aria-label='戻る']");
       if (!prevButton) return;
+      e.stopPropagation();
       prevButton.click();
     }
   });

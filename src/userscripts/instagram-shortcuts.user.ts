@@ -11,6 +11,10 @@ const config = {
 
 (({ UNLIKE }: typeof config) => {
   const getTargetPost = () => {
+    if (window.location.href.startsWith("https://www.instagram.com/p/")) {
+      return document.querySelector("main");
+    }
+
     const postWrappers = Array.from(document.querySelectorAll("article"));
 
     if (postWrappers.length === 1) return postWrappers[0];
@@ -57,6 +61,7 @@ const config = {
         post.querySelector<HTMLButtonElement>("[aria-label='次へ']");
       if (!nextButton) return;
 
+      e.stopPropagation();
       nextButton.click();
     }
 
@@ -65,10 +70,11 @@ const config = {
       if (!post) return;
 
       const prevButton =
-        post.querySelector<HTMLButtonElement>("[aria-label='Go Back']") ??
+        post.querySelector<HTMLButtonElement>("[aria-label='Go back']") ??
         post.querySelector<HTMLButtonElement>("[aria-label='戻る']");
       if (!prevButton) return;
 
+      e.stopPropagation();
       prevButton.click();
     }
   });
