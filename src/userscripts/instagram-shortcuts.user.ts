@@ -61,6 +61,7 @@ const config = {
         post.querySelector<HTMLButtonElement>("[aria-label='次へ']");
       if (!nextButton) return;
 
+      e.stopPropagation();
       nextButton.click();
     }
 
@@ -69,10 +70,11 @@ const config = {
       if (!post) return;
 
       const prevButton =
-        post.querySelector<HTMLButtonElement>("[aria-label='Go Back']") ??
+        post.querySelector<HTMLButtonElement>("[aria-label='Go back']") ??
         post.querySelector<HTMLButtonElement>("[aria-label='戻る']");
       if (!prevButton) return;
 
+      e.stopPropagation();
       prevButton.click();
     }
   });
