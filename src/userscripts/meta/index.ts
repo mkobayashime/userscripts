@@ -85,7 +85,7 @@ export const meta: { [name: string]: UserScriptMeta | undefined } = {
     match: "https://www.homes.co.jp/*",
     name: "HOME'S - Shortcut keys",
     runAt: "document-end",
-    version: "1.3.1",
+    version: "1.3.2",
   },
   "mdn-force-english": {
     description:
