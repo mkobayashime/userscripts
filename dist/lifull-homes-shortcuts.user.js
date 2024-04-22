@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HOME'S - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.1
+// @version      1.3.2
 // @description  Next/Prev image with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -27,12 +27,14 @@ const isTyping = () => {
     if (isTyping()) return;
     if (e.key === "l" || e.key === "ArrowRight") {
       e.preventDefault();
-      const nextButton = document.querySelector("#controls a.next");
+      const nextButton = document.querySelector("[aria-label='Next slide']");
       if (nextButton) nextButton.click();
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
       e.preventDefault();
-      const prevButton = document.querySelector("#controls a.prev");
+      const prevButton = document.querySelector(
+        "[aria-label='Previous slide']"
+      );
       if (prevButton) prevButton.click();
     }
   });
