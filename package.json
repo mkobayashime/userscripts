@@ -31,7 +31,7 @@
     "prettier": "3.2.5",
     "rollup": "4.21.0",
     "ts-jest-resolver": "2.0.1",
-    "tslib": "2.6.2",
+    "tslib": "2.7.0",
     "typescript": "5.4.2"
   },
   "resolutions": {
