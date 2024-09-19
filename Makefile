@@ -1,34 +1,30 @@
 ts-node = node --import @swc-node/register/esm-register
-jest = NODE_OPTIONS='--experimental-vm-modules' yarn run jest
+jest = NODE_OPTIONS='--experimental-vm-modules' pnpm exec jest
 
-node_modules: package.json yarn.lock
-ifeq ($(MAKE_YARN_FROZEN_LOCKFILE), 1)
-	yarn install --frozen-lockfile
-else
-	yarn install
-endif
+node_modules: package.json pnpm-*.yaml
+	pnpm install
 	@touch node_modules
 
 lint: node_modules
-	yarn eslint .
+	pnpm exec eslint .
 
 lint.fix: node_modules
-	yarn eslint --fix .
+	pnpm exec eslint --fix .
 
 lint.fix.dist: node_modules
-	yarn eslint --fix dist
+	pnpm exec eslint --fix dist
 
 format: node_modules
-	yarn prettier --write .
+	pnpm exec prettier --write .
 
 format.check: node_modules
-	yarn prettier --check .
+	pnpm exec prettier --check .
 
 dev: node_modules
 	$(ts-node) bin/dev.ts
 
 build: node_modules
-	yarn run rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
+	pnpm exec rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
 	@make format
 	@make lint.fix.dist
 
@@ -37,10 +33,10 @@ docgen: node_modules
 	@make format
 
 typecheck: node_modules
-	yarn tsc --noEmit
+	pnpm exec tsc --noEmit
 
 typecheck.watch: node_modules
-	yarn tsc --noEmit --watch
+	pnpm exec tsc --noEmit --watch
 
 test: node_modules
 	$(jest)

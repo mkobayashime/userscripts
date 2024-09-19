@@ -2,56 +2,45 @@ on: push
 
 name: CI
 
-env:
-  MAKE_YARN_FROZEN_LOCKFILE: 1
-
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "yarn"
-      - name: Install dependencies
-        run: make node_modules
-      - name: ESLint
-        run: make lint
-      - name: Prettier
-        run: make format.check
-      - name: Typecheck
-        run: make typecheck
+          cache: "pnpm"
+      - run: make node_modules
+      - run: make lint
+      - run: make format.check
+      - run: make typecheck
   test:
     name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "yarn"
-      - name: Install dependencies
-        run: make node_modules
-      - name: Test
-        run: make test
+          cache: "pnpm"
+      - run: make node_modules
+      - run: make test
   docs:
     name: Up-to-date docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "yarn"
-      - name: Install dependencies
-        run: make node_modules
-      - name: Docgen
-        run: make docgen
+          cache: "pnpm"
+      - run: make node_modules
+      - run: make docgen
       - name: Check uncommitted changes
         run: test -z "$(git status --porcelain)"
   scripts:
@@ -59,14 +48,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "yarn"
-      - name: Install dependencies
-        run: make node_modules
-      - name: Build
-        run: NODE_OPTIONS='--max_old_space_size=4096' make build
+          cache: "pnpm"
+      - run: make node_modules
+      - run: NODE_OPTIONS='--max_old_space_size=4096' make build
       - name: Check uncommitted changes
         run: test -z "$(git status --porcelain)"
