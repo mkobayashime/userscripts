@@ -34,21 +34,21 @@
 
   const pageObserver = new MutationObserver(() => {
     const settingPagesPattern = new RegExp(
-      "https://scrapbox.io/(projects/[^/]+/)?settings/"
+      "https://scrapbox.io/(projects/[^/]+/)?settings/",
     );
 
     const url = window.location.href;
 
     if (!settingPagesPattern.test(url)) {
       const projectId = window.location.href.match(
-        RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
+        RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$"),
       )?.groups?.projectId;
 
       if (!projectId) return;
 
       if (isProjectEnabled(projectId)) {
         const projectStyle = document.querySelector<HTMLLinkElement>(
-          `link[href='/api/code/${projectId}/settings/style.css']`
+          `link[href='/api/code/${projectId}/settings/style.css']`,
         );
         if (projectStyle) {
           // 空文字列だとそのままスタイルが当たってしまうことがあるので仕方なく

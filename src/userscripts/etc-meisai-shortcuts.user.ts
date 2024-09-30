@@ -10,7 +10,7 @@ import { isTyping } from "./utils/isTyping";
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
+        null,
       ).singleNodeValue;
 
       if (prevPageButton && prevPageButton instanceof HTMLElement)
@@ -23,7 +23,7 @@ import { isTyping } from "./utils/isTyping";
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
+        null,
       ).singleNodeValue;
 
       if (nextPageButton && nextPageButton instanceof HTMLElement)

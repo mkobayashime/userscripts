@@ -9,7 +9,7 @@
 
       if (
         (Array.from(messageLines) as HTMLElement[]).some((line) =>
-          isEmpty.test(line.innerText)
+          isEmpty.test(line.innerText),
         )
       ) {
         event.preventDefault();

@@ -35,12 +35,12 @@ import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
           }
           if (event.code === "BUNDLE_END") {
             console.log(
-              chalk.green(`Finished bundling ${path.basename(filepath)}`)
+              chalk.green(`Finished bundling ${path.basename(filepath)}`),
             );
           }
           if (event.code === "ERROR") {
             console.error(
-              chalk.red(`Error in bundling ${path.basename(filepath)}`)
+              chalk.red(`Error in bundling ${path.basename(filepath)}`),
             );
             console.error(event.error);
           }
@@ -53,6 +53,6 @@ import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
     });
 
   chokidarWatcher.on("ready", () =>
-    console.log(chalk.green("\nDev mode started: watching for file changes"))
+    console.log(chalk.green("\nDev mode started: watching for file changes")),
   );
 })();

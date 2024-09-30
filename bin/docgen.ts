@@ -25,11 +25,11 @@ const getFiles = async (): Promise<{
     return {
       scripts: pipe(
         globSync(path.resolve("src", "userscripts", "*.user.ts")),
-        A.sort(string.Ord)
+        A.sort(string.Ord),
       ),
       styles: pipe(
         globSync(path.resolve("src", "*.user.css")),
-        A.sort(string.Ord)
+        A.sort(string.Ord),
       ),
     };
   } catch (err) {
@@ -61,10 +61,10 @@ const parseFileComment = async ({
     };
 
     const titleLine = lines.find((line) =>
-      line.startsWith(commentPrefix.title)
+      line.startsWith(commentPrefix.title),
     );
     const descriptionLine = lines.find((line) =>
-      line.startsWith(commentPrefix.description)
+      line.startsWith(commentPrefix.description),
     );
 
     if (titleLine === undefined) return O.none;
@@ -111,12 +111,12 @@ const getFilesProperties = async ({
     await Promise.all(
       files.map(async (file) => {
         return await parseFileComment({ filepath: file, kind });
-      })
+      }),
     ),
     A.compact,
     A.sort<FileProperties>(
-      Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title))
-    )
+      Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title)),
+    ),
   );
 };
 
@@ -142,7 +142,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
   const readmeKeyword = "<!-- docgen -->";
   const readmeCommonPart = readme.slice(
     0,
-    readme.indexOf(readmeKeyword) + readmeKeyword.length
+    readme.indexOf(readmeKeyword) + readmeKeyword.length,
   );
 
   const updatedReadme = readmeCommonPart + "\n\n" + scriptsMarkdown;
@@ -168,12 +168,12 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
         ...fileProperties,
         filename: fileProperties.filename.replace(/.user.ts$/, ".user.js"),
         fileKind: "script",
-      })
+      }),
     )
     .join("\n\n");
   const stylesMarkdown = styleFileProperties
     .map((fileProperties) =>
-      generateMdFileEntry({ ...fileProperties, fileKind: "style" })
+      generateMdFileEntry({ ...fileProperties, fileKind: "style" }),
     )
     .join("\n\n");
 
