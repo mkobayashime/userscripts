@@ -1,5 +1,3 @@
-/* eslint sort-keys-fix/sort-keys-fix: "warn" */
-
 export type UserScriptMeta = {
   name: string;
   namespace?: string;
