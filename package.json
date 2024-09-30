@@ -26,9 +26,7 @@
     "eslint-plugin-userscripts": "0.5.4",
     "fp-ts": "2.16.9",
     "glob": "11.0.0",
-    "husky": "9.1.5",
     "jest": "29.7.0",
-    "lint-staged": "15.2.9",
     "prettier": "3.3.3",
     "rollup": "4.22.0",
     "ts-jest-resolver": "2.0.1",
@@ -38,16 +36,5 @@
   "resolutions": {
     "wrap-ansi": "7.0.0",
     "string-width": "4.2.3"
-  },
-  "scripts": {
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --check"
-    ],
-    "*.js": [
-      "eslint"
-    ]
   }
 }
