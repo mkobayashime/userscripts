@@ -1,5 +1,6 @@
 import path from "path";
 import { readFile, writeFile } from "fs/promises";
+
 import { pipe } from "fp-ts/lib/function.js";
 import * as O from "fp-ts/lib/Option.js";
 import * as A from "fp-ts/lib/Array.js";
@@ -145,7 +146,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
     readme.indexOf(readmeKeyword) + readmeKeyword.length,
   );
 
-  const updatedReadme = readmeCommonPart + "\n\n" + scriptsMarkdown;
+  const updatedReadme = `${readmeCommonPart}\n\n${scriptsMarkdown}`;
   await writeFile(path.resolve("README.md"), updatedReadme);
 };
 

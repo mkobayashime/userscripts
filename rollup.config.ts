@@ -1,6 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import { globSync } from "glob";
 import { RollupOptions } from "rollup";
+
 import { userscriptMetaPlugin } from "./src/userscripts/meta/rollupPlugin";
 import { cleanupESLintDirectivesPlugin } from "./src/rollup/cleanupESLintDirectivesRollupPlugin";
 

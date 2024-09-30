@@ -15,7 +15,7 @@ const config: { GOOGLE_ACCOUNT_ADDRESSES: string[] } = {
   const xUserEmailElement = document.getElementById("xUserEmail");
   if (!xUserEmailElement) return;
 
-  if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement?.innerText)) {
+  if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement.innerText)) {
     window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`);
   }
 })(config);

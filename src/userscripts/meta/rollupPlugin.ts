@@ -1,4 +1,5 @@
 import path from "path";
+
 import { Plugin } from "rollup";
 
 import { meta, UserScriptMeta } from "./index.js";
@@ -12,7 +13,7 @@ export const userscriptMetaPlugin = (): Plugin => ({
       throw new Error(`Meta not found for userscript: ${chunk.fileName}`);
     }
 
-    return generateHeader(scriptMeta, chunk.fileName) + "\n\n" + code;
+    return `${generateHeader(scriptMeta, chunk.fileName)}\n\n${code}`;
   },
 });
 

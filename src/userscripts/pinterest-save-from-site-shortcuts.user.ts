@@ -36,7 +36,6 @@
       );
       if (dropdownSaveButton) {
         dropdownSaveButton.click();
-        return;
       }
     }
   });

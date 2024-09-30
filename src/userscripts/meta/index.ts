@@ -16,7 +16,7 @@ export type UserScriptMeta = {
   docgenIgnore?: boolean;
 };
 
-export const meta: { [name: string]: UserScriptMeta | undefined } = {
+export const meta: Record<string, UserScriptMeta | undefined> = {
   "copy-lyrics": {
     description: "Copy lyrics automatically in supported sites",
     match: [
