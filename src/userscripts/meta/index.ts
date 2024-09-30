@@ -28,7 +28,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
       "https://music.line.me/webapp/*",
     ],
     name: "Copy lyrics",
-    version: "1.4.2",
+    version: "1.4.3",
   },
   "etc-meisai-shortcuts": {
     description:
@@ -58,7 +58,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?domain=github.com",
     match: "https://github.com/*",
     name: "GitHub - PR submission shortcuts",
-    version: "1.2.0",
+    version: "1.2.1",
   },
   "google-calendar-unintended-user-alert": {
     description: "Alert when you open Google Calendar in unintended accounts",
@@ -66,7 +66,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://calendar.google.com/calendar/*",
     name: "Google Calendar - Unintended User Alert",
     runAt: "document-end",
-    version: "3.0.1",
+    version: "3.0.2",
   },
   "instagram-shortcuts": {
     description:
@@ -115,7 +115,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://www.pinterest.jp/pin-builder/",
     name: 'Pinterest - Shortcuts in "Save from site"',
     runAt: "document-end",
-    version: "1.2.1",
+    version: "1.2.2",
   },
   "scrapbox-clear-watch-list": {
     description: "Scrapbox の Watch List を自動的に全削除します",
@@ -131,7 +131,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Force Theme",
     runAt: "document-end",
-    version: "1.3.1",
+    version: "1.3.2",
   },
   "scrapbox-no-project-styles": {
     description:
@@ -140,7 +140,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - No project styles",
     runAt: "document-end",
-    version: "1.6.0",
+    version: "1.6.1",
   },
   "scrapbox-project-notice-in-new-page": {
     description:
@@ -156,7 +156,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?sz=64&domain=slack.com",
     match: "https://app.slack.com/client/*",
     name: "Slack - No autofocus in moving channels",
-    version: "2.0.0",
+    version: "2.0.1",
   },
   "slack-no-unintended-reload": {
     description: "Alert when you reload/close Slack with a new draft",
@@ -171,14 +171,14 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://tweetdeck.twitter.com/*",
     name: "TweetDeck Preview - Shortcuts",
-    version: "0.2.1",
+    version: "0.2.2",
   },
   "twitter-shortcuts": {
     description: "Refined shortcuts in Twitter for web",
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://twitter.com/*",
     name: "Twitter - Shortcuts",
-    version: "0.4.0",
+    version: "0.4.1",
   },
   "zoom-web-shortcuts": {
     description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
