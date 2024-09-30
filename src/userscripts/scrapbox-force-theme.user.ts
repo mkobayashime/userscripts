@@ -9,7 +9,7 @@
    * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
-  const enabledProjectIds: Array<string | RegExp> = [];
+  const enabledProjectIds: (string | RegExp)[] = [];
 
   const isProjectEnabled = (projectId: string) => {
     if (enabledProjectIds.length === 0) return true;
@@ -34,8 +34,8 @@
   const url = window.location.href;
 
   if (!settingPagesPattern.test(url)) {
-    const projectId = window.location.href.match(
-      RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$"),
+    const projectId = RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$").exec(
+      window.location.href,
     )?.groups?.projectId;
 
     if (!projectId) return;

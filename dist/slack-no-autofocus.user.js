@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No autofocus in moving channels
 // @namespace    mkobayashime
-// @version      2.0.0
+// @version      2.0.1
 // @description  Disable autofocus to the message input field after moved to another channel
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -13,7 +13,7 @@
 // @grant        none
 // ==/UserScript==
 
-void (async () => {
+void (() => {
   let curTitle = "";
   new MutationObserver(() => {
     if (document.title === curTitle) return;

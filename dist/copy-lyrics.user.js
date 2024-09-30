@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.4.2
+// @version      1.4.3
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -37,7 +37,8 @@ const enableSelection = () => {
   const a = document.body;
   const b = a.parentNode;
   if (b) {
-    b.removeChild(a), b.appendChild(a.cloneNode(!0));
+    b.removeChild(a);
+    b.appendChild(a.cloneNode(!0));
   }
 };
 
@@ -88,7 +89,7 @@ const lineMusic = () => {
   return wrapper.innerText;
 };
 //
-(async () => {
+(() => {
   const url = window.location.href;
   document.addEventListener("keydown", async (e) => {
     if (e.ctrlKey && e.key === "Enter") {

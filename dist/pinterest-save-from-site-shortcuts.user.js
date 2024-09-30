@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.2.1
+// @version      1.2.2
 // @description  Ctrl+Enter in "Save from site"
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -49,7 +49,6 @@
       );
       if (dropdownSaveButton) {
         dropdownSaveButton.click();
-        return;
       }
     }
   });

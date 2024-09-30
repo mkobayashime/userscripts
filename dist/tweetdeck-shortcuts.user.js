@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TweetDeck Preview - Shortcuts
 // @namespace    mkobayashime
-// @version      0.2.1
+// @version      0.2.2
 // @description  Refined shortcuts in the new (preview) version of TweetDeck
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -22,7 +22,6 @@ const isTyping = () => {
 };
 
 const config = {};
-// eslint-disable-next-line no-empty-pattern
 (({}) => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
@@ -32,9 +31,12 @@ const config = {};
       e.stopImmediatePropagation();
     }
     if (
-      e.key === "l" || // default Like
-      e.key === "u" || // default Mute
-      e.key === "x" // default Block
+      // default Like
+      e.key === "l" ||
+      // default Mute
+      e.key === "u" ||
+      // default Block
+      e.key === "x"
     ) {
       e.stopImmediatePropagation();
     }
@@ -54,7 +56,8 @@ const config = {};
     if (e.key === "f") {
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
-          keyCode: 76, // `l`
+          // `l`
+          keyCode: 76,
         }),
       );
     }

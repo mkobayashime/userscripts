@@ -1,4 +1,5 @@
 ts-node = node --import @swc-node/register/esm-register
+eslint = pnpm exec eslint
 vitest = pnpm exec vitest
 
 node_modules: package.json pnpm-*.yaml
@@ -6,13 +7,13 @@ node_modules: package.json pnpm-*.yaml
 	@touch node_modules
 
 lint: node_modules
-	pnpm exec eslint .
+	$(eslint) .
 
 lint.fix: node_modules
-	pnpm exec eslint --fix .
+	$(eslint) --fix .
 
 lint.fix.dist: node_modules
-	pnpm exec eslint --fix dist
+	$(eslint) --fix dist
 
 format: node_modules
 	pnpm exec prettier --write .

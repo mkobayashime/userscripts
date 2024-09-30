@@ -1,4 +1,4 @@
-void (async () => {
+void (() => {
   let curTitle = "";
 
   new MutationObserver(() => {

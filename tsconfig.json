@@ -5,9 +5,10 @@
     "module": "es2020",
     "moduleResolution": "node",
     "noEmit": true,
+    "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
     "types": ["vitest/globals"]
   }

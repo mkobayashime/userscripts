@@ -1,4 +1,5 @@
 import path from "path";
+
 import { globSync } from "glob";
 
 import { meta } from "./index.js";

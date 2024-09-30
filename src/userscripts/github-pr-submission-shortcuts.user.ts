@@ -18,7 +18,6 @@ void (() => {
       );
       if (automergeConfirmButton) {
         automergeConfirmButton.click();
-        return;
       }
     }
   });
