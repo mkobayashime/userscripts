@@ -56,9 +56,10 @@ const lineMusic = () => {
 };
 
 //
-(async () => {
+(() => {
   const url = window.location.href;
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   document.addEventListener("keydown", async (e) => {
     if (e.ctrlKey && e.key === "Enter") {
       if (url.startsWith("https://www.google.com/search")) {

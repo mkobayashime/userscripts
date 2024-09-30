@@ -30,8 +30,10 @@ const findTweetInCenter = () => {
     if (isTyping()) return;
 
     if (
-      e.key === "u" || // default Mute
-      e.key === "x" // default Block
+      // default Mute
+      e.key === "u" ||
+      // default Block
+      e.key === "x"
     ) {
       e.stopImmediatePropagation();
     }

@@ -8,7 +8,7 @@ import chalk from "chalk";
 import { copyToClipboardPlugin } from "../copyToClipboardRollupPlugin.js";
 import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
 
-(async () => {
+(() => {
   const watchedFiles: Set<string> = new Set([]);
 
   const chokidarWatcher = chokidar
@@ -47,7 +47,7 @@ import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
             console.error(event.error);
           }
 
-          if (event && "result" in event && event.result) {
+          if ("result" in event && event.result) {
             event.result.close();
           }
         });

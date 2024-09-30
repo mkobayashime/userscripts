@@ -18,10 +18,10 @@ type FileProperties = {
 
 type FileKind = "script" | "style";
 
-const getFiles = async (): Promise<{
+const getFiles = (): {
   scripts: string[];
   styles: string[];
-}> => {
+} => {
   try {
     return {
       scripts: pipe(
@@ -111,7 +111,7 @@ const getFilesProperties = async ({
   return pipe(
     await Promise.all(
       files.map(async (file) => {
-        return await parseFileComment({ filepath: file, kind });
+        return parseFileComment({ filepath: file, kind });
       }),
     ),
     A.compact,
@@ -152,7 +152,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
 
 //
 (async () => {
-  const { scripts, styles } = await getFiles();
+  const { scripts, styles } = getFiles();
 
   const scriptFileProperties = await getFilesProperties({
     files: scripts,

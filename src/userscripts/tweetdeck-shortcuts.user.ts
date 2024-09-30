@@ -14,9 +14,12 @@ const config = {};
     }
 
     if (
-      e.key === "l" || // default Like
-      e.key === "u" || // default Mute
-      e.key === "x" // default Block
+      // default Like
+      e.key === "l" ||
+      // default Mute
+      e.key === "u" ||
+      // default Block
+      e.key === "x"
     ) {
       e.stopImmediatePropagation();
     }
@@ -42,7 +45,8 @@ const config = {};
     if (e.key === "f") {
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
-          keyCode: 76, // `l`
+          // `l`
+          keyCode: 76,
         }),
       );
     }

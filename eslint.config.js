@@ -49,6 +49,7 @@ const config = [
       "@typescript-eslint/naming-convention": "off",
       "consistent-return": "off",
       "id-length": "off",
+      "import/extensions": "off",
       "no-alert": "off",
       "no-console": "off",
       "no-nested-ternary": "off",
