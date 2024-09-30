@@ -26,14 +26,14 @@ void (() => {
     if (!/\/\S+\/\S+\/pull\//.test(window.location.pathname)) return;
     if (e.ctrlKey && e.key === "Enter" && !isTyping()) {
       const confirmButton = document.querySelector(
-        "button.js-merge-commit-button[type='submit']"
+        "button.js-merge-commit-button[type='submit']",
       );
       if (confirmButton) {
         confirmButton.click();
         return;
       }
       const automergeConfirmButton = document.querySelector(
-        "button.js-confirm-auto-merge-button[type='submit']"
+        "button.js-confirm-auto-merge-button[type='submit']",
       );
       if (automergeConfirmButton) {
         automergeConfirmButton.click();

@@ -33,7 +33,7 @@ const isTyping = () => {
     if (e.key === "h" || e.key === "ArrowLeft") {
       e.preventDefault();
       const prevButton = document.querySelector(
-        "[aria-label='Previous slide']"
+        "[aria-label='Previous slide']",
       );
       if (prevButton) prevButton.click();
     }

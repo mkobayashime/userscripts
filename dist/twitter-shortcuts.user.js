@@ -25,11 +25,11 @@ const config = {};
 const findTweetInCenter = () => {
   if (window.location.href.match(RegExp("^https://twitter.com/.*/status/"))) {
     return document.querySelector(
-      "article[data-testid='tweet'][tabindex='-1']"
+      "article[data-testid='tweet'][tabindex='-1']",
     );
   } else {
     const tweetWrappers = Array.from(
-      document.querySelectorAll("article[data-testid='tweet']")
+      document.querySelectorAll("article[data-testid='tweet']"),
     );
     if (tweetWrappers.length === 0) return;
     if (tweetWrappers.length === 1) return tweetWrappers[0];
@@ -62,10 +62,10 @@ const findTweetInCenter = () => {
     }
     if (e.key === "[" || e.key === "]") {
       const tabs = Array.from(
-        document.querySelectorAll("[role='tablist'] a[role='tab']")
+        document.querySelectorAll("[role='tablist'] a[role='tab']"),
       );
       const activeTabIndex = tabs.findIndex(
-        (element) => element.ariaSelected === "true"
+        (element) => element.ariaSelected === "true",
       );
       if (activeTabIndex < 0) return;
       const indexOfTabToClick =
@@ -83,7 +83,7 @@ const findTweetInCenter = () => {
     }
     if (e.ctrlKey && e.key === "e") {
       const tweetURLMatch = window.location.href.match(
-        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/
+        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/,
       );
       if (!tweetURLMatch) return;
       e.preventDefault();
@@ -94,7 +94,7 @@ const findTweetInCenter = () => {
       const targetTweet = findTweetInCenter();
       if (!targetTweet) return;
       const likeButton = targetTweet.querySelector(
-        "[data-testid='like'][role='button'], [data-testid='unlike'][role='button']"
+        "[data-testid='like'][role='button'], [data-testid='unlike'][role='button']",
       );
       if (likeButton instanceof HTMLElement) likeButton.click();
     }

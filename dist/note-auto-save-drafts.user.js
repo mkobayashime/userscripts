@@ -28,7 +28,7 @@ const config = {
       document,
       null,
       XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null
+      null,
     ).singleNodeValue;
     if (draftSaveButton instanceof HTMLButtonElement) {
       draftSaveButton.click();

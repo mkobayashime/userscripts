@@ -35,10 +35,10 @@ const config = {
       if (!targetPost) return;
 
       const likeButtonSvg = targetPost.querySelector<HTMLElement>(
-        "[aria-label='Like'], [aria-label='いいね！']"
+        "[aria-label='Like'], [aria-label='いいね！']",
       );
       const unlikeButtonSvg = targetPost.querySelector<HTMLElement>(
-        "[aria-label='Unlike'], [aria-label='「いいね！」を取り消す']"
+        "[aria-label='Unlike'], [aria-label='「いいね！」を取り消す']",
       );
 
       const buttonSvgToClick = unlikeButtonSvg ?? likeButtonSvg;

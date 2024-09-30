@@ -27,14 +27,14 @@ const config = {};
 
     if (e.key === "Backspace") {
       const closeStackButton = document.querySelector<HTMLElement>(
-        "[aria-label='Close stack']"
+        "[aria-label='Close stack']",
       );
       if (closeStackButton) closeStackButton.click();
     }
 
     if (e.key === "Escape") {
       const closeButton = document.querySelector<HTMLElement>(
-        "[aria-label='Close']"
+        "[aria-label='Close']",
       );
       if (closeButton) closeButton.click();
     }
@@ -43,7 +43,7 @@ const config = {};
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
           keyCode: 76, // `l`
-        })
+        }),
       );
     }
 
@@ -54,12 +54,12 @@ const config = {};
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
           keyCode: 67,
-        })
+        }),
       );
       document.dispatchEvent(
         new KeyboardEvent("keypress", {
           keyCode: e.keyCode,
-        })
+        }),
       );
     }
   });

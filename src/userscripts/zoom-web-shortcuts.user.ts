@@ -4,7 +4,7 @@
       e.preventDefault();
 
       const microphoneButton = document.querySelector(
-        '.footer-button__wrapper button[aria-label*="microphone"]'
+        '.footer-button__wrapper button[aria-label*="microphone"]',
       );
       if (microphoneButton && microphoneButton instanceof HTMLElement) {
         microphoneButton.click();
@@ -15,7 +15,7 @@
       e.preventDefault();
 
       const videoButton = document.querySelector(
-        '.footer-button__wrapper button[aria-label*="video"]'
+        '.footer-button__wrapper button[aria-label*="video"]',
       );
       if (videoButton && videoButton instanceof HTMLElement) {
         videoButton.click();

@@ -30,7 +30,7 @@ const isTyping = () => {
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
+        null,
       ).singleNodeValue;
       if (prevPageButton && prevPageButton instanceof HTMLElement)
         prevPageButton.click();
@@ -41,7 +41,7 @@ const isTyping = () => {
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
+        null,
       ).singleNodeValue;
       if (nextPageButton && nextPageButton instanceof HTMLElement)
         nextPageButton.click();

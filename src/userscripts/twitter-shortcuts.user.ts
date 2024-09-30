@@ -5,11 +5,11 @@ const config = {};
 const findTweetInCenter = () => {
   if (window.location.href.match(RegExp("^https://twitter.com/.*/status/"))) {
     return document.querySelector<HTMLElement>(
-      "article[data-testid='tweet'][tabindex='-1']"
+      "article[data-testid='tweet'][tabindex='-1']",
     );
   } else {
     const tweetWrappers = Array.from(
-      document.querySelectorAll<HTMLElement>("article[data-testid='tweet']")
+      document.querySelectorAll<HTMLElement>("article[data-testid='tweet']"),
     );
 
     if (tweetWrappers.length === 0) return;
@@ -42,7 +42,7 @@ const findTweetInCenter = () => {
 
     if (e.key === "Escape") {
       const closeButton = document.querySelector<HTMLElement>(
-        "[aria-label='Close']"
+        "[aria-label='Close']",
       );
       if (closeButton) closeButton.click();
     }
@@ -53,11 +53,13 @@ const findTweetInCenter = () => {
 
     if (e.key === "[" || e.key === "]") {
       const tabs = Array.from(
-        document.querySelectorAll<HTMLElement>("[role='tablist'] a[role='tab']")
+        document.querySelectorAll<HTMLElement>(
+          "[role='tablist'] a[role='tab']",
+        ),
       );
 
       const activeTabIndex = tabs.findIndex(
-        (element) => element.ariaSelected === "true"
+        (element) => element.ariaSelected === "true",
       );
       if (activeTabIndex < 0) return;
 
@@ -78,7 +80,7 @@ const findTweetInCenter = () => {
 
     if (e.ctrlKey && e.key === "e") {
       const tweetURLMatch = window.location.href.match(
-        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/
+        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/,
       );
       if (!tweetURLMatch) return;
 
@@ -93,7 +95,7 @@ const findTweetInCenter = () => {
       if (!targetTweet) return;
 
       const likeButton = targetTweet.querySelector(
-        "[data-testid='like'][role='button'], [data-testid='unlike'][role='button']"
+        "[data-testid='like'][role='button'], [data-testid='unlike'][role='button']",
       );
       if (likeButton instanceof HTMLElement) likeButton.click();
     }

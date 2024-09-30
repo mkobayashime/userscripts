@@ -40,12 +40,12 @@
     }
   });
   const settingPagesPattern = new RegExp(
-    "https://scrapbox.io/(projects/[^/]+/)?settings/"
+    "https://scrapbox.io/(projects/[^/]+/)?settings/",
   );
   const url = window.location.href;
   if (!settingPagesPattern.test(url)) {
     const projectId = window.location.href.match(
-      RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$")
+      RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$"),
     )?.groups?.projectId;
     if (!projectId) return;
     if (isProjectEnabled(projectId)) {

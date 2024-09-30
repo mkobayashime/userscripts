@@ -5,7 +5,7 @@ export const copyToClipboardPlugin = (): Plugin => ({
   name: "copyToClipboard",
   generateBundle: (_, bundle) => {
     const userscriptBundle = Object.entries(bundle).find(([filename]) =>
-      filename.endsWith(".user.js")
+      filename.endsWith(".user.js"),
     );
     if (!userscriptBundle) return;
 

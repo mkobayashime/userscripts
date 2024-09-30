@@ -23,7 +23,7 @@
         document,
         null,
         XPathResult.FIRST_ORDERED_NODE_TYPE,
-        null
+        null,
       ).singleNodeValue;
       if (matchingElement && matchingElement instanceof HTMLElement)
         matchingElement.click();
