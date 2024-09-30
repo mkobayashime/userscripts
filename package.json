@@ -34,7 +34,7 @@
     "typescript": "5.5.4"
   },
   "resolutions": {
-    "wrap-ansi": "7.0.0",
+    "wrap-ansi": "9.0.0",
     "string-width": "4.2.3"
   }
 }
