@@ -54,6 +54,8 @@ jobs:
           node-version: "lts/*"
           cache: "pnpm"
       - run: make node_modules
-      - run: NODE_OPTIONS='--max_old_space_size=4096' make build
+      - run: make build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
       - name: Check uncommitted changes
         run: test -z "$(git status --porcelain)"
