@@ -8,7 +8,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@rollup/plugin-typescript": "11.1.6",
+    "@rollup/plugin-typescript": "12.1.0",
     "@swc-node/register": "^1.9.0",
     "@swc/core": "1.7.18",
     "@types/glob": "8.1.0",
