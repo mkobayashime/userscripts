@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.2.1
 // @description  Ctrl+Enter to merge/automerge PR
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -37,7 +37,6 @@ void (() => {
       );
       if (automergeConfirmButton) {
         automergeConfirmButton.click();
-        return;
       }
     }
   });

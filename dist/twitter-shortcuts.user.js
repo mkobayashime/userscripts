@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter - Shortcuts
 // @namespace    mkobayashime
-// @version      0.4.0
+// @version      0.4.1
 // @description  Refined shortcuts in Twitter for web
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -23,7 +23,7 @@ const isTyping = () => {
 
 const config = {};
 const findTweetInCenter = () => {
-  if (window.location.href.match(RegExp("^https://twitter.com/.*/status/"))) {
+  if (RegExp("^https://twitter.com/.*/status/").exec(window.location.href)) {
     return document.querySelector(
       "article[data-testid='tweet'][tabindex='-1']",
     );
@@ -40,13 +40,14 @@ const findTweetInCenter = () => {
     });
   }
 };
-// eslint-disable-next-line no-empty-pattern
 (({}) => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
     if (
-      e.key === "u" || // default Mute
-      e.key === "x" // default Block
+      // default Mute
+      e.key === "u" ||
+      // default Block
+      e.key === "x"
     ) {
       e.stopImmediatePropagation();
     }
@@ -82,9 +83,10 @@ const findTweetInCenter = () => {
       }
     }
     if (e.ctrlKey && e.key === "e") {
-      const tweetURLMatch = window.location.href.match(
-        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/,
-      );
+      const tweetURLMatch =
+        /^https:\/\/twitter\.com\/\S+\/status\/\d+[^/]*/.exec(
+          window.location.href,
+        );
       if (!tweetURLMatch) return;
       e.preventDefault();
       window.open(`${tweetURLMatch[0]}/likes`);

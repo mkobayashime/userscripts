@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Force Theme
 // @namespace    mkobayashime
-// @version      1.3.1
+// @version      1.3.2
 // @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -44,8 +44,8 @@
   );
   const url = window.location.href;
   if (!settingPagesPattern.test(url)) {
-    const projectId = window.location.href.match(
-      RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$"),
+    const projectId = RegExp("^https://scrapbox.io/(?<projectId>.*)/.*$").exec(
+      window.location.href,
     )?.groups?.projectId;
     if (!projectId) return;
     if (isProjectEnabled(projectId)) {
