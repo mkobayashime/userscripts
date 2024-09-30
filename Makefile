@@ -1,5 +1,5 @@
 ts-node = node --import @swc-node/register/esm-register
-jest = NODE_OPTIONS='--experimental-vm-modules' pnpm exec jest
+vitest = pnpm exec vitest
 
 node_modules: package.json pnpm-*.yaml
 	pnpm install
@@ -39,10 +39,10 @@ typecheck.watch: node_modules
 	pnpm exec tsc --noEmit --watch
 
 test: node_modules
-	$(jest)
+	$(vitest) run
 
 test.watch: node_modules
-	$(jest) --watch
+	$(vitest) watch
 
 scaffold.script:
 	@./bin/scaffold-script.sh
