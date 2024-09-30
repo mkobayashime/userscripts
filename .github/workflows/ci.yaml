@@ -17,34 +17,9 @@ jobs:
       - run: make lint
       - run: make format.check
       - run: make typecheck
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-          cache: "pnpm"
-      - run: make node_modules
       - run: make test
-  docs:
-    name: Up-to-date docs
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "lts/*"
-          cache: "pnpm"
-      - run: make node_modules
-      - run: make docgen
-      - name: Check uncommitted changes
-        run: test -z "$(git status --porcelain)"
-  scripts:
-    name: Up-to-date scripts
+  up-to-date:
+    name: Up-to-date scripts/docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -57,5 +32,6 @@ jobs:
       - run: make build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
+      - run: make docgen
       - name: Check uncommitted changes
-        run: test -z "$(git status --porcelain)"
+        run: git add --intent-to-add . && git diff --exit-code --stat
