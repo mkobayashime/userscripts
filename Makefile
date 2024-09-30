@@ -1,4 +1,4 @@
-ts-node = node --import @swc-node/register/esm-register
+ts-node = node --import tsx
 eslint = pnpm exec eslint
 vitest = pnpm exec vitest
 
