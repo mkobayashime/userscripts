@@ -12,8 +12,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       '@rollup/plugin-typescript':
-        specifier: 12.1.0
-        version: 12.1.0(rollup@4.24.0)(tslib@2.8.0)(typescript@5.6.3)
+        specifier: 12.1.1
+        version: 12.1.1(rollup@4.24.0)(tslib@2.8.0)(typescript@5.6.3)
       '@shopify/eslint-plugin':
         specifier: 46.0.0
         version: 46.0.0(@babel/core@7.25.2)(eslint@8.57.1)(prettier@3.3.3)(typescript@5.6.3)
@@ -39,8 +39,8 @@ importers:
         specifier: 1.1.2
         version: 1.1.2
       eslint-plugin-userscripts:
-        specifier: 0.5.5
-        version: 0.5.5(eslint@8.57.1)
+        specifier: 0.5.6
+        version: 0.5.6(eslint@8.57.1)
       fp-ts:
         specifier: 2.16.9
         version: 2.16.9
@@ -519,8 +519,8 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@rollup/plugin-typescript@12.1.0':
-    resolution: {integrity: sha512-Kzs8KGJofe7cfTRODsnG1jNGxSvU8gVoNNd7Z/QaY25AYwe2LSSUpx/kPxqF38NYkpR8de3m51r9uwJpDlz6dg==}
+  '@rollup/plugin-typescript@12.1.1':
+    resolution: {integrity: sha512-t7O653DpfB5MbFrqPe/VcKFFkvRuFNp9qId3xq4Eth5xlyymzxNpye2z8Hrl0RIMuXTSr5GGcFpkdlMeacUiFQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0||^4.0.0
@@ -1201,8 +1201,8 @@ packages:
     resolution: {integrity: sha512-DNPHFGCA0/hZIsfODbeLZqaGY/+q3vgtshF85r+YWDNCQ2apd9PNs/zL6ttKm0nD1IFwvxyg3YOTI7FHl4unrw==}
     engines: {node: '>=0.10.0'}
 
-  eslint-plugin-userscripts@0.5.5:
-    resolution: {integrity: sha512-7OzUalwYo9hKB3w+aTAsD05iIfC2lO/4Vmf19QLC33vWXdyPXjtS+zqDK/8LNUWQJ/CMwQra96ZlihoViNLpNQ==}
+  eslint-plugin-userscripts@0.5.6:
+    resolution: {integrity: sha512-/DXb8UKyEkNCzXOA6j4E4rCWn2mLCUw2TMxrzSoz3spi4cyANlE0JNmtRleAmzc1HTUmZXr5fIMCQxyLS73DZQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0 <11'
@@ -2680,7 +2680,7 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@rollup/plugin-typescript@12.1.0(rollup@4.24.0)(tslib@2.8.0)(typescript@5.6.3)':
+  '@rollup/plugin-typescript@12.1.1(rollup@4.24.0)(tslib@2.8.0)(typescript@5.6.3)':
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.24.0)
       resolve: 1.22.8
@@ -3590,7 +3590,7 @@ snapshots:
       natural-compare: 1.4.0
       requireindex: 1.2.0
 
-  eslint-plugin-userscripts@0.5.5(eslint@8.57.1):
+  eslint-plugin-userscripts@0.5.6(eslint@8.57.1):
     dependencies:
       eslint: 8.57.1
       semver: 7.6.3
