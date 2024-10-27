@@ -1,7 +1,7 @@
 {
   "name": "userscripts",
   "version": "1.0.0",
-  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4",
+  "packageManager": "pnpm@9.12.2+sha512.22721b3a11f81661ae1ec68ce1a7b879425a1ca5b991c975b074ac220b187ce56c708fe5db69f4c962c989452eee76c82877f4ee80f474cebd61ee13461b6228",
   "repository": "git@github.com:mkobayashime/userscripts.git",
   "author": "Masaki Kobayashi <contact@mkobayashi.me>",
   "license": "Apache License 2.0",
@@ -9,7 +9,7 @@
   "type": "module",
   "devDependencies": {
     "@eslint/eslintrc": "3.1.0",
-    "@rollup/plugin-typescript": "12.1.0",
+    "@rollup/plugin-typescript": "12.1.1",
     "@shopify/eslint-plugin": "46.0.0",
     "@types/glob": "8.1.0",
     "@types/node": "20.16.11",
@@ -18,13 +18,13 @@
     "clipboardy": "4.0.0",
     "eslint": "8.57.1",
     "eslint-plugin-sort-keys-fix": "1.1.2",
-    "eslint-plugin-userscripts": "0.5.5",
+    "eslint-plugin-userscripts": "0.5.6",
     "fp-ts": "2.16.9",
     "glob": "11.0.0",
     "prettier": "3.3.3",
-    "rollup": "4.24.0",
+    "rollup": "4.24.1",
     "tslib": "2.8.0",
-    "tsx": "4.19.1",
+    "tsx": "4.19.2",
     "typescript": "5.6.3",
     "vitest": "2.1.3"
   }
