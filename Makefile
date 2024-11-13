@@ -1,52 +1,53 @@
 ts-node = node --import tsx
-eslint = pnpm exec eslint
-vitest = pnpm exec vitest
+eslint = bunx eslint
+vitest = bunx vitest
 
-node_modules: package.json pnpm-*.yaml
-	pnpm install
-	@touch node_modules
+node_modules: PHONY
+	bun install
 
-lint: node_modules
+lint: node_modules PHONY
 	$(eslint) .
 
-lint.fix: node_modules
+lint.fix: node_modules PHONY
 	$(eslint) --fix .
 
-lint.fix.dist: node_modules
+lint.fix.dist: node_modules PHONY
 	$(eslint) --fix dist
 
-format: node_modules
-	pnpm exec prettier --write .
+format: node_modules PHONY
+	bunx prettier --write .
 
-format.check: node_modules
-	pnpm exec prettier --check .
+format.check: node_modules PHONY
+	bunx prettier --check .
 
-dev: node_modules
+dev: node_modules PHONY
 	$(ts-node) bin/dev.ts
 
-build: node_modules
-	pnpm exec rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
+build: node_modules PHONY
+	bunx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript
 	@make format
 	@make lint.fix.dist
 
-docgen: node_modules
+docgen: node_modules PHONY
 	$(ts-node) bin/docgen.ts
 	@make format
 
-typecheck: node_modules
-	pnpm exec tsc --noEmit
+typecheck: node_modules PHONY
+	bunx tsc --noEmit
 
-typecheck.watch: node_modules
-	pnpm exec tsc --noEmit --watch
+typecheck.watch: node_modules PHONY
+	bunx tsc --noEmit --watch
 
-test: node_modules
+test: node_modules PHONY
 	$(vitest) run
 
-test.watch: node_modules
+test.watch: node_modules PHONY
 	$(vitest) watch
 
-scaffold.script:
+scaffold.script: PHONY
 	@./bin/scaffold-script.sh
 
-open.dist.in.remote:
+open.dist.in.remote: PHONY
 	@./bin/open-dist-in-remote.sh
+
+PHONY:
