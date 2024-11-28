@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Calendar - Dark
 @namespace      mkobayashime
-@version        1.1.0
+@version        2.0.0
 @homepageURL    https://github.com/mkobayashime/userscripts
 @updateURL      https://github.com/mkobayashime/userscripts/raw/main/src/google-calendar-dark.user.css
 @description    Dark theme for Google Calendar
@@ -9,13 +9,13 @@
 ==/UserStyle== */
 
 @-moz-document domain("calendar.google.com") {
-  html {
+  html:not(:has(meta[name="theme-color"][content="#1B1B1B"])) {
     filter: invert(95%) hue-rotate(180deg);
-  }
 
-  img,
-  div[style^="background-image: url"] {
-    filter: invert(100%) hue-rotate(180deg);
+    img,
+    div[style^="background-image: url"] {
+      filter: invert(100%) hue-rotate(180deg);
+    }
   }
 }
 
