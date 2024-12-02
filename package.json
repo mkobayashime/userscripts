@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@eslint/eslintrc": "3.1.0",
+    "@eslint/eslintrc": "3.2.0",
     "@rollup/plugin-typescript": "12.1.1",
     "@shopify/eslint-plugin": "46.0.0",
     "@types/glob": "8.1.0",
