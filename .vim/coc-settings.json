@@ -1,4 +1,3 @@
 {
-  "eslint.experimental.useFlatConfig": true,
-  "cSpell.words": ["userscript", "userscripts", "docgen", "tampermonkey"]
+  "eslint.experimental.useFlatConfig": true
 }
