@@ -46,6 +46,13 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     runAt: "document-end",
     version: "1.3.1",
   },
+  "github-auto-sso": {
+    description: "Attempt SSO if the banner exists on every pageload",
+    icon: "https://www.google.com/s2/favicons?domain=github.com",
+    match: "https://github.com/*",
+    name: "GitHub - Auto SSO",
+    version: "0.1.0",
+  },
   "github-disable-some-keymaps": {
     description: "Disable some keyboard shortcuts on GitHub",
     icon: "https://www.google.com/s2/favicons?domain=github.com",

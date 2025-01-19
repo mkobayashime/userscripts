@@ -34,6 +34,10 @@ ETC利用照会サービスに h/l などのショートカットキーを追加
 
 freee にショートカットキーを追加します
 
+### [GitHub - Auto SSO](https://github.com/mkobayashime/userscripts/raw/main/dist/github-auto-sso.user.js)
+
+Attempt SSO if the banner exists on every pageload
+
 ### [GitHub - Disable some keymaps](https://github.com/mkobayashime/userscripts/raw/main/dist/github-disable-some-keymaps.user.js)
 
 Disable some keyboard shortcuts on GitHub
