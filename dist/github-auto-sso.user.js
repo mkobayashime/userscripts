@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - Auto SSO
 // @namespace    mkobayashime
-// @version      0.1.0
+// @version      1.0.0
 // @description  Attempt SSO if the banner exists on every pageload
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
