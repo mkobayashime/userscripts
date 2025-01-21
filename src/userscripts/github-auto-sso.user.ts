@@ -1,12 +1,9 @@
 (() => {
-  if (window.location.pathname.endsWith("/sso")) {
-    const ssoFormSubmitButton = document.querySelector(
-      ".business-sso-panel form button[type='submit']",
-    );
-    if (ssoFormSubmitButton instanceof HTMLElement) {
-      ssoFormSubmitButton.click();
-    }
-
+  const ssoFormSubmitButton = document.querySelector(
+    ".business-sso-panel form button[type='submit']",
+  );
+  if (ssoFormSubmitButton instanceof HTMLElement) {
+    ssoFormSubmitButton.click();
     return;
   }
 
