@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - Auto SSO
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.1.0
 // @description  Attempt SSO if the banner exists on every pageload
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,13 +14,11 @@
 // ==/UserScript==
 
 (() => {
-  if (window.location.pathname.endsWith("/sso")) {
-    const ssoFormSubmitButton = document.querySelector(
-      ".business-sso-panel form button[type='submit']",
-    );
-    if (ssoFormSubmitButton instanceof HTMLElement) {
-      ssoFormSubmitButton.click();
-    }
+  const ssoFormSubmitButton = document.querySelector(
+    ".business-sso-panel form button[type='submit']",
+  );
+  if (ssoFormSubmitButton instanceof HTMLElement) {
+    ssoFormSubmitButton.click();
     return;
   }
   const ssoAnchor = document.querySelector(

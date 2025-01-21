@@ -51,7 +51,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?domain=github.com",
     match: "https://github.com/*",
     name: "GitHub - Auto SSO",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   "github-disable-some-keymaps": {
     description: "Disable some keyboard shortcuts on GitHub",
