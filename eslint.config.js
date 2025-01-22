@@ -1,8 +1,8 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import shopifyPlugin from "@shopify/eslint-plugin";
 import userscriptsPlugin from "eslint-plugin-userscripts";
+import { typescriptWithBiome } from "@mkobayashime/shared-config/eslint";
 import { FlatCompat } from "@eslint/eslintrc";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -16,10 +16,7 @@ const config = [
   {
     ignores: [".dev"],
   },
-  ...[
-    ...shopifyPlugin.configs.typescript,
-    ...shopifyPlugin.configs["typescript-type-checking"],
-  ].map((c) => ({
+  ...typescriptWithBiome.map((c) => ({
     ...c,
     ignores: ["dist/**"],
   })),
@@ -28,32 +25,6 @@ const config = [
       parserOptions: {
         project: "./tsconfig.json",
       },
-    },
-  },
-
-  /**
-   * Node
-   */
-  ...shopifyPlugin.configs.node.map((c) => ({
-    ...c,
-    files: ["bin/**/*.ts"],
-  })),
-
-  /**
-   * rule overrides
-   */
-  {
-    rules: {
-      "@typescript-eslint/consistent-type-definitions": "off",
-      "@typescript-eslint/naming-convention": "off",
-      "consistent-return": "off",
-      "id-length": "off",
-      "import/extensions": "off",
-      "no-alert": "off",
-      "no-console": "off",
-      "no-nested-ternary": "off",
-      "no-void": "off",
-      "no-warning-comments": "off",
     },
   },
 
