@@ -79,5 +79,3 @@ const config = {
     }
   });
 })(config);
-
-export {};

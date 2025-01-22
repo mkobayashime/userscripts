@@ -1,10 +1,10 @@
 import path from "path";
 import { readFile, writeFile } from "fs/promises";
 
-import { pipe } from "fp-ts/lib/function.js";
-import * as O from "fp-ts/lib/Option.js";
 import * as A from "fp-ts/lib/Array.js";
+import * as O from "fp-ts/lib/Option.js";
 import * as Ord from "fp-ts/lib/Ord.js";
+import { pipe } from "fp-ts/lib/function.js";
 import * as string from "fp-ts/lib/string.js";
 import { globSync } from "glob";
 

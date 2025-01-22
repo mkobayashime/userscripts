@@ -1,9 +1,9 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import userscriptsPlugin from "eslint-plugin-userscripts";
-import { typescriptWithBiome } from "@mkobayashime/shared-config/eslint";
 import { FlatCompat } from "@eslint/eslintrc";
+import { typescriptWithBiome } from "@mkobayashime/shared-config/eslint";
+import userscriptsPlugin from "eslint-plugin-userscripts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

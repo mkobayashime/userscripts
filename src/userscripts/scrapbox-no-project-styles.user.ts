@@ -1,4 +1,4 @@
-(function () {
+(() => {
   /**
    * このスクリプトを有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
@@ -33,16 +33,15 @@
   };
 
   const pageObserver = new MutationObserver(() => {
-    const settingPagesPattern = new RegExp(
-      "https://scrapbox.io/(projects/[^/]+/)?settings/",
-    );
+    const settingPagesPattern =
+      /https:\/\/scrapbox.io\/(projects\/[^\/]+\/)?settings\//;
 
     const url = window.location.href;
 
     if (!settingPagesPattern.test(url)) {
-      const projectId = RegExp(
-        "^https://scrapbox.io/(?<projectId>.*)/.*$",
-      ).exec(window.location.href)?.groups?.projectId;
+      const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
+        window.location.href,
+      )?.groups?.projectId;
 
       if (!projectId) return;
 

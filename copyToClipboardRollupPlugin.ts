@@ -1,5 +1,5 @@
-import { Plugin } from "rollup";
 import clipboard from "clipboardy";
+import type { Plugin } from "rollup";
 
 export const copyToClipboardPlugin = (): Plugin => ({
   name: "copyToClipboard",

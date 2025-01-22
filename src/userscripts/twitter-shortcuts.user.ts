@@ -3,7 +3,7 @@ import { isTyping } from "./utils/isTyping";
 const config = {};
 
 const findTweetInCenter = () => {
-  if (RegExp("^https://twitter.com/.*/status/").exec(window.location.href)) {
+  if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {
     return document.querySelector<HTMLElement>(
       "article[data-testid='tweet'][tabindex='-1']",
     );
@@ -104,5 +104,3 @@ const findTweetInCenter = () => {
     }
   });
 })(config);
-
-export {};

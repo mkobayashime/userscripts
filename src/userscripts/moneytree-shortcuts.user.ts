@@ -1,4 +1,4 @@
-(function () {
+(() => {
   document.onkeypress = (e) => {
     if (e.ctrlKey && e.code === "Enter") {
       const saveBtnInner = document.getElementsByClassName(

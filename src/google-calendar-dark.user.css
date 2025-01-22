@@ -19,8 +19,7 @@
   }
 }
 
-@-moz-document url-prefix("https://contacts.google.com/widget/")
-{
+@-moz-document url-prefix("https://contacts.google.com/widget/") {
   img {
     filter: invert(100%) hue-rotate(180deg);
   }

@@ -1,6 +1,6 @@
 import { isTyping } from "./utils/isTyping";
 
-(function () {
+(() => {
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
 

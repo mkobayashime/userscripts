@@ -68,5 +68,3 @@ const config = {};
     }
   });
 })(config);
-
-export {};

@@ -6,7 +6,7 @@ const config = {
   INTERVAL: 30 * 1000,
 };
 
-(function ({ INTERVAL }: typeof config) {
+(({ INTERVAL }: typeof config) => {
   window.setInterval(() => {
     const draftSaveButton = document.evaluate(
       "//button[contains(text(),'下書き保存')]",

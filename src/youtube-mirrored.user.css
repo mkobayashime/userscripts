@@ -8,8 +8,7 @@
 @author         mkobayashime
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://www.youtube.com/watch?v=")
-{
+@-moz-document url-prefix("https://www.youtube.com/watch?v=") {
   video {
     transform: scale(-1, 1);
   }
