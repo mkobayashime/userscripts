@@ -1,4 +1,5 @@
 ts-node = node --import tsx
+biome = bunx biome
 eslint = bunx eslint
 vitest = bunx vitest
 
@@ -6,12 +7,15 @@ node_modules: PHONY
 	bun install
 
 lint: node_modules PHONY
+	$(biome) check .
 	$(eslint) .
 
 lint.fix: node_modules PHONY
+	$(biome) check --fix .
 	$(eslint) --fix .
 
 lint.fix.dist: node_modules PHONY
+	$(biome) check --fix dist
 	$(eslint) --fix dist
 
 format: node_modules PHONY

@@ -7,7 +7,9 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@eslint/eslintrc": "3.3.0",
+    "@mkobayashime/shared-config": "1.1.0",
     "@rollup/plugin-typescript": "12.1.2",
     "@shopify/eslint-plugin": "47.0.1",
     "@types/glob": "8.1.0",
