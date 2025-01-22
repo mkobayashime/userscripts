@@ -30,7 +30,6 @@ const config = [
       },
     },
   },
-  ...shopifyPlugin.configs.prettier,
 
   /**
    * Node

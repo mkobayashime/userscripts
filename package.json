@@ -22,7 +22,6 @@
     "eslint-plugin-userscripts": "0.5.6",
     "fp-ts": "2.16.9",
     "glob": "11.0.1",
-    "prettier": "3.5.2",
     "rollup": "4.29.0",
     "tslib": "2.8.1",
     "tsx": "4.19.3",
