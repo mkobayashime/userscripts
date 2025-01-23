@@ -1,5 +1,5 @@
-import path from "path";
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
 
 import * as A from "fp-ts/lib/Array.js";
 import * as O from "fp-ts/lib/Option.js";
@@ -150,8 +150,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
   await writeFile(path.resolve("README.md"), updatedReadme);
 };
 
-//
-(async () => {
+void (async () => {
   const { scripts, styles } = getFiles();
 
   const scriptFileProperties = await getFilesProperties({
@@ -185,5 +184,5 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
     stylesMarkdown,
   ].join("\n\n");
 
-  updateReadme(joinedMarkdown);
+  await updateReadme(joinedMarkdown);
 })();

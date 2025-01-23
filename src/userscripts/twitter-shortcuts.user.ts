@@ -1,31 +1,28 @@
 import { isTyping } from "./utils/isTyping";
 
-const config = {};
-
 const findTweetInCenter = () => {
   if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {
     return document.querySelector<HTMLElement>(
       "article[data-testid='tweet'][tabindex='-1']",
     );
-  } else {
-    const tweetWrappers = Array.from(
-      document.querySelectorAll<HTMLElement>("article[data-testid='tweet']"),
-    );
-
-    if (tweetWrappers.length === 0) return;
-    if (tweetWrappers.length === 1) return tweetWrappers[0];
-
-    return tweetWrappers.find((element) => {
-      const windowHalfHeight = window.innerHeight / 2;
-      const { top, height } = element.getBoundingClientRect();
-
-      return top <= windowHalfHeight && top + height >= windowHalfHeight;
-    });
   }
+
+  const tweetWrappers = Array.from(
+    document.querySelectorAll<HTMLElement>("article[data-testid='tweet']"),
+  );
+
+  if (tweetWrappers.length === 0) return;
+  if (tweetWrappers.length === 1) return tweetWrappers[0];
+
+  return tweetWrappers.find((element) => {
+    const windowHalfHeight = window.innerHeight / 2;
+    const { top, height } = element.getBoundingClientRect();
+
+    return top <= windowHalfHeight && top + height >= windowHalfHeight;
+  });
 };
 
-// eslint-disable-next-line no-empty-pattern
-(({}: typeof config) => {
+(() => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
 
@@ -103,4 +100,4 @@ const findTweetInCenter = () => {
       if (likeButton instanceof HTMLElement) likeButton.click();
     }
   });
-})(config);
+})();

@@ -48,7 +48,7 @@ import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
           }
 
           if ("result" in event && event.result) {
-            event.result.close();
+            void event.result.close();
           }
         });
       }

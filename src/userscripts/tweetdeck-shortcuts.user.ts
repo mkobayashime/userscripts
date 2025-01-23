@@ -1,9 +1,6 @@
 import { isTyping } from "./utils/isTyping";
 
-const config = {};
-
-// eslint-disable-next-line no-empty-pattern
-(({}: typeof config) => {
+(() => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
 
@@ -67,4 +64,4 @@ const config = {};
       );
     }
   });
-})(config);
+})();
