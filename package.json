@@ -9,9 +9,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.2.0",
     "@rollup/plugin-typescript": "12.1.2",
-    "@shopify/eslint-plugin": "47.0.0",
+    "@shopify/eslint-plugin": "47.0.1",
     "@types/glob": "8.1.0",
-    "@types/node": "22.13.0",
+    "@types/node": "22.13.4",
     "chalk": "5.4.1",
     "chokidar": "3.6.0",
     "clipboardy": "4.0.0",
@@ -20,11 +20,11 @@
     "eslint-plugin-userscripts": "0.5.6",
     "fp-ts": "2.16.9",
     "glob": "11.0.1",
-    "prettier": "3.5.0",
+    "prettier": "3.5.1",
     "rollup": "4.29.0",
     "tslib": "2.8.1",
     "tsx": "4.19.2",
     "typescript": "5.7.3",
-    "vitest": "3.0.2"
+    "vitest": "3.0.6"
   }
 }
