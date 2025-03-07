@@ -1,20 +1,19 @@
 // ==UserScript==
 // @name         Scrapbox - Project name notice in new page
 // @namespace    mkobayashime
-// @version      1.2.2
+// @version      1.2.3
 // @description  Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
+// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://scrapbox.io/*
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-project-notice-in-new-page.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-project-notice-in-new-page.user.js
-// @match        https://scrapbox.io/*
-// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
-// @grant        none
 // ==/UserScript==
 
-/* eslint-enable no-var */
-(() => {
+// src/userscripts/scrapbox-project-notice-in-new-page/index.user.ts
+void (() => {
   const titleElement = document.querySelector("title");
   if (!titleElement) return;
   new MutationObserver(() => {

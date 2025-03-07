@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         Twitter - Shortcuts
 // @namespace    mkobayashime
-// @version      0.4.2
+// @version      0.4.3
 // @description  Refined shortcuts in Twitter for web
+// @icon         https://www.google.com/s2/favicons?domain=twitter.com
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://twitter.com/*
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/twitter-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/twitter-shortcuts.user.js
-// @match        https://twitter.com/*
-// @icon         https://www.google.com/s2/favicons?domain=twitter.com
-// @grant        none
 // ==/UserScript==
 
-const isTyping = () => {
+// src/userscripts/utils/isTyping.ts
+var isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
   return (
     inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
@@ -21,30 +21,30 @@ const isTyping = () => {
   );
 };
 
-const findTweetInCenter = () => {
-  if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {
-    return document.querySelector(
-      "article[data-testid='tweet'][tabindex='-1']",
+// src/userscripts/twitter-shortcuts/index.user.ts
+void (() => {
+  const findTweetInCenter = () => {
+    if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {
+      return document.querySelector(
+        "article[data-testid='tweet'][tabindex='-1']",
+      );
+    }
+    const tweetWrappers = Array.from(
+      document.querySelectorAll("article[data-testid='tweet']"),
     );
-  }
-  const tweetWrappers = Array.from(
-    document.querySelectorAll("article[data-testid='tweet']"),
-  );
-  if (tweetWrappers.length === 0) return;
-  if (tweetWrappers.length === 1) return tweetWrappers[0];
-  return tweetWrappers.find((element) => {
-    const windowHalfHeight = window.innerHeight / 2;
-    const { top, height } = element.getBoundingClientRect();
-    return top <= windowHalfHeight && top + height >= windowHalfHeight;
-  });
-};
-(() => {
+    if (tweetWrappers.length === 0) return;
+    if (tweetWrappers.length === 1) return tweetWrappers[0];
+    return tweetWrappers.find((element) => {
+      const windowHalfHeight = window.innerHeight / 2;
+      const { top, height } = element.getBoundingClientRect();
+      return top <= windowHalfHeight && top + height >= windowHalfHeight;
+    });
+  };
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
     if (
       // default Mute
-      e.key === "u" ||
-      // default Block
+      e.key === "u" || // default Block
       e.key === "x"
     ) {
       e.stopImmediatePropagation();

@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         ETC利用照会サービス - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.0.1
+// @version      2.0.2
 // @description  ETC利用照会サービスに h/l などのショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
-// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
-// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
 // @match        https://www2.etc-meisai.jp/etc/*
 // @run-at       document-end
-// @grant        none
+// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
+// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/etc-meisai-shortcuts.user.js
 // ==/UserScript==
 
-const isTyping = () => {
+// src/userscripts/utils/isTyping.ts
+var isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
   return (
     inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
@@ -21,7 +21,8 @@ const isTyping = () => {
   );
 };
 
-(() => {
+// src/userscripts/etc-meisai-shortcuts/index.user.ts
+void (() => {
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.key === "h" || e.key === "ArrowLeft") {

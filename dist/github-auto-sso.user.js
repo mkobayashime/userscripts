@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         GitHub - Auto SSO
 // @namespace    mkobayashime
-// @version      1.1.0
+// @version      1.1.1
 // @description  Attempt SSO if the banner exists on every pageload
+// @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://github.com/*
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/github-auto-sso.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/github-auto-sso.user.js
-// @match        https://github.com/*
-// @icon         https://www.google.com/s2/favicons?domain=github.com
-// @grant        none
 // ==/UserScript==
 
-(() => {
+// src/userscripts/github-auto-sso/index.user.ts
+void (() => {
   const ssoFormSubmitButton = document.querySelector(
     ".business-sso-panel form button[type='submit']",
   );

@@ -1,28 +1,19 @@
 // ==UserScript==
 // @name         Instagram - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.2.3
+// @version      2.2.4
 // @description  Space key to like, arrow/h/l keys to next/previous photo in the post
+// @icon         https://www.google.com/s2/favicons?domain=instagram.com
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://www.instagram.com/*
+// @run-at       document-end
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js
-// @match        https://www.instagram.com/*
-// @icon         https://www.google.com/s2/favicons?domain=instagram.com
-// @run-at       document-end
-// @grant        none
 // ==/UserScript==
 
-const isTyping = () => {
-  const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
-  return (
-    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
-    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
-  );
-};
-
-const config = {
+var userscriptConfig = {
   /**
    * Whether pressing Space on already liked post unlikes it or not.
    * Defaults to `false` to keep it consistent with the double tapping in mobile app.
@@ -30,7 +21,18 @@ const config = {
    */
   UNLIKE: false,
 };
-(({ UNLIKE }) => {
+
+// src/userscripts/utils/isTyping.ts
+var isTyping = () => {
+  const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
+  return (
+    inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
+    document.activeElement?.attributes.getNamedItem("role")?.value === "textbox"
+  );
+};
+
+// src/userscripts/instagram-shortcuts/index.user.ts
+void (({ UNLIKE }) => {
   const getTargetPost = () => {
     if (window.location.href.startsWith("https://www.instagram.com/p/")) {
       return document.querySelector("main");
@@ -82,4 +84,4 @@ const config = {
       prevButton.click();
     }
   });
-})(config);
+})(userscriptConfig);

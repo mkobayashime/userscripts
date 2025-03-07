@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         TweetDeck Preview - Shortcuts
 // @namespace    mkobayashime
-// @version      0.2.3
+// @version      0.2.4
 // @description  Refined shortcuts in the new (preview) version of TweetDeck
+// @icon         https://www.google.com/s2/favicons?domain=twitter.com
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://tweetdeck.twitter.com/*
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-shortcuts.user.js
-// @match        https://tweetdeck.twitter.com/*
-// @icon         https://www.google.com/s2/favicons?domain=twitter.com
-// @grant        none
 // ==/UserScript==
 
-const isTyping = () => {
+// src/userscripts/utils/isTyping.ts
+var isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
   return (
     inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
@@ -21,20 +21,17 @@ const isTyping = () => {
   );
 };
 
-(() => {
+// src/userscripts/tweetdeck-shortcuts/index.user.ts
+void (() => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
-    // workaround for the mysterious page reloading
-    // when you hit Escape
     if (e.key === "Escape") {
       e.stopImmediatePropagation();
     }
     if (
       // default Like
-      e.key === "l" ||
-      // default Mute
-      e.key === "u" ||
-      // default Block
+      e.key === "l" || // default Mute
+      e.key === "u" || // default Block
       e.key === "x"
     ) {
       e.stopImmediatePropagation();
@@ -60,9 +57,6 @@ const isTyping = () => {
         }),
       );
     }
-    /**
-     * 0–9 keys to focus columns
-     */
     if (e.keyCode >= 48 && e.keyCode < 58) {
       document.dispatchEvent(
         new KeyboardEvent("keypress", {

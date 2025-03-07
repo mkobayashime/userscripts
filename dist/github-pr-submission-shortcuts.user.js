@@ -1,19 +1,19 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.2.1
+// @version      1.2.2
 // @description  Ctrl+Enter to merge/automerge PR
+// @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://github.com/*
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/github-pr-submission-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/github-pr-submission-shortcuts.user.js
-// @match        https://github.com/*
-// @icon         https://www.google.com/s2/favicons?domain=github.com
-// @grant        none
 // ==/UserScript==
 
-const isTyping = () => {
+// src/userscripts/utils/isTyping.ts
+var isTyping = () => {
   const inputTags = ["INPUT", "TEXTAREA", "SELECT"];
   return (
     inputTags.includes(document.activeElement?.tagName.toUpperCase() ?? "") ||
@@ -21,6 +21,7 @@ const isTyping = () => {
   );
 };
 
+// src/userscripts/github-pr-submission-shortcuts/index.user.ts
 void (() => {
   window.addEventListener("keydown", (e) => {
     if (!/\/\S+\/\S+\/pull\//.test(window.location.pathname)) return;

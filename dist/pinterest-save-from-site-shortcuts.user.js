@@ -1,20 +1,20 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.2.3
+// @version      1.2.4
 // @description  Ctrl+Enter in "Save from site"
+// @icon         https://www.google.com/s2/favicons?domain=pinterest.jp
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://www.pinterest.jp/pin-builder/
+// @run-at       document-end
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js
-// @match        https://www.pinterest.jp/pin-builder/
-// @icon         https://www.google.com/s2/favicons?domain=pinterest.jp
-// @run-at       document-end
-// @grant        none
 // ==/UserScript==
 
-(() => {
+// src/userscripts/pinterest-save-from-site-shortcuts/index.user.ts
+void (() => {
   window.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "Enter") {
       const saveFromSiteButton = document.querySelector(

@@ -1,30 +1,33 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.6.2
+// @version      1.6.3
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
+// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://scrapbox.io/*
+// @run-at       document-end
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-no-project-styles.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-no-project-styles.user.js
-// @match        https://scrapbox.io/*
-// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
-// @run-at       document-end
-// @grant        none
 // ==/UserScript==
 
-(() => {
+var userscriptConfig = {
   /**
    * このスクリプトを有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
-  const enabledProjectIds = [];
+  enabledProjectIds: [],
   /**
    * このスクリプトを無効化するプロジェクトの id またはマッチする RegExp. `enabledProjectIds` を上書きします.
    * @type Array<string | RegExp>
    */
-  const disabledProjectIds = [];
+  disabledProjectIds: [],
+};
+
+// src/userscripts/scrapbox-no-project-styles/index.user.ts
+void (({ enabledProjectIds, disabledProjectIds }) => {
   const isProjectEnabled = (projectId) => {
     if (
       disabledProjectIds.some((pattern) => {
@@ -58,7 +61,6 @@
           `link[href='/api/code/${projectId}/settings/style.css']`,
         );
         if (projectStyle) {
-          // 空文字列だとそのままスタイルが当たってしまうことがあるので仕方なく
           projectStyle.href = "dummy";
         }
       }
@@ -77,4 +79,4 @@
     childList: true,
     subtree: true,
   });
-})();
+})(userscriptConfig);
