@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MDN - Force English
 // @namespace    mkobayashime
-// @version      1.0.0
+// @version      1.0.1
 // @description  Redirect Japanese pages in MDN to corresponding English pages
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -18,7 +18,7 @@
     window.location.href.startsWith("https://developer.mozilla.org/ja/docs/")
   ) {
     window.location.href = window.location.href.replace(
-      RegExp("^https://developer.mozilla.org/ja/docs/"),
+      /^https:\/\/developer.mozilla.org\/ja\/docs\//,
       "https://developer.mozilla.org/en-US/docs/",
     );
   }

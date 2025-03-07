@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ETC利用照会サービス - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.0.0
+// @version      2.0.1
 // @description  ETC利用照会サービスに h/l などのショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -21,7 +21,7 @@ const isTyping = () => {
   );
 };
 
-(function () {
+(() => {
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.key === "h" || e.key === "ArrowLeft") {
