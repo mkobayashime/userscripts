@@ -1,4 +1,4 @@
-import { isTyping } from "./utils/isTyping";
+import { isTyping } from "../utils/isTyping";
 
 const findTweetInCenter = () => {
   if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {

@@ -1,4 +1,4 @@
-import { isTyping } from "./utils/isTyping.js";
+import { isTyping } from "../utils/isTyping.js";
 
 const config = {
   /**

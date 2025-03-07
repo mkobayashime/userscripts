@@ -1,4 +1,4 @@
-import { isTyping } from "./utils/isTyping";
+import { isTyping } from "../utils/isTyping";
 
 (() => {
   document.body.addEventListener("keypress", (e) => {

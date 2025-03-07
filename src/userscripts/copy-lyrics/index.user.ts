@@ -1,5 +1,5 @@
-import { copyToClipboard } from "./utils/copyToClipboard";
-import { enableSelection } from "./utils/enableSelection";
+import { copyToClipboard } from "../utils/copyToClipboard";
+import { enableSelection } from "../utils/enableSelection";
 
 const googleSearch = () => {
   return Array.from(
