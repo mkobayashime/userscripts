@@ -36,7 +36,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://www2.etc-meisai.jp/etc/*",
     name: "ETC利用照会サービス - Shortcut keys",
     runAt: "document-end",
-    version: "2.0.0",
+    version: "2.0.1",
   },
   "freee-shortcuts": {
     description: "freee にショートカットキーを追加します",
@@ -44,7 +44,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://secure.freee.co.jp/*",
     name: "freee shortcut keys",
     runAt: "document-end",
-    version: "1.3.1",
+    version: "1.3.2",
   },
   "github-auto-sso": {
     description: "Attempt SSO if the banner exists on every pageload",
@@ -90,7 +90,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://www.homes.co.jp/*",
     name: "HOME'S - Shortcut keys",
     runAt: "document-end",
-    version: "1.3.2",
+    version: "1.3.3",
   },
   "mdn-force-english": {
     description:
@@ -98,7 +98,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?domain=developer.mozilla.org",
     match: "https://developer.mozilla.org/ja/docs/*",
     name: "MDN - Force English",
-    version: "1.0.0",
+    version: "1.0.1",
   },
   "moneytree-shortcuts": {
     description: "Moneytree にショートカットキーを追加します",
@@ -106,7 +106,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://app.getmoneytree.com/*",
     name: "Moneytree shortcut keys",
     runAt: "document-end",
-    version: "1.3.1",
+    version: "1.3.2",
   },
   "note-auto-save-drafts": {
     description: "Auto save draft articles periodically",
@@ -114,7 +114,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://editor.note.com/notes/*",
     name: "note - Auto save drafts",
     runAt: "document-end",
-    version: "2.0.0",
+    version: "2.0.1",
   },
   "pinterest-save-from-site-shortcuts": {
     description: 'Ctrl+Enter in "Save from site"',
@@ -122,7 +122,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://www.pinterest.jp/pin-builder/",
     name: 'Pinterest - Shortcuts in "Save from site"',
     runAt: "document-end",
-    version: "1.2.2",
+    version: "1.2.3",
   },
   "scrapbox-clear-watch-list": {
     description: "Scrapbox の Watch List を自動的に全削除します",
@@ -130,7 +130,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Clear Watch List",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "scrapbox-force-theme": {
     description: "Scrapbox でプロジェクトに関わらず特定のテーマを使用します",
@@ -138,7 +138,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Force Theme",
     runAt: "document-end",
-    version: "1.3.2",
+    version: "1.3.3",
   },
   "scrapbox-no-project-styles": {
     description:
@@ -147,7 +147,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://scrapbox.io/*",
     name: "Scrapbox - No project styles",
     runAt: "document-end",
-    version: "1.6.1",
+    version: "1.6.2",
   },
   "scrapbox-project-notice-in-new-page": {
     description:
@@ -155,7 +155,7 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
     match: "https://scrapbox.io/*",
     name: "Scrapbox - Project name notice in new page",
-    version: "1.2.1",
+    version: "1.2.2",
   },
   "slack-no-autofocus": {
     description:
@@ -171,21 +171,21 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://app.slack.com/*",
     name: "Slack - No unintended reloads",
     runAt: "document-end",
-    version: "1.3.0",
+    version: "1.3.1",
   },
   "tweetdeck-shortcuts": {
     description: "Refined shortcuts in the new (preview) version of TweetDeck",
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://tweetdeck.twitter.com/*",
     name: "TweetDeck Preview - Shortcuts",
-    version: "0.2.2",
+    version: "0.2.3",
   },
   "twitter-shortcuts": {
     description: "Refined shortcuts in Twitter for web",
     icon: "https://www.google.com/s2/favicons?domain=twitter.com",
     match: "https://twitter.com/*",
     name: "Twitter - Shortcuts",
-    version: "0.4.1",
+    version: "0.4.2",
   },
   "zoom-web-shortcuts": {
     description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
@@ -200,6 +200,6 @@ export const meta: Record<string, UserScriptMeta | undefined> = {
     match: "https://zozo.jp/*",
     name: "ZOZOTOWN - Shortcut keys",
     runAt: "document-end",
-    version: "1.4.1",
+    version: "1.4.2",
   },
 };
