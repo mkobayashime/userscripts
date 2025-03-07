@@ -13,6 +13,7 @@
     "@rollup/plugin-typescript": "12.1.2",
     "@types/glob": "8.1.0",
     "@types/node": "22.13.5",
+    "bundlemonkey": "0.6.0",
     "chalk": "5.4.1",
     "chokidar": "3.6.0",
     "clipboardy": "4.0.0",
