@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "TweetDeck Preview - Shortcuts",
-  version: "0.2.3",
+  version: "0.2.4",
   description: "Refined shortcuts in the new (preview) version of TweetDeck",
   match: ["https://tweetdeck.twitter.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=twitter.com",

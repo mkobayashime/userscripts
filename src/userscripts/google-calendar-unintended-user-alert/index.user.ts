@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Google Calendar - Unintended User Alert",
-  version: "3.0.2",
+  version: "3.0.3",
   description: "Alert when you open Google Calendar in unintended accounts",
   match: ["https://calendar.google.com/calendar/*"],
   icon: "https://www.google.com/s2/favicons?domain=google.com",

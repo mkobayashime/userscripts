@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: 'Pinterest - Shortcuts in "Save from site"',
-  version: "1.2.3",
+  version: "1.2.4",
   description: 'Ctrl+Enter in "Save from site"',
   match: ["https://www.pinterest.jp/pin-builder/"],
   runAt: "document-end",

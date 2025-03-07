@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Scrapbox - Force Theme",
-  version: "1.3.3",
+  version: "1.3.4",
   description: "Scrapbox でプロジェクトに関わらず特定のテーマを使用します",
   match: ["https://scrapbox.io/*"],
   icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",

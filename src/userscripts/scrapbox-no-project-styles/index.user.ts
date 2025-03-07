@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Scrapbox - No project styles",
-  version: "1.6.2",
+  version: "1.6.3",
   description:
     "Scrapbox のプロジェクト単位で設定されているスタイルを無効化します",
   match: ["https://scrapbox.io/*"],

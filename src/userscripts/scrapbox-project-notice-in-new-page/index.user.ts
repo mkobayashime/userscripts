@@ -16,7 +16,7 @@ declare global {
 
 export default defineUserScript({
   name: "Scrapbox - Project name notice in new page",
-  version: "1.2.2",
+  version: "1.2.3",
   description:
     "Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します",
   match: ["https://scrapbox.io/*"],

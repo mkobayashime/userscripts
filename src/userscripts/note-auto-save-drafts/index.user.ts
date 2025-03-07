@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "note - Auto save drafts",
-  version: "2.0.1",
+  version: "2.0.2",
   description: "Auto save draft articles periodically",
   match: ["https://editor.note.com/notes/*"],
   runAt: "document-end",

@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Moneytree shortcut keys",
-  version: "1.3.2",
+  version: "1.3.3",
   description: "Moneytree にショートカットキーを追加します",
   match: ["https://app.getmoneytree.com/*"],
   runAt: "document-end",

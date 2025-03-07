@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "ZOZOTOWN - Shortcut keys",
-  version: "1.4.2",
+  version: "1.4.3",
   description: "Next/Prev image with arrow/h/l keys",
   match: ["https://zozo.jp/*"],
   runAt: "document-end",

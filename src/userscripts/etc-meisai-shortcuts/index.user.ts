@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "ETC利用照会サービス - Shortcut keys",
-  version: "2.0.1",
+  version: "2.0.2",
   description: "ETC利用照会サービスに h/l などのショートカットキーを追加します",
   match: ["https://www2.etc-meisai.jp/etc/*"],
   runAt: "document-end",

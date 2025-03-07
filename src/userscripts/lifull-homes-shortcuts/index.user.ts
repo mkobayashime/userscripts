@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "HOME'S - Shortcut keys",
-  version: "1.3.3",
+  version: "1.3.4",
   description: "Next/Prev image with arrow/h/l keys",
   match: ["https://www.homes.co.jp/*"],
   icon: "https://www.google.com/s2/favicons?domain=homes.co.jp",

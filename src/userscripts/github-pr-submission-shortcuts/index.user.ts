@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "GitHub - PR submission shortcuts",
-  version: "1.2.1",
+  version: "1.2.2",
   description: "Ctrl+Enter to merge/automerge PR",
   match: ["https://github.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=github.com",

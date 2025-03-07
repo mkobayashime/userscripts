@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Zoom - Shortcuts",
-  version: "1.0.0",
+  version: "1.0.1",
   description: "Google Meet-like Ctrl-d/e shortcuts in Zoom",
   match: ["https://*.zoom.us/*"],
   icon: "https://www.google.com/s2/favicons?domain=zoom.us",

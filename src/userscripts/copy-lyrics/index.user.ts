@@ -4,7 +4,7 @@ import { enableSelection } from "../utils/enableSelection";
 
 export default defineUserScript({
   name: "Copy lyrics",
-  version: "1.4.3",
+  version: "1.4.4",
   description: "Copy lyrics automatically in supported sites",
   match: [
     "https://www.google.com/search*",

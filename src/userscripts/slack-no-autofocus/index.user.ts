@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Slack - No autofocus in moving channels",
-  version: "2.0.1",
+  version: "2.0.2",
   description:
     "Disable autofocus to the message input field after moved to another channel",
   match: ["https://app.slack.com/client/*"],

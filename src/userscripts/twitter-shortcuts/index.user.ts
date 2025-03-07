@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "Twitter - Shortcuts",
-  version: "0.4.2",
+  version: "0.4.3",
   description: "Refined shortcuts in Twitter for web",
   match: ["https://twitter.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=twitter.com",

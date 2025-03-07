@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "MDN - Force English",
-  version: "1.0.1",
+  version: "1.0.2",
   description: "Redirect Japanese pages in MDN to corresponding English pages",
   match: ["https://developer.mozilla.org/ja/docs/*"],
   icon: "https://www.google.com/s2/favicons?domain=developer.mozilla.org",
