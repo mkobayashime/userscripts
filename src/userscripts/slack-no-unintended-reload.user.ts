@@ -1,9 +1,9 @@
-(function () {
+(() => {
   window.addEventListener("beforeunload", (event) => {
     const messageInputContainer =
       document.getElementsByClassName("ql-editor")[0];
     if (messageInputContainer) {
-      const isEmpty = new RegExp(".");
+      const isEmpty = /./;
 
       const messageLines = messageInputContainer.children;
 

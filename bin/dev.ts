@@ -1,9 +1,9 @@
 import path from "node:path";
 
-import * as rollup from "rollup";
 import typescript from "@rollup/plugin-typescript";
-import chokidar from "chokidar";
 import chalk from "chalk";
+import chokidar from "chokidar";
+import * as rollup from "rollup";
 
 import { copyToClipboardPlugin } from "../copyToClipboardRollupPlugin.js";
 import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
@@ -48,7 +48,7 @@ import { userscriptMetaPlugin } from "../src/userscripts/meta/rollupPlugin.js";
           }
 
           if ("result" in event && event.result) {
-            event.result.close();
+            void event.result.close();
           }
         });
       }

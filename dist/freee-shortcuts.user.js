@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         freee shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.1
+// @version      1.3.2
 // @description  freee にショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,7 +14,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
+(() => {
   window.onkeyup = (e) => {
     if (e.key === "Escape") {
       const xpath = "//button[contains(text(),'閉じる')]";

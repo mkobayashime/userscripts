@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter - Shortcuts
 // @namespace    mkobayashime
-// @version      0.4.1
+// @version      0.4.2
 // @description  Refined shortcuts in Twitter for web
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -21,26 +21,24 @@ const isTyping = () => {
   );
 };
 
-const config = {};
 const findTweetInCenter = () => {
-  if (RegExp("^https://twitter.com/.*/status/").exec(window.location.href)) {
+  if (/^https:\/\/twitter.com\/.*\/status\//.exec(window.location.href)) {
     return document.querySelector(
       "article[data-testid='tweet'][tabindex='-1']",
     );
-  } else {
-    const tweetWrappers = Array.from(
-      document.querySelectorAll("article[data-testid='tweet']"),
-    );
-    if (tweetWrappers.length === 0) return;
-    if (tweetWrappers.length === 1) return tweetWrappers[0];
-    return tweetWrappers.find((element) => {
-      const windowHalfHeight = window.innerHeight / 2;
-      const { top, height } = element.getBoundingClientRect();
-      return top <= windowHalfHeight && top + height >= windowHalfHeight;
-    });
   }
+  const tweetWrappers = Array.from(
+    document.querySelectorAll("article[data-testid='tweet']"),
+  );
+  if (tweetWrappers.length === 0) return;
+  if (tweetWrappers.length === 1) return tweetWrappers[0];
+  return tweetWrappers.find((element) => {
+    const windowHalfHeight = window.innerHeight / 2;
+    const { top, height } = element.getBoundingClientRect();
+    return top <= windowHalfHeight && top + height >= windowHalfHeight;
+  });
 };
-(({}) => {
+(() => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
     if (
@@ -101,4 +99,4 @@ const findTweetInCenter = () => {
       if (likeButton instanceof HTMLElement) likeButton.click();
     }
   });
-})(config);
+})();

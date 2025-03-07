@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinterest - Shortcuts in "Save from site"
 // @namespace    mkobayashime
-// @version      1.2.2
+// @version      1.2.3
 // @description  Ctrl+Enter in "Save from site"
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,7 +14,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
+(() => {
   window.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "Enter") {
       const saveFromSiteButton = document.querySelector(

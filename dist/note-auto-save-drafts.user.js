@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         note - Auto save drafts
 // @namespace    mkobayashime
-// @version      2.0.0
+// @version      2.0.1
 // @description  Auto save draft articles periodically
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -21,7 +21,7 @@ const config = {
    */
   INTERVAL: 30 * 1000,
 };
-(function ({ INTERVAL }) {
+(({ INTERVAL }) => {
   window.setInterval(() => {
     const draftSaveButton = document.evaluate(
       "//button[contains(text(),'下書き保存')]",

@@ -1,8 +1,8 @@
-import path from "path";
+import path from "node:path";
 
-import { Plugin } from "rollup";
+import type { Plugin } from "rollup";
 
-import { meta, UserScriptMeta } from "./index.js";
+import { type UserScriptMeta, meta } from "./index.js";
 
 export const userscriptMetaPlugin = (): Plugin => ({
   name: "userscriptMetaPlugin",
@@ -19,15 +19,15 @@ export const userscriptMetaPlugin = (): Plugin => ({
 
 const generateHeader = (meta: UserScriptMeta, fileName: string): string =>
   [
-    `// ==UserScript==`,
+    "// ==UserScript==",
     `// @name         ${meta.name}`,
     `// @namespace    ${meta.namespace ?? "mkobayashime"}`,
     `// @version      ${meta.version}`,
     `// @description  ${meta.description}`,
     meta.descriptionJp ? `// @description:jp  ${meta.descriptionJp}` : null,
-    `// @author       mkobayashime`,
-    `// @homepage     https://github.com/mkobayashime/userscripts`,
-    `// @homepageURL  https://github.com/mkobayashime/userscripts`,
+    "// @author       mkobayashime",
+    "// @homepage     https://github.com/mkobayashime/userscripts",
+    "// @homepageURL  https://github.com/mkobayashime/userscripts",
     `// @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/${fileName}`,
     `// @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/${fileName}`,
     (Array.isArray(meta.match) ? meta.match : [meta.match])
@@ -36,7 +36,7 @@ const generateHeader = (meta: UserScriptMeta, fileName: string): string =>
     meta.icon ? `// @icon         ${meta.icon}` : null,
     meta.runAt ? `// @run-at       ${meta.runAt}` : null,
     `// @grant        ${meta.grant ?? "none"}`,
-    `// ==/UserScript==`,
+    "// ==/UserScript==",
   ]
     .filter((str) => str)
     .join("\n");

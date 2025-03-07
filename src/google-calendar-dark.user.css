@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Calendar - Dark
 @namespace      mkobayashime
-@version        2.0.0
+@version        2.0.1
 @homepageURL    https://github.com/mkobayashime/userscripts
 @updateURL      https://github.com/mkobayashime/userscripts/raw/main/src/google-calendar-dark.user.css
 @description    Dark theme for Google Calendar
@@ -19,8 +19,7 @@
   }
 }
 
-@-moz-document url-prefix("https://contacts.google.com/widget/")
-{
+@-moz-document url-prefix("https://contacts.google.com/widget/") {
   img {
     filter: invert(100%) hue-rotate(180deg);
   }

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TweetDeck Preview - Shortcuts
 // @namespace    mkobayashime
-// @version      0.2.2
+// @version      0.2.3
 // @description  Refined shortcuts in the new (preview) version of TweetDeck
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -21,8 +21,7 @@ const isTyping = () => {
   );
 };
 
-const config = {};
-(({}) => {
+(() => {
   document.body.addEventListener("keypress", (e) => {
     if (isTyping()) return;
     // workaround for the mysterious page reloading
@@ -77,4 +76,4 @@ const config = {};
       );
     }
   });
-})(config);
+})();

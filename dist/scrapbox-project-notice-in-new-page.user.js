@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Project name notice in new page
 // @namespace    mkobayashime
-// @version      1.2.1
+// @version      1.2.2
 // @description  Scrapbox ページを新たに作成する際、意図したプロジェクトか確認するアラートを表示します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -14,7 +14,7 @@
 // ==/UserScript==
 
 /* eslint-enable no-var */
-(function () {
+(() => {
   const titleElement = document.querySelector("title");
   if (!titleElement) return;
   new MutationObserver(() => {

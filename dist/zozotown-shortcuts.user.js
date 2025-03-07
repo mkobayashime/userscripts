@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZOZOTOWN - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.4.1
+// @version      1.4.2
 // @description  Next/Prev image with arrow/h/l keys
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -22,7 +22,7 @@ const isTyping = () => {
   );
 };
 
-(function () {
+(() => {
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.key === "l" || e.key === "ArrowRight") {
