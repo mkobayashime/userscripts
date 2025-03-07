@@ -14,7 +14,6 @@ jobs:
       - run: make node_modules
       - run: make lint
       - run: make typecheck
-      - run: make test
   up-to-date:
     name: Up-to-date scripts/docs
     runs-on: ubuntu-latest

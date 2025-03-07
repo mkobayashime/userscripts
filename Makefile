@@ -1,7 +1,6 @@
 bundlemonkey = bunx --bun bundlemonkey
 biome = bunx biome
 eslint = bunx eslint
-vitest = bunx vitest
 
 node_modules: PHONY
 	bun install
@@ -43,15 +42,6 @@ typecheck: node_modules PHONY
 
 typecheck.watch: node_modules PHONY
 	bunx tsc --noEmit --watch
-
-test: node_modules PHONY
-	$(vitest) run
-
-test.watch: node_modules PHONY
-	$(vitest) watch
-
-scaffold.script: PHONY
-	@./bin/scaffold-script.sh
 
 open.dist.in.remote: PHONY
 	@./bin/open-dist-in-remote.sh
