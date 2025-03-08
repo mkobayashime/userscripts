@@ -12,7 +12,7 @@
     "@mkobayashime/shared-config": "1.1.0",
     "@rollup/plugin-typescript": "12.1.2",
     "@types/glob": "8.1.0",
-    "@types/node": "22.13.5",
+    "@types/node": "22.13.10",
     "chalk": "5.4.1",
     "chokidar": "3.6.0",
     "clipboardy": "4.0.0",
@@ -25,6 +25,6 @@
     "tslib": "2.8.1",
     "tsx": "4.19.3",
     "typescript": "5.7.3",
-    "vitest": "3.0.7"
+    "vitest": "3.0.8"
   }
 }
