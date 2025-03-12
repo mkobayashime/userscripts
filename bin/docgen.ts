@@ -1,11 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-
-import * as A from "fp-ts/lib/Array.js";
-import * as O from "fp-ts/lib/Option.js";
-import * as Ord from "fp-ts/lib/Ord.js";
-import { pipe } from "fp-ts/lib/function.js";
-import * as string from "fp-ts/lib/string.js";
 import { globSync } from "glob";
 import * as v from "valibot";
 
@@ -23,13 +17,11 @@ const getFiles = (): {
 } => {
   try {
     return {
-      scripts: pipe(
-        globSync(path.resolve("src", "userscripts", "*", "index.user.ts")),
-        A.sort(string.Ord),
-      ),
-      styles: pipe(
-        globSync(path.resolve("src", "*.user.css")),
-        A.sort(string.Ord),
+      scripts: globSync(
+        path.resolve("src", "userscripts", "*", "index.user.ts"),
+      ).sort((a, b) => (a > b ? 1 : -1)),
+      styles: globSync(path.resolve("src", "*.user.css")).sort((a, b) =>
+        a > b ? 1 : -1,
       ),
     };
   } catch (err) {
@@ -42,7 +34,7 @@ const parseUserStyleComment = async ({
   filepath,
 }: {
   filepath: string;
-}): Promise<O.Option<FileProperties>> => {
+}): Promise<FileProperties | null> => {
   try {
     const file = await readFile(filepath);
     const lines = file.toString().split("\n");
@@ -51,7 +43,7 @@ const parseUserStyleComment = async ({
       lines.length === 0 ||
       lines.some((line) => line.includes("docgen-ignore"))
     )
-      return O.none;
+      return null;
 
     const commentPrefix = {
       title: "@name",
@@ -65,17 +57,17 @@ const parseUserStyleComment = async ({
       line.startsWith(commentPrefix.description),
     );
 
-    if (titleLine === undefined) return O.none;
-    return O.some({
+    if (titleLine === undefined) return null;
+    return {
       filename: path.basename(filepath),
       title: titleLine.slice(commentPrefix.title.length).trim(),
       description: descriptionLine
         ?.slice(commentPrefix.description.length)
         .trim(),
-    });
+    };
   } catch (err) {
     console.error(err);
-    return O.none;
+    return null;
   }
 };
 
@@ -114,17 +106,15 @@ const getUserStyleProperties = async ({
 }: {
   files: string[];
 }): Promise<FileProperties[]> =>
-  pipe(
+  (
     await Promise.all(
       files.map(async (file) => {
         return parseUserStyleComment({ filepath: file });
       }),
-    ),
-    A.compact,
-    A.sort<FileProperties>(
-      Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title)),
-    ),
-  );
+    )
+  )
+    .filter((s) => s !== null)
+    .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1));
 
 const generateMdFileEntry = ({
   filename,
