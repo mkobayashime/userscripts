@@ -105,7 +105,9 @@ const getUserScriptProperties = async ({
           : undefined;
       }),
     )
-  ).filter((s) => s !== undefined);
+  )
+    .filter((s) => s !== undefined)
+    .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1));
 
 const getUserStyleProperties = async ({
   files,

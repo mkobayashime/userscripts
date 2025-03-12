@@ -50,13 +50,13 @@ Ctrl+Enter to merge/automerge PR
 
 Alert when you open Google Calendar in unintended accounts
 
-### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js)
-
-Space key to like, arrow/h/l keys to next/previous photo in the post
-
 ### [HOME'S - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/lifull-homes-shortcuts.user.js)
 
 Next/Prev image with arrow/h/l keys
+
+### [Instagram - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/instagram-shortcuts.user.js)
+
+Space key to like, arrow/h/l keys to next/previous photo in the post
 
 ### [MDN - Force English](https://github.com/mkobayashime/userscripts/raw/main/dist/mdn-force-english.user.js)
 
