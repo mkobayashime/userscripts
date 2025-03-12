@@ -1,7 +1,14 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "extends": ["@mkobayashime/shared-config/biome"],
+  "files": {
+    "ignore": [".dev"]
+  },
+  "linter": {
+    "ignore": ["dist"]
+  },
   "formatter": {
+    "ignore": [".dev"],
     "indentStyle": "space",
     "indentWidth": 2
   }

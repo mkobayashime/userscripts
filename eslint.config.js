@@ -1,15 +1,5 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-import { FlatCompat } from "@eslint/eslintrc";
 import { typescriptWithBiome } from "@mkobayashime/shared-config/eslint";
 import userscriptsPlugin from "eslint-plugin-userscripts";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
 
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
@@ -52,20 +42,6 @@ const config = [
     rules: {
       "userscripts/no-invalid-metadata": "off",
       "userscripts/filename-user": "off",
-    },
-  },
-
-  /**
-   * meta
-   */
-  ...compat.plugins("sort-keys-fix").map((c) => ({
-    ...c,
-    files: ["src/userscripts/meta/index.ts"],
-  })),
-  {
-    files: ["src/userscripts/meta/index.ts"],
-    rules: {
-      "sort-keys-fix/sort-keys-fix": "warn",
     },
   },
 ];

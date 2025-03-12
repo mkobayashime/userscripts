@@ -7,8 +7,7 @@ import * as Ord from "fp-ts/lib/Ord.js";
 import { pipe } from "fp-ts/lib/function.js";
 import * as string from "fp-ts/lib/string.js";
 import { globSync } from "glob";
-
-import { meta } from "../src/userscripts/meta/index.js";
+import * as v from "valibot";
 
 type FileProperties = {
   filename: string;
@@ -25,7 +24,7 @@ const getFiles = (): {
   try {
     return {
       scripts: pipe(
-        globSync(path.resolve("src", "userscripts", "*.user.ts")),
+        globSync(path.resolve("src", "userscripts", "*", "index.user.ts")),
         A.sort(string.Ord),
       ),
       styles: pipe(
@@ -39,12 +38,10 @@ const getFiles = (): {
   }
 };
 
-const parseFileComment = async ({
+const parseUserStyleComment = async ({
   filepath,
-  kind,
 }: {
   filepath: string;
-  kind: FileKind;
 }): Promise<O.Option<FileProperties>> => {
   try {
     const file = await readFile(filepath);
@@ -57,8 +54,8 @@ const parseFileComment = async ({
       return O.none;
 
     const commentPrefix = {
-      title: kind === "script" ? "// @name" : "@name",
-      description: kind === "script" ? "// @description " : "@description",
+      title: "@name",
+      description: "@description",
     };
 
     const titleLine = lines.find((line) =>
@@ -82,36 +79,43 @@ const parseFileComment = async ({
   }
 };
 
-const getFilesProperties = async ({
+const userscriptSourceSchema = v.object({
+  default: v.object({
+    name: v.string(),
+    description: v.string(),
+  }),
+});
+
+const getUserScriptProperties = async ({
   files,
-  kind,
 }: {
   files: string[];
-  kind: FileKind;
-}): Promise<FileProperties[]> => {
-  if (kind === "script") {
-    return files.flatMap((file) => {
-      const scriptMeta = meta[path.basename(file, ".user.ts")];
-      if (!scriptMeta) {
-        throw new Error(`Meta not found for userscript: ${file}`);
-      }
+}): Promise<FileProperties[]> =>
+  (
+    await Promise.all(
+      files.map(async (filepath) => {
+        const imported = (await import(filepath)) as unknown;
+        const parsed = v.safeParse(userscriptSourceSchema, imported);
+        return parsed.success
+          ? {
+              title: parsed.output.default.name,
+              description: parsed.output.default.description,
+              filename: `${path.basename(path.dirname(filepath))}.user.js`,
+            }
+          : undefined;
+      }),
+    )
+  ).filter((s) => s !== undefined);
 
-      if (scriptMeta.docgenIgnore) return [];
-
-      return [
-        {
-          filename: path.basename(file),
-          title: scriptMeta.name,
-          description: scriptMeta.description,
-        },
-      ];
-    });
-  }
-
-  return pipe(
+const getUserStyleProperties = async ({
+  files,
+}: {
+  files: string[];
+}): Promise<FileProperties[]> =>
+  pipe(
     await Promise.all(
       files.map(async (file) => {
-        return parseFileComment({ filepath: file, kind });
+        return parseUserStyleComment({ filepath: file });
       }),
     ),
     A.compact,
@@ -119,7 +123,6 @@ const getFilesProperties = async ({
       Ord.fromCompare((a, b) => string.Ord.compare(a.title, b.title)),
     ),
   );
-};
 
 const generateMdFileEntry = ({
   filename,
@@ -153,13 +156,11 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
 void (async () => {
   const { scripts, styles } = getFiles();
 
-  const scriptFileProperties = await getFilesProperties({
+  const scriptFileProperties = await getUserScriptProperties({
     files: scripts,
-    kind: "script",
   });
-  const styleFileProperties = await getFilesProperties({
+  const styleFileProperties = await getUserStyleProperties({
     files: styles,
-    kind: "style",
   });
 
   const scriptsMarkdown = scriptFileProperties

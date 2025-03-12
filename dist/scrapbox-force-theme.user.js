@@ -1,30 +1,33 @@
 // ==UserScript==
 // @name         Scrapbox - Force Theme
 // @namespace    mkobayashime
-// @version      1.3.3
+// @version      1.3.4
 // @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
+// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
 // @homepageURL  https://github.com/mkobayashime/userscripts
+// @match        https://scrapbox.io/*
+// @run-at       document-end
 // @updateURL    https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js
 // @downloadURL  https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-force-theme.user.js
-// @match        https://scrapbox.io/*
-// @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
-// @run-at       document-end
-// @grant        none
 // ==/UserScript==
 
-(() => {
+var userscriptConfig = {
   /**
    * 適用するテーマ. html の data-project-theme に設定されるもの.
    * @type string
    */
-  const themeId = "default-dark";
+  themeId: "default-dark",
   /**
    * 有効化するプロジェクトの id またはマッチする RegExp. 空配列の場合全プロジェクトで有効.
    * @type Array<string | RegExp>
    */
-  const enabledProjectIds = [];
+  enabledProjectIds: [],
+};
+
+// src/userscripts/scrapbox-force-theme/index.user.ts
+void (({ themeId, enabledProjectIds }) => {
   const isProjectEnabled = (projectId) => {
     if (enabledProjectIds.length === 0) return true;
     return enabledProjectIds.some((pattern) => {
@@ -51,4 +54,4 @@
       pageObserver.observe(document.documentElement, { attributes: true });
     }
   }
-})();
+})(userscriptConfig);
