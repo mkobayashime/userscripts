@@ -34,7 +34,7 @@ clear: PHONY
 	rm -rf dist
 
 docgen: node_modules PHONY
-	$(ts-node) bin/docgen.ts
+	bun run bin/docgen.ts
 	@make lint.fix
 
 typecheck: node_modules PHONY
