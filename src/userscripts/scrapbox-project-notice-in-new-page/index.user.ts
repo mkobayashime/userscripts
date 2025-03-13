@@ -1,6 +1,5 @@
 import { defineUserScript } from "bundlemonkey";
 
-/* eslint-disable no-var */
 declare global {
   var scrapbox: {
     Page: {
@@ -12,7 +11,6 @@ declare global {
     };
   };
 }
-/* eslint-enable no-var */
 
 export default defineUserScript({
   name: "Scrapbox - Project name notice in new page",
