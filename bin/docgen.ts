@@ -19,10 +19,8 @@ const getFiles = (): {
     return {
       scripts: globSync(
         path.resolve("src", "userscripts", "*", "index.user.ts"),
-      ).sort((a, b) => (a > b ? 1 : -1)),
-      styles: globSync(path.resolve("src", "*.user.css")).sort((a, b) =>
-        a > b ? 1 : -1,
       ),
+      styles: globSync(path.resolve("src", "*.user.css")),
     };
   } catch (err) {
     console.error(err);
