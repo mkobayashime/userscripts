@@ -4,7 +4,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "GitHub - PR submission shortcuts",
-  version: "1.3.0",
+  version: "1.4.0",
   description: "Ctrl+Enter to merge/automerge PR",
   match: ["https://github.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=github.com",
@@ -34,6 +34,12 @@ export default defineUserScript({
         }
 
         mergeButton.click();
+
+        const focusedInput = await awaitWithInterval(() => {
+          const focused = document.activeElement;
+          return focused instanceof HTMLInputElement ? { data: focused } : null;
+        });
+        if (focusedInput) focusedInput.blur();
 
         const confirmButton = await awaitWithInterval(() => {
           const button = document.evaluate(
