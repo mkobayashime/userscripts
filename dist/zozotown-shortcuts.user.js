@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ZOZOTOWN - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.4.3
+// @version      1.4.4
 // @description  Next/Prev image with arrow/h/l keys
 // @icon         https://www.google.com/s2/favicons?domain=zozo.jp
 // @author       mkobayashime
@@ -27,11 +27,15 @@ void (() => {
   window.addEventListener("keydown", (e) => {
     if (isTyping()) return;
     if (e.key === "l" || e.key === "ArrowRight") {
-      const nextButton = document.querySelector("#btnNext button");
+      const nextButton = document.querySelector(
+        "#goods-image-carousel .swiper-button-next",
+      );
       if (nextButton) nextButton.click();
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
-      const prevButton = document.querySelector("#btnPrev button");
+      const prevButton = document.querySelector(
+        "#goods-image-carousel .swiper-button-prev",
+      );
       if (prevButton) prevButton.click();
     }
   });
