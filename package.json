@@ -10,7 +10,7 @@
     "@biomejs/biome": "1.9.4",
     "@mkobayashime/shared-config": "1.1.0",
     "@types/glob": "8.1.0",
-    "@types/node": "22.13.13",
+    "@types/node": "22.14.0",
     "bundlemonkey": "0.7.1",
     "eslint": "9.23.0",
     "eslint-plugin-userscripts": "0.5.6",
