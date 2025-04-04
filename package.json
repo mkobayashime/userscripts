@@ -12,7 +12,7 @@
     "@types/glob": "8.1.0",
     "@types/node": "22.14.0",
     "bundlemonkey": "0.7.1",
-    "eslint": "9.23.0",
+    "eslint": "9.24.0",
     "eslint-plugin-userscripts": "0.5.6",
     "glob": "11.0.1",
     "typescript": "5.8.2",
