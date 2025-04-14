@@ -66,10 +66,6 @@ Redirect Japanese pages in MDN to corresponding English pages
 
 Moneytree にショートカットキーを追加します
 
-### [note - Auto save drafts](https://github.com/mkobayashime/userscripts/raw/main/dist/note-auto-save-drafts.user.js)
-
-Auto save draft articles periodically
-
 ### [Pinterest - Shortcuts in "Save from site"](https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js)
 
 Ctrl+Enter in "Save from site"
@@ -97,10 +93,6 @@ Disable autofocus to the message input field after moved to another channel
 ### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-unintended-reload.user.js)
 
 Alert when you reload/close Slack with a new draft
-
-### [TweetDeck Preview - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/tweetdeck-shortcuts.user.js)
-
-Refined shortcuts in the new (preview) version of TweetDeck
 
 ### [Twitter - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/twitter-shortcuts.user.js)
 
