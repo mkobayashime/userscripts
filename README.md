@@ -30,6 +30,10 @@ Copy lyrics automatically in supported sites
 
 ETC利用照会サービスに h/l などのショートカットキーを追加します
 
+### [FLYMEe - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/flymee-shortcuts.user.js)
+
+Next/Prev image with arrow/h/l keys
+
 ### [freee shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/freee-shortcuts.user.js)
 
 freee にショートカットキーを追加します
