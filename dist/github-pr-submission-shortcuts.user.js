@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.5.0
+// @version      1.6.0
 // @description  Ctrl+Enter to merge/automerge PR
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime
@@ -43,14 +43,28 @@ var isTyping = () => {
   );
 };
 
+// src/userscripts/utils/sleep.ts
+var sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // src/userscripts/github-pr-submission-shortcuts/index.user.ts
 void (() => {
   window.addEventListener("keydown", async (e) => {
     if (!/\/\S+\/\S+\/pull\//.test(window.location.pathname)) return;
     if (e.ctrlKey && e.key === "Enter" && !isTyping()) {
+      const bypassRulesCheckbox = document.evaluate(
+        "//label[descendant::*[contains(text(), '(bypass rules)')]]",
+        document,
+        null,
+        XPathResult.FIRST_ORDERED_NODE_TYPE,
+        null,
+      ).singleNodeValue;
+      if (bypassRulesCheckbox instanceof HTMLElement) {
+        bypassRulesCheckbox.click();
+        await sleep(100);
+      }
       const mergeButton = await awaitWithInterval(() => {
         const button = document.evaluate(
-          "//button[*//*[text() = 'Merge pull request' or text() = 'Enable auto-merge' or text() = 'Bypass rules and merge']]",
+          "//button[descendant::*[text() = 'Merge pull request' or text() = 'Enable auto-merge' or text() = 'Bypass rules and merge']]",
           document,
           null,
           XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -73,7 +87,7 @@ void (() => {
       if (focusedInput) focusedInput.blur();
       const confirmButton = await awaitWithInterval(() => {
         const button = document.evaluate(
-          "//button[*//*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge']]",
+          "//button[descendant::*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge']]",
           document,
           null,
           XPathResult.FIRST_ORDERED_NODE_TYPE,
