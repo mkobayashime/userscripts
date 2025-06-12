@@ -1,10 +1,11 @@
 import { defineUserScript } from "bundlemonkey";
 import { awaitWithInterval } from "../utils/awaitWithInterval";
 import { isTyping } from "../utils/isTyping";
+import { sleep } from "../utils/sleep";
 
 export default defineUserScript({
   name: "GitHub - PR submission shortcuts",
-  version: "1.5.0",
+  version: "1.6.0",
   description: "Ctrl+Enter to merge/automerge PR",
   match: ["https://github.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=github.com",
@@ -14,9 +15,21 @@ export default defineUserScript({
       if (!/\/\S+\/\S+\/pull\//.test(window.location.pathname)) return;
 
       if (e.ctrlKey && e.key === "Enter" && !isTyping()) {
+        const bypassRulesCheckbox = document.evaluate(
+          "//label[descendant::*[contains(text(), '(bypass rules)')]]",
+          document,
+          null,
+          XPathResult.FIRST_ORDERED_NODE_TYPE,
+          null,
+        ).singleNodeValue;
+        if (bypassRulesCheckbox instanceof HTMLElement) {
+          bypassRulesCheckbox.click();
+          await sleep(100);
+        }
+
         const mergeButton = await awaitWithInterval(() => {
           const button = document.evaluate(
-            "//button[*//*[text() = 'Merge pull request' or text() = 'Enable auto-merge' or text() = 'Bypass rules and merge']]",
+            "//button[descendant::*[text() = 'Merge pull request' or text() = 'Enable auto-merge' or text() = 'Bypass rules and merge']]",
             document,
             null,
             XPathResult.FIRST_ORDERED_NODE_TYPE,
@@ -43,7 +56,7 @@ export default defineUserScript({
 
         const confirmButton = await awaitWithInterval(() => {
           const button = document.evaluate(
-            "//button[*//*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge']]",
+            "//button[descendant::*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge']]",
             document,
             null,
             XPathResult.FIRST_ORDERED_NODE_TYPE,
