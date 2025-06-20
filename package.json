@@ -8,7 +8,7 @@
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@mkobayashime/shared-config": "1.1.1",
+    "@mkobayashime/shared-config": "1.2.0",
     "@types/glob": "8.1.0",
     "@types/node": "22.15.19",
     "bundlemonkey": "0.7.3",
