@@ -9,7 +9,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@mkobayashime/shared-config": "1.2.0",
-    "@types/glob": "8.1.0",
+    "@types/glob": "9.0.0",
     "@types/node": "24.0.4",
     "bundlemonkey": "0.7.3",
     "eslint": "9.30.0",
