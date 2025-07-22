@@ -14,7 +14,7 @@ lint.fix: node_modules PHONY
 	$(eslint) --fix .
 
 lint.fix.dist: node_modules PHONY
-	$(biome) check --fix dist
+	$(biome) check --config-path ./biome-dist.json --fix dist
 	$(eslint) --fix dist
 
 dev: dev.remote PHONY
