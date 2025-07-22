@@ -1,0 +1,11 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "root": false,
+  "extends": ["./biome.json"],
+  "files": {
+    "includes": ["**/dist"]
+  },
+  "linter": {
+    "includes": ["!**"]
+  }
+}

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.6.3
+// @version      1.6.4
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime
@@ -49,7 +49,7 @@ void (({ enabledProjectIds, disabledProjectIds }) => {
   };
   const pageObserver = new MutationObserver(() => {
     const settingPagesPattern =
-      /https:\/\/scrapbox.io\/(projects\/[^\/]+\/)?settings\//;
+      /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
     const url = window.location.href;
     if (!settingPagesPattern.test(url)) {
       const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
