@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Force Theme
 // @namespace    mkobayashime
-// @version      1.3.4
+// @version      1.3.5
 // @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime
@@ -43,7 +43,7 @@ void (({ themeId, enabledProjectIds }) => {
     }
   });
   const settingPagesPattern =
-    /https:\/\/scrapbox.io\/(projects\/[^\/]+\/)?settings\//;
+    /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
   const url = window.location.href;
   if (!settingPagesPattern.test(url)) {
     const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
