@@ -38,7 +38,7 @@ export default defineUserScript({
     });
 
     const settingPagesPattern =
-      /https:\/\/scrapbox.io\/(projects\/[^\/]+\/)?settings\//;
+      /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
 
     const url = window.location.href;
 
