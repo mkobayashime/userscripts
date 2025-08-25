@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - Auto SSO
 // @namespace    mkobayashime
-// @version      1.1.1
+// @version      1.2.0
 // @description  Attempt SSO if the banner exists on every pageload
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime
@@ -14,6 +14,16 @@
 
 // src/userscripts/github-auto-sso/index.user.ts
 void (() => {
+  const globalSSOBannerSection = document.querySelector(
+    "[data-testid='global-sso-banner']",
+  );
+  const ssoBannerActionAnchor = globalSSOBannerSection?.querySelector(
+    "[class*='-Banner-BannerActionsContainer-'] a",
+  );
+  if (ssoBannerActionAnchor instanceof HTMLElement) {
+    ssoBannerActionAnchor.click();
+    return;
+  }
   const ssoFormSubmitButton = document.querySelector(
     ".business-sso-panel form button[type='submit']",
   );
