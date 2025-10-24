@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - PR submission shortcuts
 // @namespace    mkobayashime
-// @version      1.7.0
+// @version      1.7.1
 // @description  Ctrl+Enter to merge/automerge PR
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime
@@ -87,7 +87,7 @@ void (() => {
       if (focusedInput) focusedInput.blur();
       const confirmButton = await awaitWithInterval(() => {
         const button = document.evaluate(
-          "//button[descendant::*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge' or text() == 'Confirm squash and merge']]",
+          "//button[descendant::*[text() = 'Confirm merge' or text() = 'Confirm auto-merge' or text() = 'Confirm bypass rules and merge' or text() = 'Confirm squash and merge']]",
           document,
           null,
           XPathResult.FIRST_ORDERED_NODE_TYPE,
