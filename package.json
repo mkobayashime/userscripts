@@ -8,11 +8,12 @@
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
-    "@mkobayashime/shared-config": "2.0.0",
+    "@mkobayashime/shared-config": "3.0.0",
     "@types/glob": "9.0.0",
     "@types/node": "25.0.9",
     "bundlemonkey": "0.7.5",
     "eslint": "9.39.2",
+    "eslint-config-flat-gitignore": "2.1.0",
     "eslint-plugin-userscripts": "0.5.6",
     "glob": "11.1.0",
     "typescript": "5.9.3",
