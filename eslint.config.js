@@ -8,7 +8,7 @@ const config = [
   },
   ...typescriptWithBiome.map((c) => ({
     ...c,
-    ignores: ["dist/**"],
+    files: ["src/**/*.ts"],
   })),
   {
     languageOptions: {
