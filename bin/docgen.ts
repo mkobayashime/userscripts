@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { globSync } from "glob";
+import { Glob } from "bun";
 import * as v from "valibot";
 
 type FileProperties = {
@@ -11,16 +11,29 @@ type FileProperties = {
 
 type FileKind = "script" | "style";
 
-const getFiles = (): {
+const getFiles = async (): Promise<{
   scripts: string[];
   styles: string[];
-} => {
+}> => {
   try {
     return {
-      scripts: globSync(
-        path.resolve("src", "userscripts", "*", "index.user.ts"),
+      scripts: await Array.fromAsync(
+        new Glob(
+          path.resolve(
+            import.meta.dirname,
+            "..",
+            "src",
+            "userscripts",
+            "*",
+            "index.user.ts",
+          ),
+        ).scan(),
       ),
-      styles: globSync(path.resolve("src", "*.user.css")),
+      styles: await Array.fromAsync(
+        new Glob(
+          path.resolve(import.meta.dirname, "..", "src", "*.user.css"),
+        ).scan(),
+      ),
     };
   } catch (err) {
     console.error(err);
@@ -144,7 +157,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
 };
 
 void (async () => {
-  const { scripts, styles } = getFiles();
+  const { scripts, styles } = await getFiles();
 
   const scriptFileProperties = await getUserScriptProperties({
     files: scripts,
