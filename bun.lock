@@ -6,7 +6,7 @@
       "name": "userscripts",
       "devDependencies": {
         "@biomejs/biome": "2.3.11",
-        "@mkobayashime/shared-config": "3.0.0",
+        "@mkobayashime/shared-config": "4.0.0",
         "@types/bun": "1.3.9",
         "@types/node": "25.2.1",
         "bundlemonkey": "0.7.5",
@@ -152,7 +152,7 @@
 
     "@isaacs/cliui": ["@isaacs/cliui@9.0.0", "", {}, "sha512-AokJm4tuBHillT+FpMtxQ60n8ObyXBatq7jD2/JA9dxbDDokKQm8KMht5ibGzLVU9IJDIKK4TPKgMHEYMn3lMg=="],
 
-    "@mkobayashime/shared-config": ["@mkobayashime/shared-config@3.0.0", "", { "peerDependencies": { "@biomejs/biome": "^2.0.4", "eslint": "^9.31.0", "eslint-config-flat-gitignore": "^2.1.0", "typescript": "^5.8.3", "typescript-eslint": "^8.39.0" } }, "sha512-/wJWswLezPKDBWcn8FWSsVLuaTgBac69D7KsfC1snNxHjL7l7bf14To54tNmXw46RzY7G+GgHVJyKDVnR0gKHg=="],
+    "@mkobayashime/shared-config": ["@mkobayashime/shared-config@4.0.0", "", { "optionalDependencies": { "@biomejs/biome": ">2.3.0", "eslint": "^9.31.0", "eslint-config-flat-gitignore": "^2.1.0", "typescript": "^5.8.3", "typescript-eslint": "^8.39.0" } }, "sha512-yLcjSwsHmBQT5NngXSByTF1sn0qxSsyWRqFoOthhzWwvaWZWXi7vMNKVKW4JVn1WElh1AZuXL0WPHryNM6OvrA=="],
 
     "@sec-ant/readable-stream": ["@sec-ant/readable-stream@0.4.1", "", {}, "sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg=="],
 
