@@ -9,9 +9,9 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.7",
     "@mkobayashime/shared-config": "4.1.0",
-    "@types/bun": "1.3.9",
+    "@types/bun": "1.3.10",
     "@types/node": "25.5.0",
-    "bundlemonkey": "0.7.5",
+    "bundlemonkey": "0.7.6",
     "eslint": "10.0.3",
     "eslint-config-flat-gitignore": "2.2.1",
     "eslint-plugin-userscripts": "0.5.6",
