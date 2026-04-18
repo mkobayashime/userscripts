@@ -66,10 +66,6 @@ Space key to like, arrow/h/l keys to next/previous photo in the post
 
 Redirect Japanese pages in MDN to corresponding English pages
 
-### [Moneytree shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/moneytree-shortcuts.user.js)
-
-Moneytree にショートカットキーを追加します
-
 ### [Pinterest - Shortcuts in "Save from site"](https://github.com/mkobayashime/userscripts/raw/main/dist/pinterest-save-from-site-shortcuts.user.js)
 
 Ctrl+Enter in "Save from site"
@@ -97,10 +93,6 @@ Disable autofocus to the message input field after moved to another channel
 ### [Slack - No unintended reloads](https://github.com/mkobayashime/userscripts/raw/main/dist/slack-no-unintended-reload.user.js)
 
 Alert when you reload/close Slack with a new draft
-
-### [Twitter - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/twitter-shortcuts.user.js)
-
-Refined shortcuts in Twitter for web
 
 ### [Zoom - Shortcuts](https://github.com/mkobayashime/userscripts/raw/main/dist/zoom-web-shortcuts.user.js)
 
