@@ -98,10 +98,6 @@ Alert when you reload/close Slack with a new draft
 
 Google Meet-like Ctrl-d/e shortcuts in Zoom
 
-### [ZOZOTOWN - Shortcut keys](https://github.com/mkobayashime/userscripts/raw/main/dist/zozotown-shortcuts.user.js)
-
-Next/Prev image with arrow/h/l keys
-
 ## Styles (`*.user.css`)
 
 ### [Remove signup dialogue in Qiita](https://github.com/mkobayashime/userscripts/raw/main/src/qiita-no-dialogue.user.css)
