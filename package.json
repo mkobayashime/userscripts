@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "2.4.7",
+    "@biomejs/biome": "2.5.1",
     "@mkobayashime/shared-config": "4.1.0",
     "@types/bun": "1.3.10",
     "@types/node": "25.6.0",
