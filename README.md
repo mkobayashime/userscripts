@@ -70,6 +70,10 @@ Redirect Japanese pages in MDN to corresponding English pages
 
 Ctrl+Enter in "Save from site"
 
+### [Rakuten Humanized](https://github.com/mkobayashime/userscripts/raw/main/dist/rakuten-humanized.user.js)
+
+楽天の商品ページを人間にも使える程度にマシにします
+
 ### [Scrapbox - Clear Watch List](https://github.com/mkobayashime/userscripts/raw/main/dist/scrapbox-clear-watch-list.user.js)
 
 Scrapbox の Watch List を自動的に全削除します
