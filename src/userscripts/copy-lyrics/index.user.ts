@@ -1,4 +1,5 @@
 import { defineUserScript } from "bundlemonkey";
+
 import { copyToClipboard } from "../utils/copyToClipboard";
 import { enableSelection } from "../utils/enableSelection";
 

@@ -1,4 +1,5 @@
 import { defineUserScript } from "bundlemonkey";
+
 import { awaitWithInterval } from "../utils/awaitWithInterval";
 import { isTyping } from "../utils/isTyping";
 import { sleep } from "../utils/sleep";
