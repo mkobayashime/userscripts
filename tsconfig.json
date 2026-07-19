@@ -2,8 +2,8 @@
   "include": ["**/*.ts"],
   "compilerOptions": {
     "target": "es2020",
-    "module": "es2020",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "strict": true,
     "esModuleInterop": true,
