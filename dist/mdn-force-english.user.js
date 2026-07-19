@@ -14,9 +14,7 @@
 
 // src/userscripts/mdn-force-english/index.user.ts
 void (() => {
-  if (
-    window.location.href.startsWith("https://developer.mozilla.org/ja/docs/")
-  ) {
+  if (window.location.href.startsWith("https://developer.mozilla.org/ja/docs/")) {
     window.location.href = window.location.href.replace(
       /^https:\/\/developer.mozilla.org\/ja\/docs\//,
       "https://developer.mozilla.org/en-US/docs/",

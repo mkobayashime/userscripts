@@ -33,8 +33,7 @@ void (() => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null,
       ).singleNodeValue;
-      if (prevPageButton && prevPageButton instanceof HTMLElement)
-        prevPageButton.click();
+      if (prevPageButton && prevPageButton instanceof HTMLElement) prevPageButton.click();
     }
     if (e.key === "l" || e.key === "ArrowRight") {
       const nextPageButton = document.evaluate(
@@ -44,8 +43,7 @@ void (() => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null,
       ).singleNodeValue;
-      if (nextPageButton && nextPageButton instanceof HTMLElement)
-        nextPageButton.click();
+      if (nextPageButton && nextPageButton instanceof HTMLElement) nextPageButton.click();
     }
   });
 })();

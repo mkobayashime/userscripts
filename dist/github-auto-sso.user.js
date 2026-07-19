@@ -14,9 +14,7 @@
 
 // src/userscripts/github-auto-sso/index.user.ts
 void (() => {
-  const globalSSOBannerSection = document.querySelector(
-    "[data-testid='global-sso-banner']",
-  );
+  const globalSSOBannerSection = document.querySelector("[data-testid='global-sso-banner']");
   const ssoBannerActionAnchor = globalSSOBannerSection?.querySelector(
     "[class*='-Banner-BannerActionsContainer-'] a",
   );
@@ -31,9 +29,7 @@ void (() => {
     ssoFormSubmitButton.click();
     return;
   }
-  const ssoAnchor = document.querySelector(
-    "section[aria-labelledby='single-sign-on'] a",
-  );
+  const ssoAnchor = document.querySelector("section[aria-labelledby='single-sign-on'] a");
   if (!(ssoAnchor instanceof HTMLElement)) return;
   ssoAnchor.click();
 })();

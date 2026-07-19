@@ -25,8 +25,7 @@ void (() => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null,
       ).singleNodeValue;
-      if (matchingElement && matchingElement instanceof HTMLElement)
-        matchingElement.click();
+      if (matchingElement && matchingElement instanceof HTMLElement) matchingElement.click();
     }
   };
 })();

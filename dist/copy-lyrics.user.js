@@ -45,12 +45,8 @@ var enableSelection = () => {
 // src/userscripts/copy-lyrics/index.user.ts
 void (() => {
   const googleSearch = () => {
-    return Array.from(
-      document.querySelectorAll("div[data-lyricid] > div > div > div > span"),
-    )
-      .map((element) =>
-        element instanceof HTMLSpanElement ? element.innerText : null,
-      )
+    return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div > span"))
+      .map((element) => (element instanceof HTMLSpanElement ? element.innerText : null))
       .filter((str) => str !== null)
       .join("\n");
   };
@@ -67,18 +63,14 @@ void (() => {
   };
   const musixmatch = () =>
     Array.from(document.getElementsByClassName("mxm-lyrics__content "))
-      .map((element) =>
-        element instanceof HTMLElement ? element.innerText : null,
-      )
+      .map((element) => (element instanceof HTMLElement ? element.innerText : null))
       .filter((str) => str)
       .join("\n");
   const linkcore = () => {
     const wrapper = document.querySelector(".lyric_text");
     if (!wrapper) return;
     return Array.from(wrapper.children)
-      .map((element) =>
-        element instanceof HTMLElement ? element.innerText : null,
-      )
+      .map((element) => (element instanceof HTMLElement ? element.innerText : null))
       .filter((str) => str !== null)
       .join("\n");
   };
