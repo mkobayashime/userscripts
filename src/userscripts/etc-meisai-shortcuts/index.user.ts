@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "ETC利用照会サービス - Shortcut keys",
-  version: "2.0.2",
+  version: "2.0.3",
   description: "ETC利用照会サービスに h/l などのショートカットキーを追加します",
   match: ["https://www2.etc-meisai.jp/etc/*"],
   runAt: "document-end",
@@ -20,8 +20,7 @@ export default defineUserScript({
           null,
         ).singleNodeValue;
 
-        if (prevPageButton && prevPageButton instanceof HTMLElement)
-          prevPageButton.click();
+        if (prevPageButton && prevPageButton instanceof HTMLElement) prevPageButton.click();
       }
 
       if (e.key === "l" || e.key === "ArrowRight") {
@@ -33,8 +32,7 @@ export default defineUserScript({
           null,
         ).singleNodeValue;
 
-        if (nextPageButton && nextPageButton instanceof HTMLElement)
-          nextPageButton.click();
+        if (nextPageButton && nextPageButton instanceof HTMLElement) nextPageButton.click();
       }
     });
   },

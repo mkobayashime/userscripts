@@ -2,9 +2,8 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Scrapbox - No project styles",
-  version: "1.6.4",
-  description:
-    "Scrapbox のプロジェクト単位で設定されているスタイルを無効化します",
+  version: "1.6.5",
+  description: "Scrapbox のプロジェクト単位で設定されているスタイルを無効化します",
   match: ["https://scrapbox.io/*"],
   runAt: "document-end",
   icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
@@ -44,15 +43,13 @@ export default defineUserScript({
     };
 
     const pageObserver = new MutationObserver(() => {
-      const settingPagesPattern =
-        /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
+      const settingPagesPattern = /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
 
       const url = window.location.href;
 
       if (!settingPagesPattern.test(url)) {
-        const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
-          window.location.href,
-        )?.groups?.projectId;
+        const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(window.location.href)
+          ?.groups?.projectId;
 
         if (!projectId) return;
 

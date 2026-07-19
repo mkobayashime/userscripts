@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Scrapbox - Force Theme",
-  version: "1.3.5",
+  version: "1.3.6",
   description: "Scrapbox でプロジェクトに関わらず特定のテーマを使用します",
   match: ["https://scrapbox.io/*"],
   icon: "https://www.google.com/s2/favicons?domain=scrapbox.io",
@@ -37,15 +37,13 @@ export default defineUserScript({
       }
     });
 
-    const settingPagesPattern =
-      /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
+    const settingPagesPattern = /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
 
     const url = window.location.href;
 
     if (!settingPagesPattern.test(url)) {
-      const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
-        window.location.href,
-      )?.groups?.projectId;
+      const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(window.location.href)
+        ?.groups?.projectId;
 
       if (!projectId) return;
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         freee shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.3
+// @version      1.3.4
 // @description  freee にショートカットキーを追加します
 // @icon         https://www.google.com/s2/favicons?domain=freee.co.jp
 // @author       mkobayashime
@@ -25,8 +25,7 @@ void (() => {
         XPathResult.FIRST_ORDERED_NODE_TYPE,
         null,
       ).singleNodeValue;
-      if (matchingElement && matchingElement instanceof HTMLElement)
-        matchingElement.click();
+      if (matchingElement && matchingElement instanceof HTMLElement) matchingElement.click();
     }
   };
 })();

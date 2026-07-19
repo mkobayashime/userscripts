@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping";
 
 export default defineUserScript({
   name: "HOME'S - Shortcut keys",
-  version: "1.3.4",
+  version: "1.3.5",
   description: "Next/Prev image with arrow/h/l keys",
   match: ["https://www.homes.co.jp/*"],
   icon: "https://www.google.com/s2/favicons?domain=homes.co.jp",
@@ -14,17 +14,13 @@ export default defineUserScript({
 
       if (e.key === "l" || e.key === "ArrowRight") {
         e.preventDefault();
-        const nextButton = document.querySelector<HTMLElement>(
-          "[aria-label='Next slide']",
-        );
+        const nextButton = document.querySelector<HTMLElement>("[aria-label='Next slide']");
         if (nextButton) nextButton.click();
       }
 
       if (e.key === "h" || e.key === "ArrowLeft") {
         e.preventDefault();
-        const prevButton = document.querySelector<HTMLElement>(
-          "[aria-label='Previous slide']",
-        );
+        const prevButton = document.querySelector<HTMLElement>("[aria-label='Previous slide']");
         if (prevButton) prevButton.click();
       }
     });

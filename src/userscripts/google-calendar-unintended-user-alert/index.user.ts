@@ -24,9 +24,7 @@ export default defineUserScript({
     if (!xUserEmailElement) return;
 
     if (!GOOGLE_ACCOUNT_ADDRESSES.includes(xUserEmailElement.innerText)) {
-      window.alert(
-        `Unintended account detected: ${xUserEmailElement.innerText}`,
-      );
+      window.alert(`Unintended account detected: ${xUserEmailElement.innerText}`);
     }
   },
 });

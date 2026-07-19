@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HOME'S - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.4
+// @version      1.3.5
 // @description  Next/Prev image with arrow/h/l keys
 // @icon         https://www.google.com/s2/favicons?domain=homes.co.jp
 // @author       mkobayashime
@@ -33,9 +33,7 @@ void (() => {
     }
     if (e.key === "h" || e.key === "ArrowLeft") {
       e.preventDefault();
-      const prevButton = document.querySelector(
-        "[aria-label='Previous slide']",
-      );
+      const prevButton = document.querySelector("[aria-label='Previous slide']");
       if (prevButton) prevButton.click();
     }
   });

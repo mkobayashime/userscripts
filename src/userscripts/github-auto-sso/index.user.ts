@@ -2,14 +2,12 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "GitHub - Auto SSO",
-  version: "1.2.0",
+  version: "1.2.1",
   description: "Attempt SSO if the banner exists on every pageload",
   match: ["https://github.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=github.com",
   main: () => {
-    const globalSSOBannerSection = document.querySelector(
-      "[data-testid='global-sso-banner']",
-    );
+    const globalSSOBannerSection = document.querySelector("[data-testid='global-sso-banner']");
     const ssoBannerActionAnchor = globalSSOBannerSection?.querySelector(
       "[class*='-Banner-BannerActionsContainer-'] a",
     );
@@ -26,9 +24,7 @@ export default defineUserScript({
       return;
     }
 
-    const ssoAnchor = document.querySelector(
-      "section[aria-labelledby='single-sign-on'] a",
-    );
+    const ssoAnchor = document.querySelector("section[aria-labelledby='single-sign-on'] a");
     if (!(ssoAnchor instanceof HTMLElement)) return;
 
     ssoAnchor.click();

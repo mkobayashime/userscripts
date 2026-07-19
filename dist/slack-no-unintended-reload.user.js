@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No unintended reloads
 // @namespace    mkobayashime
-// @version      1.3.2
+// @version      1.3.3
 // @description  Alert when you reload/close Slack with a new draft
 // @icon         https://www.google.com/s2/favicons?domain=slack.com
 // @author       mkobayashime
@@ -16,14 +16,11 @@
 // src/userscripts/slack-no-unintended-reload/index.user.ts
 void (() => {
   window.addEventListener("beforeunload", (event) => {
-    const messageInputContainer =
-      document.getElementsByClassName("ql-editor")[0];
+    const messageInputContainer = document.getElementsByClassName("ql-editor")[0];
     if (messageInputContainer) {
       const isEmpty = /./;
       const messageLines = messageInputContainer.children;
-      if (
-        Array.from(messageLines).some((line) => isEmpty.test(line.innerText))
-      ) {
+      if (Array.from(messageLines).some((line) => isEmpty.test(line.innerText))) {
         event.preventDefault();
         event.returnValue = "";
         return false;

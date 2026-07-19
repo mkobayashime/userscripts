@@ -18,10 +18,9 @@ export default defineUserScript({
           return;
         }
 
-        const websiteLinkSubmitButton =
-          document.querySelector<HTMLButtonElement>(
-            '[data-test-id="website-link-submit-button"]',
-          );
+        const websiteLinkSubmitButton = document.querySelector<HTMLButtonElement>(
+          '[data-test-id="website-link-submit-button"]',
+        );
         if (websiteLinkSubmitButton) {
           websiteLinkSubmitButton.click();
           return;
@@ -31,13 +30,10 @@ export default defineUserScript({
         if (!(document.activeElement instanceof HTMLElement)) return;
         document.activeElement.blur();
         const addNPinButtonCandidates: HTMLSelectElement[] = Array.from(
-          document.querySelectorAll(
-            '[data-test-id="pin-builder-draft"] button',
-          ),
+          document.querySelectorAll('[data-test-id="pin-builder-draft"] button'),
         );
         const addNPinButton = addNPinButtonCandidates.find(
-          (el) =>
-            el.innerText.startsWith("Add") && el.innerText.endsWith("Pin"),
+          (el) => el.innerText.startsWith("Add") && el.innerText.endsWith("Pin"),
         );
         if (addNPinButton) {
           addNPinButton.click();

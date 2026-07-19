@@ -1,6 +1,7 @@
 bundlemonkey = bunx --bun bundlemonkey
+oxlint = bunx oxlint
+oxfmt = bunx oxfmt
 biome = bunx biome
-eslint = bunx eslint
 
 node_modules: PHONY
 ifeq ($(CI), true)
@@ -10,16 +11,18 @@ else
 endif
 
 lint: node_modules PHONY
+	$(oxfmt) --check
+	$(oxlint) --type-aware
 	$(biome) check .
-	$(eslint) .
 
 lint.fix: node_modules PHONY
+	$(oxfmt)
+	$(oxlint) --fix --type-aware
 	$(biome) check --fix .
-	$(eslint) --fix .
 
 lint.fix.dist: node_modules PHONY
-	$(biome) check --config-path ./biome-dist.json --fix dist
-	$(eslint) --fix dist
+	$(oxfmt) dist
+	$(oxlint) -c oxlint.dist.config.ts --fix dist
 
 dev: dev.remote PHONY
 
