@@ -37,15 +37,13 @@ export default defineUserScript({
       }
     });
 
-    const settingPagesPattern =
-      /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
+    const settingPagesPattern = /https:\/\/scrapbox.io\/(projects\/[^/]+\/)?settings\//;
 
     const url = window.location.href;
 
     if (!settingPagesPattern.test(url)) {
-      const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(
-        window.location.href,
-      )?.groups?.projectId;
+      const projectId = /^https:\/\/scrapbox.io\/(?<projectId>.*)\/.*$/.exec(window.location.href)
+        ?.groups?.projectId;
 
       if (!projectId) return;
 

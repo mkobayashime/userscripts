@@ -19,8 +19,7 @@ export default defineUserScript({
           null,
         ).singleNodeValue;
 
-        if (matchingElement && matchingElement instanceof HTMLElement)
-          matchingElement.click();
+        if (matchingElement && matchingElement instanceof HTMLElement) matchingElement.click();
       }
     };
   },

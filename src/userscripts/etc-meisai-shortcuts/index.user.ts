@@ -20,8 +20,7 @@ export default defineUserScript({
           null,
         ).singleNodeValue;
 
-        if (prevPageButton && prevPageButton instanceof HTMLElement)
-          prevPageButton.click();
+        if (prevPageButton && prevPageButton instanceof HTMLElement) prevPageButton.click();
       }
 
       if (e.key === "l" || e.key === "ArrowRight") {
@@ -33,8 +32,7 @@ export default defineUserScript({
           null,
         ).singleNodeValue;
 
-        if (nextPageButton && nextPageButton instanceof HTMLElement)
-          nextPageButton.click();
+        if (nextPageButton && nextPageButton instanceof HTMLElement) nextPageButton.click();
       }
     });
   },

@@ -9,17 +9,14 @@ export default defineUserScript({
   icon: "https://www.google.com/s2/favicons?domain=slack.com",
   main: () => {
     window.addEventListener("beforeunload", (event) => {
-      const messageInputContainer =
-        document.getElementsByClassName("ql-editor")[0];
+      const messageInputContainer = document.getElementsByClassName("ql-editor")[0];
       if (messageInputContainer) {
         const isEmpty = /./;
 
         const messageLines = messageInputContainer.children;
 
         if (
-          (Array.from(messageLines) as HTMLElement[]).some((line) =>
-            isEmpty.test(line.innerText),
-          )
+          (Array.from(messageLines) as HTMLElement[]).some((line) => isEmpty.test(line.innerText))
         ) {
           event.preventDefault();
           event.returnValue = "";

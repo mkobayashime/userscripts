@@ -19,20 +19,11 @@ const getFiles = async (): Promise<{
     return {
       scripts: await Array.fromAsync(
         new Glob(
-          path.resolve(
-            import.meta.dirname,
-            "..",
-            "src",
-            "userscripts",
-            "*",
-            "index.user.ts",
-          ),
+          path.resolve(import.meta.dirname, "..", "src", "userscripts", "*", "index.user.ts"),
         ).scan(),
       ),
       styles: await Array.fromAsync(
-        new Glob(
-          path.resolve(import.meta.dirname, "..", "src", "*.user.css"),
-        ).scan(),
+        new Glob(path.resolve(import.meta.dirname, "..", "src", "*.user.css")).scan(),
       ),
     };
   } catch (err) {
@@ -50,31 +41,21 @@ const parseUserStyleComment = async ({
     const file = await readFile(filepath);
     const lines = file.toString().split("\n");
 
-    if (
-      lines.length === 0 ||
-      lines.some((line) => line.includes("docgen-ignore"))
-    )
-      return null;
+    if (lines.length === 0 || lines.some((line) => line.includes("docgen-ignore"))) return null;
 
     const commentPrefix = {
       title: "@name",
       description: "@description",
     };
 
-    const titleLine = lines.find((line) =>
-      line.startsWith(commentPrefix.title),
-    );
-    const descriptionLine = lines.find((line) =>
-      line.startsWith(commentPrefix.description),
-    );
+    const titleLine = lines.find((line) => line.startsWith(commentPrefix.title));
+    const descriptionLine = lines.find((line) => line.startsWith(commentPrefix.description));
 
     if (titleLine === undefined) return null;
     return {
       filename: path.basename(filepath),
       title: titleLine.slice(commentPrefix.title.length).trim(),
-      description: descriptionLine
-        ?.slice(commentPrefix.description.length)
-        .trim(),
+      description: descriptionLine?.slice(commentPrefix.description.length).trim(),
     };
   } catch (err) {
     console.error(err);
@@ -89,11 +70,7 @@ const userscriptSourceSchema = v.object({
   }),
 });
 
-const getUserScriptProperties = async ({
-  files,
-}: {
-  files: string[];
-}): Promise<FileProperties[]> =>
+const getUserScriptProperties = async ({ files }: { files: string[] }): Promise<FileProperties[]> =>
   (
     await Promise.all(
       files.map(async (filepath) => {
@@ -112,11 +89,7 @@ const getUserScriptProperties = async ({
     .filter((s) => s !== undefined)
     .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1));
 
-const getUserStyleProperties = async ({
-  files,
-}: {
-  files: string[];
-}): Promise<FileProperties[]> =>
+const getUserStyleProperties = async ({ files }: { files: string[] }): Promise<FileProperties[]> =>
   (
     await Promise.all(
       files.map(async (file) => {
@@ -147,10 +120,7 @@ const updateReadme = async (scriptsMarkdown: string): Promise<void> => {
   if (!readme) return;
 
   const readmeKeyword = "<!-- docgen -->";
-  const readmeCommonPart = readme.slice(
-    0,
-    readme.indexOf(readmeKeyword) + readmeKeyword.length,
-  );
+  const readmeCommonPart = readme.slice(0, readme.indexOf(readmeKeyword) + readmeKeyword.length);
 
   const updatedReadme = `${readmeCommonPart}\n\n${scriptsMarkdown}`;
   await writeFile(path.resolve("README.md"), updatedReadme);
@@ -176,9 +146,7 @@ void (async () => {
     )
     .join("\n\n");
   const stylesMarkdown = styleFileProperties
-    .map((fileProperties) =>
-      generateMdFileEntry({ ...fileProperties, fileKind: "style" }),
-    )
+    .map((fileProperties) => generateMdFileEntry({ ...fileProperties, fileKind: "style" }))
     .join("\n\n");
 
   const joinedMarkdown = [

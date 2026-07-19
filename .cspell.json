@@ -1,9 +1,3 @@
 {
-  "words": [
-    "userscript",
-    "userscripts",
-    "bundlemonkey",
-    "docgen",
-    "tampermonkey"
-  ]
+  "words": ["userscript", "userscripts", "bundlemonkey", "docgen", "tampermonkey"]
 }

@@ -16,12 +16,8 @@ export default defineUserScript({
   ],
   main: () => {
     const googleSearch = () => {
-      return Array.from(
-        document.querySelectorAll("div[data-lyricid] > div > div > div > span"),
-      )
-        .map((element) =>
-          element instanceof HTMLSpanElement ? element.innerText : null,
-        )
+      return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div > span"))
+        .map((element) => (element instanceof HTMLSpanElement ? element.innerText : null))
         .filter((str) => str !== null)
         .join("\n");
     };
@@ -41,9 +37,7 @@ export default defineUserScript({
 
     const musixmatch = () =>
       Array.from(document.getElementsByClassName("mxm-lyrics__content "))
-        .map((element) =>
-          element instanceof HTMLElement ? element.innerText : null,
-        )
+        .map((element) => (element instanceof HTMLElement ? element.innerText : null))
         .filter((str) => str)
         .join("\n");
 
@@ -52,9 +46,7 @@ export default defineUserScript({
       if (!wrapper) return;
 
       return Array.from(wrapper.children)
-        .map((element) =>
-          element instanceof HTMLElement ? element.innerText : null,
-        )
+        .map((element) => (element instanceof HTMLElement ? element.innerText : null))
         .filter((str) => str !== null)
         .join("\n");
     };

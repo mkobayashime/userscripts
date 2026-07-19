@@ -12,16 +12,12 @@ export default defineUserScript({
       if (isTyping()) return;
 
       if (e.key === "l" || e.key === "ArrowRight") {
-        const nextButton = document.querySelector<HTMLElement>(
-          ".main_image .icon_next",
-        );
+        const nextButton = document.querySelector<HTMLElement>(".main_image .icon_next");
         if (nextButton) nextButton.click();
       }
 
       if (e.key === "h" || e.key === "ArrowLeft") {
-        const prevButton = document.querySelector<HTMLElement>(
-          ".main_image .icon_prev",
-        );
+        const prevButton = document.querySelector<HTMLElement>(".main_image .icon_prev");
         if (prevButton) prevButton.click();
       }
     });
