@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - No project styles
 // @namespace    mkobayashime
-// @version      1.6.4
+// @version      1.6.5
 // @description  Scrapbox のプロジェクト単位で設定されているスタイルを無効化します
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime

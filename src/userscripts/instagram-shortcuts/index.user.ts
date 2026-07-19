@@ -3,7 +3,7 @@ import { isTyping } from "../utils/isTyping.js";
 
 export default defineUserScript({
   name: "Instagram - Shortcut keys",
-  version: "2.2.4",
+  version: "2.2.5",
   description: "Space key to like, arrow/h/l keys to next/previous photo in the post",
   match: ["https://www.instagram.com/*"],
   icon: "https://www.google.com/s2/favicons?domain=instagram.com",

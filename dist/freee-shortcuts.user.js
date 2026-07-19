@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         freee shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.3
+// @version      1.3.4
 // @description  freee にショートカットキーを追加します
 // @icon         https://www.google.com/s2/favicons?domain=freee.co.jp
 // @author       mkobayashime

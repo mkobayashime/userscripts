@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "Slack - No unintended reloads",
-  version: "1.3.2",
+  version: "1.3.3",
   description: "Alert when you reload/close Slack with a new draft",
   match: ["https://app.slack.com/*"],
   runAt: "document-end",

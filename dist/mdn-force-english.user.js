@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MDN - Force English
 // @namespace    mkobayashime
-// @version      1.0.2
+// @version      1.0.3
 // @description  Redirect Japanese pages in MDN to corresponding English pages
 // @icon         https://www.google.com/s2/favicons?domain=developer.mozilla.org
 // @author       mkobayashime

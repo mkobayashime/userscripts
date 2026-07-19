@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HOME'S - Shortcut keys
 // @namespace    mkobayashime
-// @version      1.3.4
+// @version      1.3.5
 // @description  Next/Prev image with arrow/h/l keys
 // @icon         https://www.google.com/s2/favicons?domain=homes.co.jp
 // @author       mkobayashime

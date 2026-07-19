@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scrapbox - Force Theme
 // @namespace    mkobayashime
-// @version      1.3.5
+// @version      1.3.6
 // @description  Scrapbox でプロジェクトに関わらず特定のテーマを使用します
 // @icon         https://www.google.com/s2/favicons?domain=scrapbox.io
 // @author       mkobayashime

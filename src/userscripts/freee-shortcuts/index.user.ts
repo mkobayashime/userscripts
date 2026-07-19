@@ -2,7 +2,7 @@ import { defineUserScript } from "bundlemonkey";
 
 export default defineUserScript({
   name: "freee shortcut keys",
-  version: "1.3.3",
+  version: "1.3.4",
   match: ["https://secure.freee.co.jp/*"],
   description: "freee にショートカットキーを追加します",
   icon: "https://www.google.com/s2/favicons?domain=freee.co.jp",

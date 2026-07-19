@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ETC利用照会サービス - Shortcut keys
 // @namespace    mkobayashime
-// @version      2.0.2
+// @version      2.0.3
 // @description  ETC利用照会サービスに h/l などのショートカットキーを追加します
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.4.4
+// @version      1.4.5
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts

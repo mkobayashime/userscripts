@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub - Auto SSO
 // @namespace    mkobayashime
-// @version      1.2.0
+// @version      1.2.1
 // @description  Attempt SSO if the banner exists on every pageload
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // @author       mkobayashime

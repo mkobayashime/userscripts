@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slack - No unintended reloads
 // @namespace    mkobayashime
-// @version      1.3.2
+// @version      1.3.3
 // @description  Alert when you reload/close Slack with a new draft
 // @icon         https://www.google.com/s2/favicons?domain=slack.com
 // @author       mkobayashime
