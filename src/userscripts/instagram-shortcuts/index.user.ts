@@ -1,4 +1,5 @@
 import { defineUserScript } from "bundlemonkey";
+
 import { isTyping } from "../utils/isTyping.js";
 
 export default defineUserScript({
