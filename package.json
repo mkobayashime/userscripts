@@ -15,7 +15,7 @@
     "oxfmt": "0.59.0",
     "oxlint": "1.74.0",
     "oxlint-tsgolint": "0.25.0",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "valibot": "1.4.0"
   }
 }
