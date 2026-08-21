@@ -5,7 +5,7 @@ import { enableSelection } from "../utils/enableSelection";
 
 export default defineUserScript({
   name: "Copy lyrics",
-  version: "1.4.5",
+  version: "1.4.6",
   description: "Copy lyrics automatically in supported sites",
   match: [
     "https://www.google.com/search*",
@@ -17,10 +17,15 @@ export default defineUserScript({
   ],
   main: () => {
     const googleSearch = () => {
-      return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div > span"))
-        .map((element) => (element instanceof HTMLSpanElement ? element.innerText : null))
-        .filter((str) => str !== null)
-        .join("\n");
+      return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div"))
+        .map((e) =>
+          Array.from(e.querySelectorAll("& > span"))
+            .map((e) => (e instanceof HTMLSpanElement ? e.innerText : null))
+            .filter((str) => str !== null)
+            .join("\n"),
+        )
+        .filter((s) => s.length > 0)
+        .join("\n\n");
     };
 
     const utaNet = () => {
