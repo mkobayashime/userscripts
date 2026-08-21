@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy lyrics
 // @namespace    mkobayashime
-// @version      1.4.5
+// @version      1.4.6
 // @description  Copy lyrics automatically in supported sites
 // @author       mkobayashime
 // @homepage     https://github.com/mkobayashime/userscripts
@@ -45,10 +45,15 @@ var enableSelection = () => {
 // src/userscripts/copy-lyrics/index.user.ts
 void (() => {
   const googleSearch = () => {
-    return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div > span"))
-      .map((element) => (element instanceof HTMLSpanElement ? element.innerText : null))
-      .filter((str) => str !== null)
-      .join("\n");
+    return Array.from(document.querySelectorAll("div[data-lyricid] > div > div > div"))
+      .map((e) =>
+        Array.from(e.querySelectorAll("& > span"))
+          .map((e2) => (e2 instanceof HTMLSpanElement ? e2.innerText : null))
+          .filter((str) => str !== null)
+          .join("\n"),
+      )
+      .filter((s) => s.length > 0)
+      .join("\n\n");
   };
   const utaNet = () => {
     enableSelection();
